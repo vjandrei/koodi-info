@@ -12,7 +12,7 @@ class TailwindExtractor {
 
 module.exports = {
   siteName: 'Digikokki Andreas',
-  siteDescription: "Suunnittelijasta koodariksi Suomeksi! Tämä on minun eli Andreasksen henkilökohtainen sivu joka sisältää Suomeksi koodi ja käyttöliittymä asioita erillaisissa formaateissa.",
+  siteDescription: "Suunnittelijasta koodariksi Suomeksi! Tämä on minun eli Andreasksen henkilökohtainen sivu joka sisältää Suomeksi ohjelmointia ja käyttöliittymäsuunnittelua.",
   titleTemplate: `%s | Digikokki`,
   icon: 'src/favicon.png',
   siteUrl: 'https://youthful-wiles-bb2081.netlify.com/',
