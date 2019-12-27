@@ -7,7 +7,7 @@ import DefaultLayout from '~/layouts/Default.vue'
 export default function (Vue, { router, head, isClient }) {
   // Add a html attributes
   head.htmlAttrs = { lang: 'fi', class: 'h-full' }
-  head.bodyAttrs = { class: 'antialiased font-serif' }
+  head.bodyAttrs = { class: 'bg-gray-100 text-gray-900 tracking-wider leading-normal antialiased font-sans' }
   // Add a meta tag
   head.meta.push({
     name: 'keywords',
@@ -16,7 +16,7 @@ export default function (Vue, { router, head, isClient }) {
   // Add a Google fonts
   head.link.push({
     rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css?family=Raleway:400,700'
+    href: 'https://fonts.googleapis.com/css?family=Raleway:400,700,900'
   })
 
 
