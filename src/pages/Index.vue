@@ -33,12 +33,12 @@
 </template>
 
 <page-query> 
-query Craft {
+query Craft ($path: String){
   posts: craft {
-  entries {
+  entries  (slug: $path){
     ... on craft_KoodiInfo{
-        id
         uri
+        slug
         title
       	summaryContent{
           content
@@ -47,6 +47,7 @@ query Craft {
     }
   }
 }
+
 </page-query>
 
 <script>

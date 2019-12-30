@@ -2,7 +2,7 @@
 <div class="w-full lg:max-w-full lg:flex my-2 font-sans">
   <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
     <div class="mb-8">
-      <g-link :to="`${post.path}/`">
+      <g-link :to="`${post.slug}/`">
       <div class="text-gray-900 font-bold text-xl mb-2">
         {{ post.title }}
       </div>
@@ -10,7 +10,6 @@
       </g-link>
     </div>
     <div class="flex items-center">
-      <g-image class="w-10 h-10 rounded-full mr-4" :src="post.cover" fit="fill" background />
       <div class="text-sm">
         <p class="text-gray-900 leading-none">Jonathan Reinink</p>
         <p class="text-gray-600">Aug 18</p>
