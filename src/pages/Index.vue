@@ -23,34 +23,30 @@
       </div>
     </div>
     <section class="w-full lg:w-4/5">
-    <div class="px-1">
-      <div class="flex -mx-2 flex-wrap">
-          <Card  class="w-full sm:w-1/1 md:w-1/2 px-2" v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node"/>
+      <div class="px-1">
+        <div class="flex -mx-2 flex-wrap">
+            <Card  class="w-full sm:w-1/1 md:w-1/2 px-2" v-for="edge in $page.posts.entries" :key="edge.id" :post="edge"/>
+        </div>
       </div>
-    </div>
     </section>
-   
-
   </Layout>
 </template>
 
 <page-query> 
-
-query HomePage{
-  posts: allPost{
-    edges{
-      node {
+query Craft {
+  posts: craft {
+  entries {
+    ... on craft_KoodiInfo{
         id
+        uri
         title
-        description
-        excerpt
-        cover 
-        path
+      	summaryContent{
+          content
+        }
       }
     }
   }
 }
-
 </page-query>
 
 <script>
