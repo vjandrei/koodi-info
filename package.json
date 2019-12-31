@@ -24,9 +24,15 @@
     "vue-parallaxy": "^1.1.1"
   },
   "devDependencies": {
+    "autoprefixer": "^9.7.3",
+    "css-loader": "^3.4.0",
+    "gridsome-plugin-tailwindcss": "^2.2.30",
     "moment": "^2.24.0",
+    "node-sass": "^4.13.0",
     "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
     "postcss-nested": "^4.2.1",
+    "sass-loader": "^8.0.0",
     "tailwindcss": "^1.1.4",
     "tailwindcss-transitions": "^2.1.0"
   }
