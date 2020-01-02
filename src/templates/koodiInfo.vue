@@ -1,24 +1,30 @@
 <template>
-  <Layout>
-    <div v-html="$page.post.content"/>
-  </Layout>
+  <div>
+  	<h1 v-html="$page.posts.entry.title" />
+  	<div v-html="$page.posts.entry.summaryContent.content" />
+  </div>
 </template>
 
 <page-query>
-query Post ($path: String!) {
-  post: post (path: $path) {
-    title
-    content
+query Craft ($id: [Int]){
+  posts: craft {
+  entry (id: $id) {
+    ... on craft_KoodiInfo{
+        id
+        uri
+        slug
+        title
+      	summaryContent{
+          content
+        }
+      }
+    }
   }
 }
 </page-query>
 
 <script>
 export default {
-  metaInfo() {
-    return {
-      title: this.$page.post.title
-    };
-  }
+  
 };
 </script>
