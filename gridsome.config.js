@@ -41,15 +41,11 @@ module.exports = {
       },
     },
     {
-      use: '@gridsome/source-graphql',
+      use: 'gridsome-source-craftql',
       options: {
         url: process.env.CRAFT_API_URL,
-        fieldName: 'craft',
-        typeName: 'craft',
-        headers: {
-          Authorization: `bearer ${process.env.AUTH_TOKEN}`,
-        }
-      }
+        token: process.env.AUTH_TOKEN,
+      },
     },
     {
       use: '@gridsome/plugin-google-analytics',
@@ -99,13 +95,4 @@ module.exports = {
       }
     },
   ],
-
-
-  templates: {
-    Post: '/:title',
-    Tag: '/tag/:id',
-    Author: '/author/:id',
-  },
-
-
 }
