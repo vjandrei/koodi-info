@@ -1,19 +1,19 @@
 <template>
   <div>
-  <section class="shadow-lg">
-    <Nav />
-  </section>
-  <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-16 mt-16">
-    <slot/>
-  </div>
+    <SiteHeader class="xl:flex-shrink-0"/> 
+    <SiteMain>
+      <slot/>
+    </SiteMain>
   </div>
 </template>
 
 <script>
-import Nav from '~/components/Nav.vue'
+import SiteHeader from '~/components/SiteHeader.vue'
+import SiteMain from '~/components/SiteMain.vue'
 export default {
   components: {
-    Nav
+    SiteHeader,
+    SiteMain
   },
   metaInfo: {
     title: 'Hello, world!'
