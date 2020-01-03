@@ -2,6 +2,7 @@
   <div>
   	<h1 v-html="$page.posts.entry.title" />
   	<div v-html="$page.posts.entry.summaryContent.content" />
+    <div v-html="$page.posts.entry.bodyContent.content" />
   </div>
 </template>
 
@@ -15,6 +16,9 @@ query Craft ($id: [Int]){
         slug
         title
       	summaryContent{
+          content
+        }
+         bodyContent{
           content
         }
       }

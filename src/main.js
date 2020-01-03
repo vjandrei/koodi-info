@@ -17,7 +17,7 @@ export default function (Vue, { router, head, isClient }) {
   // Add a Google fonts
   head.link.push({
     rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap'
+    href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&display=swap'
   })
 
 
