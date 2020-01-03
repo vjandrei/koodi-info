@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SiteHeader class="xl:flex-shrink-0"/> 
+    <SiteHeader class="xl:flex-shrink-0 border-b border-gray-200"/> 
     <SiteMain>
       <slot/>
     </SiteMain>

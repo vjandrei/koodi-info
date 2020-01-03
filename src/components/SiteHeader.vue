@@ -3,7 +3,7 @@
     <header id="header" class="sm:flex sm:items-center sm:justify-between container mx-auto">
         <div id="brand" class="xl:w-72 xl:justify-center xl:py-5">
             <div>
-                <g-link to="/"><h3>Koodi<span class="bg-black text-white px-1">.info</span></h3></g-link>
+                <g-link to="/"><h3 class="text-3xl font-black uppercase;">Koodi<span class="bg-gray-900 text-white px-1 text-teal-500">.info/></span></h3></g-link>
             </div>
             <div class="flex items-center sm:hidden">
                 <button @click="toggle" type="button" class="px-2 text-gray-500 focus:outline-none focus:text-black flex items-center ">
@@ -56,7 +56,7 @@ export default {
     #brand{
         @apply flex justify-between px-4 py-3;
          h3 {
-            @apply text-3xl font-black uppercase;
+            @apply text-3xl font-black ;
         }
     }
 </style>

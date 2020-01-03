@@ -223,7 +223,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        'Raleway',
+        'Roboto',
       ],
       serif: ['serif'],
       mono: [

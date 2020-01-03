@@ -1,7 +1,7 @@
 <template>
-    <main class="container mx-auto px-4 py-3">
-        <slot/>
-    </main>
+    <div><slot/></div>
+        
+  
 </template>
 
 <script>
