@@ -53,10 +53,10 @@ export default {
 
 
 <style lang="scss">
-    #brand{
-        @apply flex justify-between px-4 py-3;
-         h3 {
-            @apply text-3xl font-black ;
-        }
+#brand{
+    @apply flex justify-between px-4 py-3;
+        h3 {
+        @apply text-3xl font-black;
     }
+}
 </style>
