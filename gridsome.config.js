@@ -21,13 +21,8 @@ module.exports = {
     remark: {
       externalLinksTarget: '_blank',
       externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+      anchorClassName: 'icon icon-link',
       plugins: [
-        ['gridsome-plugin-remark-shiki', {
-          theme: 'min-light'
-        }],
-        [ '@noxify/gridsome-plugin-remark-embed', {
-          'enabledProviders' : ['Youtube', 'Twitter', 'Gist'],
-        }]
       ]
     }
   },
@@ -47,6 +42,13 @@ module.exports = {
             typeName: 'Author',
             create: true,
           },
+        },
+        remark: {
+          plugins: [
+            [ '@noxify/gridsome-plugin-remark-embed', {
+                'enabledProviders' : ['Youtube', 'Twitter', 'Gist'],
+            }]
+          ]
         },
       },
     },
@@ -85,7 +87,6 @@ module.exports = {
                   extensions: ['css', 'vue', 'js']
                 }
               ],
-              whitelistPatterns: [/shiki/]
             }),
           ])
         }

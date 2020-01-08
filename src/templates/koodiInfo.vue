@@ -22,7 +22,12 @@ export default {
   },
   computed: {
     compiledMarkdown: function () {
-      return marked(this.$page.posts.entry.bodyContent, { sanitize: true })
+      return marked(this.$page.posts.entry.bodyContent, { 
+        sanitize: true,
+        highlight: function(code) {
+          return require('highlight.js').highlightAuto(code).value;
+        },
+      })
     }
   }
 };
