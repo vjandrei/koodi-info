@@ -4,6 +4,8 @@
 import DefaultLayout from '~/layouts/Default.vue'
 require("highlight.js/styles/atom-one-dark.css")
 
+import 'highlight.js/styles/atom-one-dark.css';
+
 export default function (Vue, { router, head, isClient }) {
   // Add a html attributes
   head.htmlAttrs = { lang: 'fi', class: 'h-full' }
@@ -14,10 +16,11 @@ export default function (Vue, { router, head, isClient }) {
     content: 'HTML,CSS,XML,JavaScript,Koodari,Koodausta,Ohjeilmointi,Käyttöliittymäsuunnittelua'
   })
   // Add a Google fonts
-  head.link.push({
+  head.link.push([{
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&display=swap'
-  })
+    }
+  ])
 
 
   // Set default layout as a global component
