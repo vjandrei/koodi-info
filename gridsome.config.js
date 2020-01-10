@@ -59,6 +59,19 @@ module.exports = {
         token: process.env.AUTH_TOKEN,
       },
     },
+    {
+      use: 'gridsome-plugin-flexsearch',
+      options: {
+        collections: [
+          {
+            typeName: 'craft',
+            indexName: 'craft',
+            fields: ['title', 'bodyContent']
+          }
+        ],
+        searchFields: ['title']
+      }
+    },
   ],
 
   chainWebpack: config => {
