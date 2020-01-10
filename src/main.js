@@ -6,6 +6,8 @@ require("highlight.js/styles/atom-one-dark.css")
 
 import 'highlight.js/styles/atom-one-dark.css';
 
+import 'highlight.js/styles/atom-one-dark.css';
+
 export default function (Vue, { router, head, isClient }) {
   // Add a html attributes
   head.htmlAttrs = { lang: 'fi', class: 'h-full' }
