@@ -9,3 +9,5 @@
 @import 'components/markdown';
 
 @import 'tailwindcss/utilities';
+
+@import 'highlight.js/styles/atom-one-dark.css';
