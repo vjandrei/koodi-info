@@ -16,40 +16,16 @@ module.exports = {
   titleTemplate: `%s | Koodi.info`,
   icon: 'src/favicon.png',
   siteUrl: 'https://youthful-wiles-bb2081.netlify.com/',
-  
   transformers: {
     remark: {
       externalLinksTarget: '_blank',
       externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
       plugins: [
-        ['gridsome-plugin-remark-shiki', {
-          theme: 'min-light'
-        }],
-        [ '@noxify/gridsome-plugin-remark-embed', {
-          'enabledProviders' : ['Youtube', 'Twitter', 'Gist'],
-        }]
       ]
     }
   },
 
   plugins: [
-    {
-      use: '@gridsome/source-filesystem',
-      options: {
-        path: 'content/posts/**/*.md',
-        typeName: 'Post',
-        refs: {
-          tags: {
-            typeName: 'Tag',
-            create: true,
-          },
-          author: {
-            typeName: 'Author',
-            create: true,
-          },
-        },
-      },
-    },
     {
       use: 'gridsome-source-craftql',
       options: {

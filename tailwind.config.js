@@ -25,7 +25,7 @@ module.exports = {
         700: '#4a5568',
         800: '#2d3748',
         900: '#1a202c',
-        'codeblock': '#fbfcfd',
+        'codeblock': '#282c34',
       },
       red: {
         100: '#fff5f5',

@@ -41,12 +41,12 @@ export default {
   data() {
     return {
         isOpen: false,
-    };
+    }
   },
   methods: {
-      toggle() {
+    toggle() {
         this.isOpen = !this.isOpen
-        },
+    }
   }
 };
 </script>

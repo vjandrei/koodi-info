@@ -41,17 +41,12 @@
     }
   }
 
-  pre.shiki {
-    @apply bg-gray-codeblock !important;
-    @apply border border-gray-300 -mx-6 p-6 mb-4 text-sm font-mono leading-code overflow-x-auto scrolling-touch;
+  code {
+    @apply bg-gray-codeblock text-gray-100 !important;
+    @apply rounded border border-gray-300 p-4 block mb-4 font-mono text-sm leading-code overflow-x-auto scrolling-touch;
   }
 
-  code.shiki {
-    @apply bg-gray-100 text-gray-700 !important;
-    @apply border border-gray-300 p-4 block mb-4 font-mono text-sm leading-code overflow-x-auto scrolling-touch;
-  }
-
-  .shiki-inline {
+  .inline {
     @apply bg-gray-100 text-gray-700 !important;
     @apply border border-gray-300 text-xs px-2 py-1 rounded;
   }
