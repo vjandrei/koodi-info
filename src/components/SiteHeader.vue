@@ -22,7 +22,6 @@
                 </div>
                 <input id="search" v-model="searchTerm" class="block w-full border border-transparent bg-gray-200 focus:outline-none focus:bg-white focus:border-gray-300 text-gray-900 rounded-lg pl-10 pr-4 py-2" placeholder="Etsi avainsanalla" type="text" >
                 <g-link v-for="result in searchResults" :key="result.id" :to="result.slug" class="navbar-item">{{ result.title }}</g-link>
-                <!--input class="block w-full border border-transparent bg-gray-200 focus:outline-none focus:bg-white focus:border-gray-300 text-gray-900 rounded-lg pl-10 pr-4 py-2" placeholder="Etsi avainsanalla" -->
              </div>
              <div class="sm:flex sm:items-center">
                 <div class="px-2 pt-2 pb-5 border-b border-gray-800 sm:flex sm:border-b-0 sm:py-0 sm:px-0">
