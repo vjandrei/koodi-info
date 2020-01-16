@@ -22,7 +22,7 @@ export default {
 
       length = length || 280
       clamp = clamp || ' ...'
-      let text = post.summaryContent.content.replace(/<pre(.|\n)*?<\/pre>/gm, '').replace(/<[^>]+>/gm, '')
+      let text = post.pageSummaryContent.content.replace(/<pre(.|\n)*?<\/pre>/gm, '').replace(/<[^>]+>/gm, '')
 
       return text.length > length ? `${ text.slice(0, length)}${clamp}` : text
     },

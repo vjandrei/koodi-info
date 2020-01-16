@@ -37,6 +37,33 @@
   </Layout>
 </template>
 
+<script>
+import Card from '~/components/Card.vue'
+export default {
+  components: {
+    Card
+  },
+  metaInfo () {
+    return {
+      title: this.$static.metadata.siteName,
+      meta: [
+        { property: "og:type", content: 'website' },
+        { property: "og:title", content: this.$static.metadata.siteName },
+        { property: "og:description", content: this.$static.metadata.siteDescription },
+        { property: "og:url", content: this.$static.metadata.siteUrl },
+        { property: "og:image", content: this.ogImageUrl },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: this.$static.metadata.siteName },
+        { name: "twitter:description", content: this.$static.metadata.siteDescription },
+        { name: "twitter:site", content: "@vj_andrei" },
+        { name: "twitter:creator", content: "@vj_andrei" },
+        { name: "twitter:image", content: this.ogImageUrl },
+      ],
+    }
+  },
+}
+</script>
+
 <page-query> 
 query Craft ($slug: String){
   posts: craft {
@@ -45,7 +72,7 @@ query Craft ($slug: String){
         uri
         slug
         title
-      	summaryContent{
+      	pageSummaryContent{
           content
         }
       }
@@ -54,16 +81,12 @@ query Craft ($slug: String){
 }
 </page-query>
 
-<script>
-import Card from '~/components/Card.vue'
-export default {
-  components: {
-    Card
-  },
-  metaInfo: {
-    title: 'Hello, world!'
+<static-query>
+query {
+  metadata {
+    siteName
+    siteUrl
+    siteDescription
   }
 }
-</script>
-
-<style></style>
+</static-query>
