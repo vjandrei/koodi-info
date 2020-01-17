@@ -6,6 +6,9 @@
         <h1 class="text-4xl font-bold my-4" v-html="$page.post.entry.title" />
         <div v-html="$page.post.entry.pageSummaryContent.content" />
 
+
+        <vue-audio :file="file"></vue-audio>
+
         <div v-for="podcast in $page.post.entry.pageSoundContent" :key="podcast.id">
           {{podcast.title}}<br/>
           {{podcast.filename}}<br/>
@@ -19,11 +22,7 @@
         {{$page.post.entry.title}}<br/>
         {{$page.post.entry.pageSummaryContent.content}}<br/>
         {{$page.post.entry.pageContent}}<br/>
-        <div v-for="podcast in $page.post.entry.pageSoundContent" :key="podcast.id">
-          {{podcast.title}}<br/>
-          {{podcast.filename}}<br/>
-          {{podcast.url}}<br/>
-        </div>
+
        
       </div>
     </section>
@@ -33,15 +32,17 @@
 <script>
 import marked from 'marked'
 import SiteHeader from '~/components/SiteHeader.vue'
+import VueAudio from '~/components/Audio.vue'
 
 export default {
   data (){
     return {
-      
+      file: this.$page.post.entry.id,
     }
   },
   components: {
     SiteHeader,
+   'vue-audio': VueAudio
   },
   computed: {
     compiledMarkdown: function () {
@@ -52,7 +53,10 @@ export default {
       })
       return marked(this.$page.post.entry.pageContent)
     }
-  }
+  },
+  methods: {
+      
+  },
 };
 </script>
 
