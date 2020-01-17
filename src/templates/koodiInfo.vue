@@ -2,10 +2,29 @@
   <div>
     <SiteHeader class="xl:flex-shrink-0 border-b border-gray-200"/> 
     <section class="markdown container mx-auto px-4 py-3">
-      <div class="w-3/4 mx-auto">
-        <h1 class="text-4xl font-bold my-4" v-html="$page.posts.entry.pageTitle" />
-        <div v-html="$page.posts.entry.pageSummaryContent.content" />
+      <div class="w-3/5 mx-auto">
+        <h1 class="text-4xl font-bold my-4" v-html="$page.post.entry.title" />
+        <div v-html="$page.post.entry.pageSummaryContent.content" />
+
+        <div v-for="podcast in $page.post.entry.pageSoundContent" :key="podcast.id">
+          {{podcast.title}}<br/>
+          {{podcast.filename}}<br/>
+          {{podcast.url}}<br/>
+        </div>
+
         <div class="markdown" v-html="compiledMarkdown"></div>
+
+        {{$page.post.entry.id}}<br/>
+        {{$page.post.entry.slug}}<br/>
+        {{$page.post.entry.title}}<br/>
+        {{$page.post.entry.pageSummaryContent.content}}<br/>
+        {{$page.post.entry.pageContent}}<br/>
+        <div v-for="podcast in $page.post.entry.pageSoundContent" :key="podcast.id">
+          {{podcast.title}}<br/>
+          {{podcast.filename}}<br/>
+          {{podcast.url}}<br/>
+        </div>
+       
       </div>
     </section>
   </div>
@@ -16,7 +35,12 @@ import marked from 'marked'
 import SiteHeader from '~/components/SiteHeader.vue'
 
 export default {
-   components: {
+  data (){
+    return {
+      
+    }
+  },
+  components: {
     SiteHeader,
   },
   computed: {
@@ -26,7 +50,7 @@ export default {
           return require('highlight.js').highlightAuto(code).value;
         }
       })
-      return marked(this.$page.posts.entry.pageContent)
+      return marked(this.$page.post.entry.pageContent)
     }
   }
 };
@@ -34,7 +58,7 @@ export default {
 
 <page-query>
 query Craft ($id: [Int]){
-  posts: craft {
+  post: craft {
   entry (id: $id) {
     ... on craft_KoodiInfo{
         id
@@ -44,18 +68,13 @@ query Craft ($id: [Int]){
       	pageSummaryContent{
           content
         }
-         pageContent
-      }
-    }
-  }
-}
-
-query Seo($id: [Int]) {
-  posts: craft {
-    entry(id: $id) {
-      ... on craft_KoodiInfo {
-        id
-        title
+        pageContent
+        pageSoundContent{
+          id
+          title
+          filename
+          url
+        }
         pageSeoContent {
           title
           description
