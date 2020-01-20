@@ -1,43 +1,35 @@
 <template>
  <div class="w-full">
      <div class="bg-white shadow-lg rounded-lg">
-         <div class="flex">
-             <div class="w-full px-8 py-4">
-                 <div class="flex flex-col">
-                    <a @click="stop()" title="Stop" class="icon-stop2" ></a>
-                    <a @click="pause()" title="Play" :class="[ paused ? 'icon-play3' : 'icon-pause2' ]">Play</a>
-                    <div :class="`__extern-wrapper`">
-                        <a @click="download()" class="icon-download"></a>
-                        <a @click="changeLoop()" :class="[ innerLoop ? 'icon-spinner10' : 'icon-spinner11']"></a>
-                        <a @click="mute()" :class="[isMuted ? 'icon-volume-mute2': 'icon-volume-high' ]" title="Mute"></a>
-                        <a v-on:mouseover="toggleVolume()" class="volume-toggle icon-paragraph-justify" title="Volume">
-                        <input orient="vertical" v-model.lazy="volumeValue" v-on:change="updateVolume()" v-show="hideVolumeSlider" type="range" min="0" max="100" class="volume-slider"/>
-                        </a>
-                    </div>
-                    <audio v-bind:id="playerId" :loop="innerLoop" ref="audiofile" :src="file" preload="auto" style="display:none;"></audio>
+         <div class="flex justify-between flex-wrap">
+              
+              <div>1</div>
 
-                    <div>
-                        <h3 class="text-2xl text-grey-darkest font-medium">A Sky Full of Stars</h3>
-                        <p class="text-sm text-grey mt-1">Ghost Stories</p>
-                    </div>
-                    <div>
-                       <div class="flex justify-between text-sm text-grey-darker">
-                            <span :class="`__playback-time-current`">{{currentTime}}</span>
-                            <span :class="`__playback-time-total`">{{duration}}</span>
-                        </div>
-                        <div class="mt-1">
-                            <div v-on:click="setPosition" :class="`__playback-time-wrapper`" title="Time played : Total time">
-                            <div v-bind:style="progressStyle" :class="`__playback-time-indicator`"></div>
-                            </div>
-                            <div class="h-1 bg-gray-100 rounded-full">
-                                <div class="w-1/5 h-1 rounded-full relative">
-                                    <span class="w-4 h-4 absolute pin-r pin-b -mb-1 rounded-full shadow"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                 </div>
-             </div>
+              <div class="">
+                <a @click="pause()" title="Play" :class="[ paused ? 'icon-play3' : 'icon-pause2' ]">Play</a>
+                <a @click="stop()" title="Stop" class="icon-stop2" >Stop</a>
+              </div>
+
+              <div>
+                <span :class="`__playback-time-current`">{{currentTime}}</span>:
+                      <span :class="`__playback-time-total`">{{duration}}</span>
+              </div>
+
+              
+              <div class="w-full">
+                <div v-on:click="setPosition" :class="`__playback-time-wrapper`" title="Time played : Total time"></div>
+                <div v-bind:style="progressStyle" :class="`__playback-time-indicator`"></div>
+                <div :class="`__extern-wrapper w-full`">
+                    <a @click="download()" class="icon-download"></a>
+                    <a @click="changeLoop()" :class="[ innerLoop ? 'icon-spinner10' : 'icon-spinner11']"></a>
+                    <a @click="mute()" :class="[isMuted ? 'icon-volume-mute2': 'icon-volume-high' ]" title="Mute"></a>
+                    <a v-on:mouseover="toggleVolume()" class="volume-toggle icon-paragraph-justify" title="Volume">
+                    <input orient="vertical" v-model.lazy="volumeValue" v-on:change="updateVolume()" v-show="hideVolumeSlider" type="range" min="0" max="100" class="volume-slider"/>
+                    </a>
+                </div>
+                <audio v-bind:id="playerId" :loop="innerLoop" ref="audiofile" :src="file" preload="auto" style="display:none;"></audio>
+              </div>
+            </div>
          </div>
      </div>
   </div>
@@ -232,12 +224,13 @@ export default {
             width: 80px;
             left: 24px;
           }
-        }
+        } 
       }
       .__playback-time-wrapper {
         background: transparent;
         position: relative;
-        width: 250px;
+        width: 100%;
+        padding: 16px 0;
         display: inline-block;
         background: #e0dcd7;
         height: 3px;
