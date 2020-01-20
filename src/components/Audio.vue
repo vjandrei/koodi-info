@@ -2,32 +2,34 @@
  <div class="w-full">
      <div class="bg-white shadow-lg rounded-lg">
          <div class="flex justify-between flex-wrap">
-              
-              <div>1</div>
-
-              <div class="">
-                <a @click="pause()" title="Play" :class="[ paused ? 'icon-play3' : 'icon-pause2' ]">Play</a>
-                <a @click="stop()" title="Stop" class="icon-stop2" >Stop</a>
-              </div>
-
+              <div></div>
               <div>
-                <span :class="`__playback-time-current`">{{currentTime}}</span>:
-                      <span :class="`__playback-time-total`">{{duration}}</span>
+                <a @click="stop()" title="Stop" class="icon-stop2" >Stop</a>
+                <div @click="pause()" v-if="paused">
+                  <svg aria-hidden="true" data-prefix="fas" data-icon="play" class="svg-inline--fa fa-play fa-w-14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"/>
+                  </svg>
+                </div>
+                <div @click="pause()" v-else>
+                  <svg aria-hidden="true" data-prefix="fas" data-icon="pause" class="svg-inline--fa fa-pause fa-w-14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path fill="currentColor" d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z"/>
+                  </svg>
+                </div>
               </div>
+              <div></div>
 
               
               <div class="w-full">
-                <div v-on:click="setPosition" :class="`__playback-time-wrapper`" title="Time played : Total time"></div>
-                <div v-bind:style="progressStyle" :class="`__playback-time-indicator`"></div>
-                <div :class="`__extern-wrapper w-full`">
-                    <a @click="download()" class="icon-download"></a>
-                    <a @click="changeLoop()" :class="[ innerLoop ? 'icon-spinner10' : 'icon-spinner11']"></a>
-                    <a @click="mute()" :class="[isMuted ? 'icon-volume-mute2': 'icon-volume-high' ]" title="Mute"></a>
-                    <a v-on:mouseover="toggleVolume()" class="volume-toggle icon-paragraph-justify" title="Volume">
-                    <input orient="vertical" v-model.lazy="volumeValue" v-on:change="updateVolume()" v-show="hideVolumeSlider" type="range" min="0" max="100" class="volume-slider"/>
-                    </a>
+                <div class="flex justify-between">
+                  <span :class="`__playback-time-current`">{{currentTime}}</span>
+                  <span :class="`__playback-time-total`">{{duration}}</span>
                 </div>
-                <audio v-bind:id="playerId" :loop="innerLoop" ref="audiofile" :src="file" preload="auto" style="display:none;"></audio>
+
+                <div class="cursor-pointer relative">
+                  <div v-on:click="setPosition" :class="`__playback-time-wrapper`" title="Time played : Total time"></div>
+                  <div v-bind:style="progressStyle" :class="`__playback-time-indicator`"></div>
+                  <audio v-bind:id="playerId" :loop="innerLoop" ref="audiofile" :src="file" preload="auto" style="display:none;"></audio>
+                </div>
               </div>
             </div>
          </div>
@@ -168,7 +170,7 @@ export default {
     },
     _handlePlayPause: function (e) {
       if (e.type === 'pause' && this.playing === false) {
-        this.progressStyle = `width:0%;`
+        this.progressStyle = `width:${percentage}%;`
         this.currentTime = '00:00'
         this.paused = true
       }
@@ -201,53 +203,30 @@ export default {
 
 
 <style lang="scss">
- $prefixCls: "vue-sound";
 
-      a {
-        cursor: pointer;
-        display: inline-block;
-        vertical-align: middle;
-      }
-      .__extern-wrapper {
-        display: inline-block;
-        margin-left: 10px;
-        > a {
-          margin-right: 5px;
-          vertical-align: 0;
-        }
-        .volume-toggle {
-          position: relative;
-          .volume-slider {
-            cursor: pointer;
-            position: absolute;
-            top: 0;
-            width: 80px;
-            left: 24px;
-          }
-        } 
-      }
-      .__playback-time-wrapper {
-        background: transparent;
-        position: relative;
-        width: 100%;
-        padding: 16px 0;
-        display: inline-block;
-        background: #e0dcd7;
-        height: 3px;
-        cursor: pointer;
-        font-size: 14px;
-        vertical-align: middle;
-        .__playback-time-separator::after {
-            content:' : ';
-        }
-        .__playback-time-total {
-        }
-        .__playback-time-indicator {
-            background: #5099ff;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-        }
-      }
+
+.__playback-time-wrapper {
+background: transparent;
+position: relative;
+width: 100%;
+padding: 16px 0;
+display: inline-block;
+background: #e0dcd7;
+height: 3px;
+cursor: pointer;
+font-size: 14px;
+vertical-align: middle;
+  .__playback-time-separator::after {
+    content:' : ';
+  }
+}
+
+.__playback-time-indicator {
+background: #5099ff;
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+height: 5px;
+}     
 </style>
