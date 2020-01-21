@@ -29,4 +29,3 @@ query {
 }
 </static-query>
 
-<style src="~/assets/css/main.css"></style>

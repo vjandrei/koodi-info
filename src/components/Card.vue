@@ -1,6 +1,6 @@
 <template>
   <div class="relative my-2 bg-white rounded-lg px-6 py-5 shadow-lg">
-    <g-link class="text-3xl font-bold leading-loose" :to="`${post.uri}/`">{{ post.title }}</g-link>
+    <g-link class="text-3xl font-bold leading-tight" :to="`${post.uri}/`">{{ post.title }}</g-link>
     <div class="font-normal text-gray-600" v-html="excerpt(post, 150, ' ...')"></div>
   </div>
 </template>

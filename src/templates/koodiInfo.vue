@@ -1,16 +1,29 @@
 <template>
-  <div>
+  <div class="bg-white">
     <SiteHeader class="xl:flex-shrink-0 border-b border-gray-200"/> 
-    <section class="markdown container mx-auto px-4 py-3">
-      <div class="w-3/5 mx-auto">
-        <h1 class="text-4xl font-bold my-4" v-html="$page.post.entry.title" />
-        <div v-html="$page.post.entry.pageSummaryContent.content" />
-        <vue-audio :file="file"></vue-audio>
-        <div v-for="podcast in $page.post.entry.pageSoundContent" :key="podcast.id">
-          {{podcast.title}}<br/>
-          {{podcast.filename}}<br/>
-          {{podcast.url}}<br/>
+    <section class=" container mx-auto px-4 py-3">
+      <div class="w-4/5 mx-auto">
+
+        <div class="text-center mt-16">
+          <span class="text-xs font-bold uppercase text-teal-500 mb-2 block">Arkkitehtuuri</span>
+          <h1 class="text-5xl font-bold leading-tight mt-0 mb-4" v-html="$page.post.entry.title" />
         </div>
+
+        <div class="flex w-2/3 mx-auto flex-row justify-center text-center my-6">
+          <div class="flex-1 px-2">Andreas Koutsoukos</div>
+          <div class="flex-1 px-2 border-r-2 border-l-2  border-teal-500">21.01.2020</div>
+          <div class="flex-1 px-2">Avainsana</div>
+        </div>
+
+        <div class="my-6 w-full mx-auto">
+          <vue-audio :file="file"></vue-audio>
+        </div>    
+
+        
+
+        <div v-html="$page.post.entry.pageSummaryContent.content" />
+        
+
         <div class="markdown" v-html="compiledMarkdown"></div>
         {{$page.post.entry.id}}<br/>
         {{$page.post.entry.slug}}<br/>
@@ -18,6 +31,7 @@
         {{$page.post.entry.pageSummaryContent.content}}<br/>
         {{$page.post.entry.pageContent}}<br/>
       </div>
+
     </section>
   </div>
 </template>

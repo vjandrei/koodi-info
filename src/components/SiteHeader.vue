@@ -92,11 +92,8 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="postcss">
 #brand{
     @apply flex justify-between px-4 py-3;
-        h3 {
-        @apply text-3xl font-black;
-    }
 }
 </style>

@@ -1,40 +1,32 @@
 <template>
- <div class="w-full">
-     <div class="bg-white shadow-lg rounded-lg">
-         <div class="flex justify-between flex-wrap">
-              <div></div>
-              <div>
-                <a @click="stop()" title="Stop" class="icon-stop2" >Stop</a>
-                <div @click="pause()" v-if="paused">
-                  <svg aria-hidden="true" data-prefix="fas" data-icon="play" class="svg-inline--fa fa-play fa-w-14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                      <path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"/>
-                  </svg>
-                </div>
-                <div @click="pause()" v-else>
-                  <svg aria-hidden="true" data-prefix="fas" data-icon="pause" class="svg-inline--fa fa-pause fa-w-14" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                      <path fill="currentColor" d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z"/>
-                  </svg>
-                </div>
-              </div>
-              <div></div>
+<div class="bg-gray-100 px-6 py-2 rounded-lg">
+  <div class="flex flex-row py-2">
+    <div class="flex items-center">
+      <div @click="pause()" v-if="paused" class="w-16 h-10 flex justify-center items-center bg-gray-400 rounded-full">
+        <svg class="w-4 h-4 text-teal-800" aria-hidden="true" data-prefix="fas" data-icon="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"/>
+        </svg>
+      </div>
+      <div @click="pause()" v-else class="w-16 h-10 flex justify-center items-center bg-gray-400 rounded-full">
+        <svg class="w-4 h-4 text-teal-800" aria-hidden="true" data-prefix="fas" data-icon="pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="currentColor" d="M144 479H48c-26.5 0-48-21.5-48-48V79c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v352c0 26.5-21.5 48-48 48zm304-48V79c0-26.5-21.5-48-48-48h-96c-26.5 0-48 21.5-48 48v352c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48z"/>
+        </svg>
+      </div>
+    </div>
 
-              
-              <div class="w-full">
-                <div class="flex justify-between">
-                  <span :class="`__playback-time-current`">{{currentTime}}</span>
-                  <span :class="`__playback-time-total`">{{duration}}</span>
-                </div>
+    <div class="flex flex1 items-center px-4">
+      <p class="">{{currentTime}} </p> 
+      <span class="mx-2">-</span>
+      <p class="">{{duration}}</p>
+    </div>
 
-                <div class="cursor-pointer relative">
-                  <div v-on:click="setPosition" :class="`__playback-time-wrapper`" title="Time played : Total time"></div>
-                  <div v-bind:style="progressStyle" :class="`__playback-time-indicator`"></div>
-                  <audio v-bind:id="playerId" :loop="innerLoop" ref="audiofile" :src="file" preload="auto" style="display:none;"></audio>
-                </div>
-              </div>
-            </div>
-         </div>
-     </div>
+    <div class="w-full flex items-center cursor-pointer relative">
+        <div v-on:click="setPosition" id="setPlayPosition" class="relative w-full h-4 cursor-pointer z-10"></div>
+        <div v-bind:style="progressStyle" class="__playback-time-indicator bg-teal-800"></div>
+        <audio v-bind:id="playerId" :loop="innerLoop" ref="audiofile" :src="file" preload="auto" style="display:none;"></audio>
+    </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -170,6 +162,8 @@ export default {
     },
     _handlePlayPause: function (e) {
       if (e.type === 'pause' && this.playing === false) {
+        let currTime = parseInt(this.audio.currentTime)
+        let percentage = parseInt((currTime / this.totalDuration) * 100)
         this.progressStyle = `width:${percentage}%;`
         this.currentTime = '00:00'
         this.paused = true
@@ -202,31 +196,18 @@ export default {
 </script>
 
 
-<style lang="scss">
-
-
-.__playback-time-wrapper {
-background: transparent;
-position: relative;
-width: 100%;
-padding: 16px 0;
-display: inline-block;
-background: #e0dcd7;
-height: 3px;
-cursor: pointer;
-font-size: 14px;
-vertical-align: middle;
-  .__playback-time-separator::after {
-    content:' : ';
-  }
-}
-
+<style lang="postcss">
 .__playback-time-indicator {
-background: #5099ff;
-position: absolute;
-top: 0;
-left: 0;
-bottom: 0;
-height: 5px;
-}     
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: auto;
+  mask: url('~@/assets/wave-shape.svg') repeat-x;
+}   
+#setPlayPosition{
+  background: url('~@/assets/wave-shape.svg') repeat-x;
+  height: 56px;
+}  
+
 </style>

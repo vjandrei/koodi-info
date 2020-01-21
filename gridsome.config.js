@@ -4,12 +4,6 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-class TailwindExtractor {
-  static extract(content) {
-    return content.match(/[A-Za-z0-9-_:\/]+/g) || [];
-  }
-}
-
 module.exports = {
   siteName: 'Koodi.info',
   siteDescription: "Sivun kuvaus",
@@ -34,6 +28,16 @@ module.exports = {
         token: process.env.AUTH_TOKEN,
       },
     },
+    {
+      use: 'gridsome-plugin-tailwindcss',
+      options: {
+        purgeConfig: {},
+        presetEnvConfig: {},
+        shouldPurge: true,
+        shouldImport: true,
+        shouldTimeTravel: true
+      }
+    }
   ],
 
   chainWebpack: config => {
@@ -45,7 +49,6 @@ module.exports = {
         options.plugins.unshift(...[
           require('postcss-import'),
           require('postcss-nested'),
-          require('tailwindcss'),
         ])
 
         if (process.env.NODE_ENV === 'production') {
@@ -58,16 +61,14 @@ module.exports = {
               ],
               extractors: [
                 {
-                  extractor: TailwindExtractor,
                   extensions: ['css', 'vue', 'js']
                 }
               ],
             }),
           ])
         }
-
         return options
       })
-  },
-
+    }
+  
 }
