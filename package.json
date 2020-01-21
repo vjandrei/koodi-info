@@ -19,7 +19,8 @@
     "gridsome-plugin-rss": "^1.2.0",
     "gridsome-source-craftql": "^0.1.1",
     "highlight.js": "^9.17.1",
-    "marked": "^0.8.0"
+    "marked": "^0.8.0",
+    "vue-moment": "^4.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.3",

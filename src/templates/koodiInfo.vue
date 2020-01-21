@@ -10,8 +10,12 @@
         </div>
 
         <div class="flex w-2/3 mx-auto flex-row justify-center text-center my-6">
-          <div class="flex-1 px-2">Andreas Koutsoukos</div>
-          <div class="flex-1 px-2 border-r-2 border-l-2  border-teal-500">21.01.2020</div>
+          <div class="flex-1 px-2">
+            <p v-html="$page.post.entry.author.name" />
+          </div>
+          <div class="flex-1 px-2 border-r-2 border-l-2  border-teal-500">
+            <time>{{ $page.post.entry.postDate | moment("M d, Y") }}</time>
+          </div>
           <div class="flex-1 px-2">Avainsana</div>
         </div>
 
@@ -22,6 +26,10 @@
         <div class="my-6 text-2xl leading-snug" v-html="$page.post.entry.pageSummaryContent.content" />
 
         <div class="markdown" v-html="compiledMarkdown"></div>
+
+        <div>
+          
+        </div>
 
       </div>
     </section>
@@ -70,8 +78,12 @@ query Craft ($id: [Int]){
     ... on craft_KoodiInfo{
         id
         uri
+        author{
+          name
+        }
         slug
         title
+        postDate
       	pageSummaryContent{
           content
         }
