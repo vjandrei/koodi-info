@@ -19,19 +19,11 @@
           <vue-audio :file="file"></vue-audio>
         </div>    
 
-        
-
-        <div v-html="$page.post.entry.pageSummaryContent.content" />
-        
+        <div class="my-6 text-2xl leading-snug" v-html="$page.post.entry.pageSummaryContent.content" />
 
         <div class="markdown" v-html="compiledMarkdown"></div>
-        {{$page.post.entry.id}}<br/>
-        {{$page.post.entry.slug}}<br/>
-        {{$page.post.entry.title}}<br/>
-        {{$page.post.entry.pageSummaryContent.content}}<br/>
-        {{$page.post.entry.pageContent}}<br/>
-      </div>
 
+      </div>
     </section>
   </div>
 </template>
@@ -40,8 +32,6 @@
 import marked from 'marked'
 import SiteHeader from '~/components/SiteHeader.vue'
 import VueAudio from '~/components/Audio.vue'
-
-
 
 export default {
   data (){
