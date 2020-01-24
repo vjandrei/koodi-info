@@ -6,10 +6,10 @@
 
         <div class="text-center mt-16">
           <span class="text-xs font-bold uppercase text-teal-500 mb-2 block">Arkkitehtuuri</span>
-          <h1 class="text-5xl font-bold leading-tight mt-0 mb-4" v-html="$page.post.entry.title" />
+          <h1 class="sm:text-5xl text-2xl font-bold leading-tight mt-0 mb-4" v-html="$page.post.entry.title" />
         </div>
 
-        <div class="flex w-2/3 mx-auto flex-row justify-center text-center my-6">
+        <div class="flex w-2/3 mx-auto flex-row justify-center text-center my-6 sm:text-base text-sm">
           <div class="flex-1 px-2">
             <p v-html="$page.post.entry.author.name" />
           </div>
@@ -23,7 +23,7 @@
           <vue-audio :file="file"></vue-audio>
         </div>    
 
-        <div class="my-6 text-2xl leading-snug" v-html="$page.post.entry.pageSummaryContent.content" />
+        <div class="my-6 sm:text-2xl text-lg leading-snug" v-html="$page.post.entry.pageSummaryContent.content" />
         <div class="markdown" v-html="compiledMarkdown"></div>
 
         <div v-if="$page.post.entry.postCodeLearn">
