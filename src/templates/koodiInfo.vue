@@ -24,12 +24,34 @@
         </div>    
 
         <div class="my-6 text-2xl leading-snug" v-html="$page.post.entry.pageSummaryContent.content" />
-
         <div class="markdown" v-html="compiledMarkdown"></div>
 
-        <div>
-          
+        <div v-if="$page.post.entry.postCodeLearn">
+            <div class="markdown">
+              <h2>Live koodi</h2>
+              <iframe width="100%" height="700" :src="$page.post.entry.postCodeLearn" frameborder="0" allowfullscreen></iframe>
+            </div>
         </div>
+        <div v-else></div>
+
+
+        <div v-if="$page.post.entry.postLinkList">
+          <div class="markdown">
+            <h2>Linkkit</h2>
+          </div>
+          <ul v-for="link in $page.post.entry.postLinkList" :key="link.id">
+            <li>
+              <a v-bind:href="link.code">{{link.code}}</a>
+            </li>
+            <li>
+               <a v-bind:href="link.design">{{link.design}}</a>
+            </li>
+            <li>
+               <a v-bind:href="link.wow">{{link.wow}}</a>
+            </li>
+          </ul>
+        </div>
+        
 
       </div>
     </section>
@@ -93,6 +115,15 @@ query Craft ($id: [Int]){
           title
           filename
           url
+        }
+        postCodeLearn
+        postLinkList{
+          ... on craft_PostLinkListPostLinks{
+            __typename
+            design
+            code
+            wow
+          }
         }
         pageSeoContent {
           title

@@ -72,6 +72,7 @@ query Craft ($slug: String){
         uri
         slug
         title
+        postTitle
       	pageSummaryContent{
           content
         }
