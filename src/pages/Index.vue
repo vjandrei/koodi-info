@@ -4,7 +4,7 @@
       <section class="bg-gray-900 relative">
         <div class="flex container mx-auto px-4 py-3">
           <div class="w-full lg:w-2/3 my-6 z-40">
-            <h1 class="text-5xl font-black tracking-normal text-gray-100 mb-2">Haluat siis oppia jotakin?</h1>
+            <h1 class="sm:text-5xl text-4xl font-black tracking-normal leading-tight text-gray-100 mb-2">Haluat siis oppia jotakin?</h1>
             <h3 class="text-lg tracking-wider leading-normal text-white mb-2">Olet tullut oikeaan paikkaan. Koodi.info tavoitteena on opastaa ytimekkäästi web ohjelmistokehitykseen liittyviin asioihin, kuten esim. PWA sovellukset, Javascript ohjelmointi sekä käyttöliittymäsuunnittelu.</h3>
             <p class="text-l tracking-wider leading-normal text-gray-200 mt-12">Ehdota aihetta josta tarvitse lisää tietoa</p>
             <div class="flex flex-wrap my-4">
