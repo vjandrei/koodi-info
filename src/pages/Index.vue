@@ -3,7 +3,7 @@
     <main> 
       <section class="bg-gray-900 relative">
         <div class="flex container mx-auto px-4 py-3">
-          <div class="w-full lg:w-2/3 mx-auto my-6 z-40">
+          <div class="w-full lg:w-2/3  my-6 z-40">
             <span class="text-xs font-bold uppercase text-teal-500 mb-2 block">{{this.$page.heading.globals.bigHeaderInfo.pageTitle}}</span>
             <h1 class="sm:text-2xl text-1xl font-semibold	tracking-wide leading-tight text-gray-100 mb-2">{{this.$page.heading.globals.bigHeaderInfo.pageContent}}</h1>
             <p class="text-l tracking-wider leading-normal text-gray-200 mt-12">Ehdota aihetta josta tarvitse lisää tietoa</p>
