@@ -2,13 +2,11 @@
   <div class="bg-white">
     <SiteHeader class="xl:flex-shrink-0 border-b border-gray-200"/> 
     <section class=" container mx-auto px-4 py-3">
-      <div class="sm:w-4/5 w-full mx-auto">
-
+      <div class="sm:w-4/5 w-full mx-auto border-b border-gray-200">
         <div class="text-center sm:mt-16 mt-8">
-          <span class="text-xs font-bold uppercase text-teal-500 mb-2 block">Arkkitehtuuri</span>
+          <span class="text-xs font-bold uppercase text-teal-500 mb-2 block">{{$page.post.entry.postSubjects[0].title}}</span>
           <h1 class="sm:text-5xl text-2xl font-bold leading-tight mt-0 mb-4" v-html="$page.post.entry.title" />
         </div>
-
         <div class="flex sm:w-2/3 w-full mx-auto flex-row justify-center items-center text-center my-6 sm:text-base text-xs">
           <div class="flex-1 px-2">
             <p v-html="$page.post.entry.author.name" />
@@ -18,24 +16,26 @@
           </div>
           <div class="flex-1 px-2">Avainsana</div>
         </div>
+      </div>
 
+      <div class="sm:w-4/5 w-full mx-auto border-b-2">
         <div class="my-6 w-full mx-auto">
-          <vue-audio :file="file"></vue-audio>
+          <div v-for="audio in podcastAudioFile" :key="audio.id">
+            <vue-audio :file="audio.url"></vue-audio>
+          </div>
         </div>    
 
-        <div class="my-6 sm:text-2xl text-lg leading-snug" v-html="$page.post.entry.pageSummaryContent.content" />
+        <div class="my-6 sm:text-2xl text-lg leading-snug my-12" v-html="$page.post.entry.pageSummaryContent.content" />
         <div class="markdown" v-html="compiledMarkdown"></div>
-
         <div v-if="$page.post.entry.postCodeLearn">
             <div class="markdown">
               <h2>Live koodi</h2>
               <iframe width="100%" height="700" :src="$page.post.entry.postCodeLearn" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
-        <div v-else></div>
 
 
-        <div v-if="$page.post.entry.postLinkList">
+        <div v-if="$page.post.entry.postLinkList.length">
           <div class="markdown">
             <h2>Linkkit</h2>
           </div>
@@ -66,7 +66,7 @@ import VueAudio from '~/components/Audio.vue'
 export default {
   data (){
     return {
-      file: '',
+      podcastAudio: '',
       postDate: ''
     }
   },
@@ -82,14 +82,12 @@ export default {
         }
       })
       return marked(this.$page.post.entry.pageContent)
-    }
-  },
-  methods: {
-      
+    },
+    podcastAudioFile: function () {
+      return this.podcastAudio = this.$page.post.entry.pageSoundContent
+    },
   },
   mounted() {
-    const podcastUrl = this.$page.post.entry.pageSoundContent[0].url
-    this.file = podcastUrl
     this.postDate = Number(this.$page.post.entry.postDate)
   }
 };
@@ -106,6 +104,9 @@ query Craft ($id: [Int]){
           name
         }
         slug
+        postSubjects{
+          title
+        }
         title
         postDate
       	pageSummaryContent{

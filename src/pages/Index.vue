@@ -3,9 +3,9 @@
     <main> 
       <section class="bg-gray-900 relative">
         <div class="flex container mx-auto px-4 py-3">
-          <div class="w-full lg:w-2/3 my-6 z-40">
-            <h1 class="sm:text-5xl text-4xl font-black tracking-normal leading-tight text-gray-100 mb-2">Haluat siis oppia jotakin?</h1>
-            <h3 class="text-lg tracking-wider leading-normal text-white mb-2">Olet tullut oikeaan paikkaan. Koodi.info tavoitteena on opastaa ytimekkäästi web ohjelmistokehitykseen liittyviin asioihin, kuten esim. PWA sovellukset, Javascript ohjelmointi sekä käyttöliittymäsuunnittelu.</h3>
+          <div class="w-full lg:w-2/3 mx-auto my-6 z-40">
+            <span class="text-xs font-bold uppercase text-teal-500 mb-2 block">{{this.$page.heading.globals.bigHeaderInfo.pageTitle}}</span>
+            <h1 class="sm:text-2xl text-1xl font-semibold	tracking-wide leading-tight text-gray-100 mb-2">{{this.$page.heading.globals.bigHeaderInfo.pageContent}}</h1>
             <p class="text-l tracking-wider leading-normal text-gray-200 mt-12">Ehdota aihetta josta tarvitse lisää tietoa</p>
             <div class="flex flex-wrap my-4">
               <div class="w-3/4 lg:w-5/6x">
@@ -27,7 +27,7 @@
       <section>
         <div class="container mx-auto px-4 py-3">
           <div class="py-6 flex flex-wrap -mx-2">
-            <div v-for="(item, i) in $page.posts.entries" :key="item.id" :post="item" class="w-full sm:w-1/1 md:w-1/3 px-2" :class="{'': i > 0 }">
+            <div v-for="(item, i) in $page.posts.entries" :key="item.id" :post="item" class="w-full sm:w-1/1 md:w-1/3 px-2 my-4" :class="{'': i > 0 }">
               <Card :post="item" />
             </div>
           </div>
@@ -66,6 +66,14 @@ export default {
 
 <page-query> 
 query Craft ($slug: String){
+  heading: craft{
+    globals{
+      bigHeaderInfo{
+        pageTitle
+        pageContent
+      }
+    }
+  }
   posts: craft {
   entries  (slug: $slug) {
     ... on craft_KoodiInfo{

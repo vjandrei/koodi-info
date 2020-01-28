@@ -1,11 +1,11 @@
 <template>
 <section class="bg-white">
-    <header id="header" class="sm:flex sm:items-center sm:justify-between container mx-auto">
-        <div id="brand" class="xl:w-72 xl:justify-center xl:py-5">
+    <header id="header" class="md:flex md:items-center container mx-auto w-full py-2">
+        <div id="brand" class="space-between xl:py-5 flex justify-between px-4 py-3">
             <div>
-                <g-link to="/"><h3 class="text-3xl font-black uppercase;">Koodi<span class="bg-gray-900 text-white px-1 text-teal-500"><span class="text-base">.info/></span></span></h3></g-link>
+                <g-link to="/"><h3 class="sm:text-xl md:text-xl lg:text-2xl xl:text-3xl text-xl font-black uppercase;">Koodi<span class="bg-gray-900 text-white px-1 text-teal-500">.info/></span></h3></g-link>
             </div>
-            <div class="flex items-center sm:hidden">
+            <div class="flex items-center md:hidden">
                 <button @click="toggle" type="button" class="px-2 text-gray-500 focus:outline-none focus:text-black flex items-center ">
                 <span class="mr-2">Valikko</span>
                 <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -15,19 +15,23 @@
                 </button>
             </div>
         </div>
-        <nav class="sm:flex sm:items-center sm:px-4 xl:flex-1 xl:justify-between" :class="{ 'hidden': !isOpen, 'block': isOpen }">
-          <div class="hidden xl:block xl:relative xl:max-w-xs xl:w-full">
+        <nav class="md:flex items-center w-full sm:items-center"  :class="{ 'hidden': !isOpen, 'block': isOpen }">
+          <div class="sm:w-3/4 hidden md:block md:relative">
             <div class="absolute inset-y-0 left-0 flex items-center pl-3">
                 <svg class="h-6 w-6 fill-current text-gray-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.32 14.9l1.1 1.1c.4-.02.83.13 1.14.44l3 3a1.5 1.5 0 0 1-2.12 2.12l-3-3a1.5 1.5 0 0 1-.44-1.14l-1.1-1.1a8 8 0 1 1 1.41-1.41l.01-.01zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/></svg>
             </div>
             <input id="search" v-model="searchTerm" class="block w-full border border-transparent bg-gray-200 focus:outline-none focus:bg-white focus:border-gray-300 text-gray-900 rounded-lg pl-10 pr-4 py-2" placeholder="Etsi avainsanalla" type="text" >
-            <g-link v-for="result in searchResults" :key="result.id" :to="result.slug" class="navbar-item">{{ result.title }}</g-link>
+           
+            <div v-if="searchResults.length" class="absolute shadow-lg w-full bg-white z-50 border border-gray-300 focus:outline-none focus:bg-white focus:border-gray-300 text-gray-900 rounded-lg py-4 px-8 my-2">
+              <g-link v-for="result in searchResults" :key="result.id" :to="result.slug" class="navbar-item cursor-pointer my-2 block">
+              {{ result.title }}
+              </g-link>
+            </div>
+
           </div>
-          <div class="sm:flex sm:items-center">
-            <div class="px-2 pt-2 pb-5 border-b border-gray-800 sm:flex sm:border-b-0 sm:py-0 sm:px-0">
-                <g-link to="/about/" class="block px-3 py-1">Tietoa</g-link>
-                <g-link to="/about/" class="block px-3 py-1">Kysy jotain</g-link>
-                <g-link to="/about/" class="block px-3 py-1">Twitter</g-link>
+          <div class="sm:w-1/4 w-full">
+            <div class="px-2 pt-2 pb-5 sm:flex sm:border-b-0 sm:py-0 sm:px-0 justify-end">
+                <g-link to="/about/" class="block px-3 py-1">Tietoja tästä sivusta</g-link>
             </div>
           </div>
         </nav>
@@ -92,7 +96,4 @@ export default {
 
 
 <style lang="postcss">
-#brand{
-    @apply flex justify-between px-4 py-3;
-}
 </style>
