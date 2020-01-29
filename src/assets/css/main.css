@@ -12,3 +12,21 @@
 
 @import 'highlight.js/styles/atom-one-dark.css';
 
+a{
+    color: #38b2ac;
+}
+
+a:hover{
+    color: #2c7a7b;
+}
+
+a, a:link {
+    transition: all .2s;
+    color: #38b2ac;
+}
+
+ .markdown a {
+    text-decoration: underline;
+    text-decoration-color: #38b2ac;
+    text-decoration-skip: ink;
+}
