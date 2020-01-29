@@ -7,7 +7,7 @@ import "~/assets/css/main.css"
 export default function (Vue, { router, head, isClient }) {
   // Add a html attributes
   head.htmlAttrs = { lang: 'fi', class: 'h-full' }
-  head.bodyAttrs = { class: 'bg-gray-100 text-gray-900 tracking-wider leading-normal antialiased font-sans min-h-screen xl:flex xl:flex-col xl:h-screen' }
+  head.bodyAttrs = { class: 'bg-gray-100 text-gray-900 leading-normal antialiased font-sans min-h-screen xl:flex xl:flex-col xl:h-screen m-0' }
   // Add a meta tag
   head.meta.push({
     name: 'keywords',
