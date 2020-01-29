@@ -27,7 +27,7 @@
       </p>
 
       <h3 class="bg-teal-100 text-teal-500 p-4 text-xl text-center">
-        Kiinnostaako sisältöyhteistyötä? <a href="https://twitter.com/vj_andrei" class="block text-teal-900">Ota yhteyttä täällä</a> 
+        Kiinnostaako tehdä sisältöäjä Koodi.infoon? <a href="" class="block text-teal-900">Katso ohjeet täältä</a> 
       </h3>
 
     </div> 
