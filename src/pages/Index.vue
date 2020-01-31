@@ -114,9 +114,7 @@ query Craft ($slug: String){
 <static-query>
 query {
   metadata {
-    siteName
     siteUrl
-    siteDescription
   }
 }
 </static-query>

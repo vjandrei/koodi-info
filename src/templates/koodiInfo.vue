@@ -70,6 +70,25 @@ export default {
       postDate: ''
     }
   },
+  metaInfo () {
+    return {
+      title: this.$page.post.entry.pageSeoContent.title,
+      meta: [
+        { name: 'description', content: this.$page.post.entry.pageSeoContent.description },
+        { property: "og:type", content: 'website' },
+        { property: "og:title", content: this.$page.post.entry.pageSeoContent.social.facebook.title },
+        { property: "og:description", content: this.$page.post.entry.pageSeoContent.social.facebook.description },
+        { property: "og:url", content: this.$static.metadata.siteUrl },
+        { property: "og:image",  content: this.$page.post.entry.pageSeoContent.social.facebook.image.url },
+        { name: "twitter:card", content: this.$page.post.entry.pageSeoContent.social.twitter.image.url },
+        { name: "twitter:title", content: this.$page.post.entry.pageSeoContent.social.twitter.title },
+        { name: "twitter:description", content: this.$page.post.entry.pageSeoContent.description },
+        { name: "twitter:site", content: "@vj_andrei" },
+        { name: "twitter:creator", content: "@vj_andrei" },
+        { name: "twitter:image", content: this.$page.post.entry.pageSeoContent.social.twitter.image.url },
+      ],
+    }
+  },
   components: {
     SiteHeader,
    'vue-audio': VueAudio
@@ -133,7 +152,6 @@ query Craft ($id: [Int]){
           description
           keywords {
             keyword
-            rating
           }
           social {
             twitter {
@@ -159,3 +177,11 @@ query Craft ($id: [Int]){
   }
 }
 </page-query>
+
+<static-query>
+query {
+  metadata {
+    siteUrl
+  }
+}
+</static-query>

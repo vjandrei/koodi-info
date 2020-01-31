@@ -28,5 +28,5 @@ a, a:link {
  .markdown a {
     text-decoration: underline;
     text-decoration-color: #38b2ac;
-    text-decoration-skip: ink;
+    text-decoration-skip-ink: auto;
 }
