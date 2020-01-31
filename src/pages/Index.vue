@@ -55,7 +55,7 @@ export default {
         { property: "og:image",  content: this.$page.meta.globals.homePage.pageSeoContent.social.facebook.image.url },
         { name: "twitter:card", content: this.$page.meta.globals.homePage.pageSeoContent.social.twitter.image.url },
         { name: "twitter:title", content: this.$page.meta.globals.homePage.pageSeoContent.social.twitter.title },
-        { name: "twitter:description", content: this.$page.meta.globals.homePage.pageSeoContent.social.twitter.description },
+        { name: "twitter:description", content: this.$page.meta.globals.homePage.pageSeoContent.description },
         { name: "twitter:site", content: "@vj_andrei" },
         { name: "twitter:creator", content: "@vj_andrei" },
         { name: "twitter:image", content: this.$page.meta.globals.homePage.pageSeoContent.social.twitter.image.url },
