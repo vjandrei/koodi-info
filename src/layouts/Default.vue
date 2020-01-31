@@ -14,18 +14,7 @@ export default {
   components: {
     SiteHeader,
     SiteMain
-  },
-  metaInfo: {
-    title: 'Hello, world!'
   }
 }
 </script>
-
-<static-query>
-query {
-  metadata {
-    siteName
-  }
-}
-</static-query>
 

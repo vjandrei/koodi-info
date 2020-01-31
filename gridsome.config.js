@@ -13,7 +13,7 @@ class TailwindExtractor {
 
 module.exports = {
   siteName: 'Koodi.info',
-  siteDescription: "Sivun kuvaus",
+  siteDescription: "",
   titleTemplate: `%s | Koodi.info`,
   icon: 'src/favicon.png',
   siteUrl: 'https://youthful-wiles-bb2081.netlify.com/',
