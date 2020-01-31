@@ -71,6 +71,7 @@ query Craft ($slug: String){
     globals{
        homePage {
         pageTitle
+        pageContent
         pageSeoContent {
           title
           description
