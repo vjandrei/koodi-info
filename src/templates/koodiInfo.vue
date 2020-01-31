@@ -2,7 +2,7 @@
   <div class="bg-white">
     <SiteHeader class="xl:flex-shrink-0 border-b border-gray-200"/> 
     <section class="container mx-auto px-4 py-3">
-      <div class="sm:w-3/5 w-full mx-auto border-b border-gray-200">
+      <div class="w-full sm:w-auto md:w-full lg:w-3/5 xl:w-3/5 mx-auto border-b border-gray-200">
         <div class="text-center sm:mt-16 mt-8">
           <span class="text-xs font-bold uppercase text-teal-500 mb-2 block">{{$page.post.entry.postSubjects[0].title}}</span>
           <h1 class="sm:text-5xl text-2xl font-bold leading-tight mt-0 mb-4" v-html="$page.post.entry.title" />
@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <div class="sm:w-3/5 w-full mx-auto">
+      <div class="w-full sm:w-auto md:w-full lg:w-3/5 xl:w-3/5 mx-auto">
         <div class="my-6 w-full mx-auto">
           <div v-for="audio in podcastAudioFile" :key="audio.id">
             <vue-audio :file="audio.url"></vue-audio>

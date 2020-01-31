@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <main> 
-      <section class="bg-gray-900 relative">
+      <section class="bg-gray-900">
         <div class="flex container mx-auto px-4 py-3">
           <div class="w-full lg:w-2/3  my-6 z-40">
             <span class="text-xs font-bold uppercase text-teal-500 mb-2 block">{{this.$page.meta.globals.homePage.pageTitle}}</span>
