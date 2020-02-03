@@ -1,14 +1,7 @@
-# Default starter for Gridsome
+# Koodi.info
 
-This is the project you get when you run `gridsome create new-project`.
+Koodi.info on uusi ohjelmistoalaan keskisttyvä blogi joka keskittyy esittämään asiat 
+ytimekkäästi ja suomeksi. 
 
-### 1. Install Gridsome CLI tool if you don't have
+Koodi.info on blogi joka yhdistelee tekstiä, audiota ja kuvakaappausta ohjelmistoalan liittyvistä aiheista. Aiheina ovat mm. webin teknlogiat, käyttöliittymäsuunnittelu, arkkitehtuurit, muut ohjelmisto teknologiat sekä avointa keskustelua ohjelmistoalasta.
 
-`npm install --global @gridsome/cli`
-
-### 2. Create a Gridsome project
-
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌

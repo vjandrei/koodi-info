@@ -2,7 +2,7 @@
 <section class="bg-white">
     <header id="header" class="md:flex md:items-center container mx-auto w-full py-2">
         <div id="brand" class="space-between xl:py-5 flex justify-between px-4 py-3">
-            <g-link to="/"><h3 class="sm:text-xl md:text-xl lg:text-2xl xl:text-3xl text-xl font-black uppercase;">Koodi<span class="bg-gray-900 text-white px-1 text-teal-500">.info/></span></h3></g-link>
+            <g-link to="/"><h3 class="sm:text-xl md:text-xl lg:text-2xl xl:text-3xl text-xl font-black uppercase;">Koodi.info</h3></g-link>
             <div class="flex items-center md:hidden">
                 <button @click="toggle" type="button" class="px-2 text-gray-500 focus:outline-none focus:text-black flex items-center ">
                 <span class="mr-2">Valikko</span>
