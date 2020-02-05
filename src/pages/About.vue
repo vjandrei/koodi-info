@@ -21,9 +21,7 @@
       <h3 class="sm:text-4xl text-xl text-center text-teal-500 font-semibold">Koodi.info takana häärää</h3>
       <g-image class="mx-auto my-8" src="~/assets/andreas.jpg" width="500"/>
       <p class="sm:text-2xl text-xl tracking-normal text-teal-900 my-16"> 
-      Moikka! 👋🏻 Olen Andreas Koutsoukos tämän sivuston kehittäjä sekä isäntä. Osaamisen jakaminen on minulle ollut tärkeätä. 
-      Päätin siksi toteuttaa kanavan jossa voin lisää vuorovaikutusta ja sitä kautta jakaa osaamista. Olen myös itse alanvaihtaja 👨🏻‍🍳 ja 
-      oppinut asioita paljon itse kokeilemalla, se on yksi syy miksi osaaminen on laaja. Päivätyökseni työskentelen käyttöliittymäsuunnittelun 👨🏻‍🎨 parissa.
+      Moikka! 👋🏻 Olen Andreas Koutsoukos tämän sivuston kehittäjä sekä isäntä. Osaamisen jakaminen on minulle ollut tärkeätä. Päätin siksi toteuttaa kanavan jossa voin lisää vuorovaikutusta ja sitä kautta jakaa osaamista. Olen myös itse alanvaihtaja 👨🏻‍🍳 ja oppinut asioita paljon itse kokeilemalla. Päivätyökseni työskentelen käyttöliittymäsuunnittelun 👨🏻‍🎨 parissa.
       </p>
 
       <h3 class="bg-teal-100 text-teal-500 p-4 text-xl text-center">

@@ -1,8 +1,10 @@
 <template>
+  <g-link :to="`${post.uri}/`">
   <div class="relative my-2 bg-white rounded-lg px-6 py-5 shadow-lg h-full">
-    <g-link class="text-2xl font-bold leading-tight" :to="`${post.uri}/`">{{ post.postTitle }}</g-link>
+    <h4 class="text-2xl font-bold leading-tight underline">{{ post.postTitle }}</h4>
     <div class="font-normal text-gray-600 mt-4" v-html="excerpt(post, 150, ' ...')"></div>
   </div>
+  </g-link>
 </template>
 
 <script>
