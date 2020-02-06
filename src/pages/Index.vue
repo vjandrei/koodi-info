@@ -7,11 +7,23 @@
           <h1 class="sm:text-3xl text-1xl font-semibold	tracking-wide leading-tight text-gray-100 mb-2">{{this.$page.meta.globals.homePage.pageContent}}</h1>
           <p class="text-l font-normal tracking-wider leading-normal text-gray-200 mt-12">Kerro mistä haluat tietää enenmmän</p>
           <div class="flex flex-wrap my-4">
+            <form 
+              name="contact"
+              method="post"
+              v-on:submit.prevent="handleSubmit"
+              action="/success/"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              netlify
+            >
+            <textarea name="message" v-model="formData.message"></textarea>
+            <button type="submit">Submit form</button>
+            </form>
             <div class="w-3/4 lg:w-5/6x">
-              <input class="bg-gray-100 appearance-none border-2 border-gray-200 rounded-l-lg  w-full py-4 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500" type="text" placeholder="Kerro mistä aiheesta haluat tietää enenmmän">
+              <input class="bg-gray-100 appearance-none border-2 border-gray-200 rounded-l-lg  w-full py-4 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500" type="text" name="proposal" placeholder="Kerro mistä aiheesta haluat tietää enenmmän">
             </div>
             <div class="w-1/4 lg:w-1/6">
-              <button class="bg-teal-500 appearance-none border-2 border-teal-500 rounded-r-lg  w-full py-4 px-4 text-gray-900 font-bold leading-tight focus:outline-none focus:bg-teal-200 focus:border-teal-200 hover:bg.teal-200" type="button">Ehdota</button>
+              <button class="bg-teal-500 appearance-none border-2 border-teal-500 rounded-r-lg  w-full py-4 px-4 text-gray-900 font-bold leading-tight focus:outline-none focus:bg-teal-200 focus:border-teal-200 hover:bg.teal-200" type="submit">Ehdota</button>
             </div>
           </div>
         </div>
@@ -32,6 +44,11 @@
 <script>
 import Card from '~/components/Card.vue'
 export default {
+  data() {
+    return {
+      formData: {},
+    }
+  },
   components: {
     Card
   },
@@ -54,6 +71,25 @@ export default {
       ],
     }
   },
+  methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+        .join('&')
+    },
+    handleSubmit(e) {
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: this.encode({
+          'form-name': e.target.getAttribute('name'),
+          ...this.formData,
+        }),
+      })
+      .then(() => this.$router.push('/success'))
+      .catch(error => alert(error))
+    }
+  }
 }
 </script>
 
