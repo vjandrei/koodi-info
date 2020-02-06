@@ -85,7 +85,10 @@ export default {
           ...this.formData,
         }),
       })
-      .then(() => alert("Thank you!"))
+      .then(() => {
+        this.$router.push('/') 
+        alert('Form Submitted!')
+      })
       .catch(error => alert(error))
     }
   }
