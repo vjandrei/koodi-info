@@ -8,13 +8,12 @@
           <p class="text-l font-normal tracking-wider leading-normal text-gray-200 mt-12">Kerro mistä haluat tietää enenmmän</p>
           <div class="flex flex-wrap my-4">
             <form 
-              name="contact"
+              name="proposal"
               method="post"
               v-on:submit.prevent="handleSubmit"
               action="/success/"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              netlify
             >
             <textarea name="message" v-model="formData.message"></textarea>
             <button type="submit">Submit form</button>
@@ -86,7 +85,7 @@ export default {
           ...this.formData,
         }),
       })
-      .then(() => this.$router.push('/about'))
+      .then(() => alert("Thank you!"))
       .catch(error => alert(error))
     }
   }
