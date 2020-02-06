@@ -36,7 +36,7 @@
       </div>
     </section>
     <section>
-      <Notifications :notification-data="notificationData" ref="notificationData"/>
+      <Notifications :notification-data="notificationData" ref="sendData"/>
     </section>
   </Layout>
 </template>
@@ -91,7 +91,11 @@ export default {
       })
       .then(() => {
         this.formData = ""
-        this.notificationData = this.$refs.notificationData.makeNotification();
+        this.notificationData = [{
+          type: "demo",
+          title: "demo",
+          message: "demo"
+        }]
       })
       .catch(error => alert(error))
     }
