@@ -225,7 +225,9 @@ module.exports = {
       sans: [
         'Roboto',
       ],
-      serif: ['serif'],
+      serif: [
+        'Merriweather'
+      ],
       mono: [
         'SFMono-Regular',
         'Menlo',

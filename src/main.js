@@ -19,6 +19,10 @@ export default function (Vue, { router, head, isClient }) {
     href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&display=swap'
   })
 
+  head.link.push({
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css?family=Merriweather:400,900&display=swap'
+  })
 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
