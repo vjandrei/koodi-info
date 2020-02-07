@@ -19,7 +19,7 @@
               <input v-model="formData.proposal" class="bg-gray-100 appearance-none border-2 border-gray-200 rounded-l-lg  w-full py-4 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500" type="text" name="proposal" placeholder="Kerro mistä aiheesta haluat tietää enenmmän">
             </div>
             <div class="w-1/4 lg:w-1/6">
-              <button class="bg-teal-500 appearance-none border-2 border-teal-500 rounded-r-lg  w-full py-4 px-4 text-gray-900 font-bold leading-tight focus:outline-none focus:bg-teal-200 focus:border-teal-200 hover:bg.teal-200" type="submit">Ehdota</button>
+              <button class="bg-teal-500 appearance-none border-2 border-teal-500 rounded-r-lg  w-full py-4 px-4 text-gray-900 font-bold leading-tight focus:outline-none focus:bg-teal-200 focus:border-teal-200 hover:bg.teal-200" type="submit">{{this.submitText}}</button>
             </div>
             </div>
           </form>
@@ -54,6 +54,13 @@ export default {
   components: {
     Card,
     Notifications
+  },
+  props:{
+    submitText: {
+      type: String,
+      required: false,
+      default: 'Ehdota'
+    }
   },
   metaInfo () {
     return {
@@ -91,10 +98,12 @@ export default {
       })
       .then(() => {
         this.formData = ""
+        this.submitText = "Kiitos 👍🏻"
         this.notificationData = [{
           type: "demo",
           title: "demo",
-          message: "demo"
+          message: "demo",
+          on: false
         }]
       })
       .catch(error => alert(error))
