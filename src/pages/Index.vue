@@ -69,7 +69,7 @@ export default {
         { property: "og:description", content: this.$page.meta.globals.homePage.pageSeoContent.social.facebook.description },
         { property: "og:url", content: this.$static.metadata.siteUrl },
         { property: "og:image",  content: this.$page.meta.globals.homePage.pageSeoContent.social.facebook.image.url },
-        { name: "twitter:card", content: this.$page.meta.globals.homePage.pageSeoContent.description },
+        { name: "twitter:card", content: "Summary" },
         { name: "twitter:title", content: this.$page.meta.globals.homePage.pageSeoContent.social.twitter.title },
         { name: "twitter:description", content: this.$page.meta.globals.homePage.pageSeoContent.description },
         { name: "twitter:site", content: "@vj_andrei" },
