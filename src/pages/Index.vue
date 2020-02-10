@@ -1,11 +1,11 @@
 <template>
-  <Layout>
+  <Layout class="h-full bg-gray-100">
     <section class="bg-gray-900 relative">
       <div class="flex container mx-auto px-4 py-3">
         <div class="w-full lg:w-2/3  my-6 z-40">
           <span class="text-xs font-black uppercase text-teal-400 mb-2 block">{{this.$page.meta.globals.homePage.pageTitle}}</span>
           <h1 class="sm:text-3xl text-1xl font-semibold	tracking-wide leading-tight text-gray-100 mb-2">{{this.$page.meta.globals.homePage.pageContent}}</h1>
-          <p class="text-l font-normal tracking-wider leading-normal text-gray-200 mt-12">Kerro mistä haluat tietää enenmmän</p>
+          <p class="text-l font-normal tracking-wider leading-normal text-gray-200 mt-12">Kerro mistä haluat tietää enemmän</p>
           <form 
               name="proposal"
               method="post"
@@ -26,7 +26,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section class="h-full bg-gray-100">
       <div class="container mx-auto px-4 py-3">
         <div class="py-6 flex flex-wrap -mx-2">
           <div v-for="(item, i) in $page.posts.entries" :key="item.id" :post="item" class="w-full sm:w-1/1 md:w-1/3 px-2 my-4" :class="{'': i > 0 }">
