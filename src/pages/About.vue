@@ -9,7 +9,7 @@
 
       <p class="my-6 sm:text-2xl text-lg leading-relaxed tracking-wide text-teal-900">
       Koodi.info on blogi joka yhdistelee tekstiä, audiota ja kuvakaappausta ohjelmistoalan liittyvistä aiheista.
-      Aiheina ovat mm. webin teknlogiat, käyttöliittymäsuunnittelu, arkkitehtuurit, muut ohjelmisto teknologiat sekä avointa keskustelua ohjelmistoalasta.
+      Aiheina ovat mm. webin teknologiat, käyttöliittymäsuunnittelu, arkkitehtuurit, muut ohjelmisto teknologiat sekä avointa keskustelua ohjelmistoalasta.
       </p>
 
       <p class="sm:text-3xl text-xl tracking-wider text-teal-800 text-center my-16">
@@ -25,7 +25,7 @@
       </p>
 
       <h3 class="bg-teal-100 text-teal-500 p-4 text-xl text-center">
-        Kiinnostaako tehdä sisältöäjä Koodi.infoon? <a href="" class="block text-teal-900">Tulossa</a> 
+        Kiinnostaako tehdä sisältöjä Koodi.infoon? <a href="" class="block text-teal-900">Tulossa</a> 
       </h3>
 
     </div> 
