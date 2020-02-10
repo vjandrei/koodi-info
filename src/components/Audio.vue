@@ -13,13 +13,11 @@
         </svg>
       </div>
     </div>
-
     <div class="flex flex1 items-center px-4">
       <p class="">{{currentTime}} </p> 
       <span class="mx-2">-</span>
       <p class="">{{duration}}</p>
     </div>
-
     <div class="w-full flex items-center cursor-pointer relative">
         <div v-on:click="setPosition" id="setPlayPosition" class="relative w-full h-full cursor-pointer z-20"></div>
         <div v-bind:style="progressStyle" class="__playback-time-indicator bg-teal-800 z-30"></div>
