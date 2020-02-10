@@ -4,7 +4,7 @@
     <section class="container mx-auto px-4 py-3">
       <div class="w-full sm:w-auto md:w-full lg:w-3/5 xl:w-3/5 mx-auto border-b border-gray-200">
         <div class="text-center sm:mt-16 mt-8">
-          <span class="text-xs font-bold uppercase text-teal-500 mb-2 block">{{$page.post.entry.postSubjects[0].title}}</span>
+          <span class="text-xs font-bold uppercase text-teal-700 mb-2 block">{{$page.post.entry.postSubjects[0].title}}</span>
           <h1 class="sm:text-4xl text-2xl font-bold leading-tight mt-0 mb-4 font-serif font-black" v-html="$page.post.entry.title" />
         </div>
         <div class="flex sm:w-3/4 w-full mx-auto flex-row justify-center items-center text-center my-6 sm:text-base text-xs">

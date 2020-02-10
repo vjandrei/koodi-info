@@ -3,7 +3,7 @@
     <section class="bg-gray-900 relative">
       <div class="flex container mx-auto px-4 py-3">
         <div class="w-full lg:w-2/3  my-6 z-40">
-          <span class="text-xs font-black uppercase text-teal-500 mb-2 block">{{this.$page.meta.globals.homePage.pageTitle}}</span>
+          <span class="text-xs font-black uppercase text-teal-400 mb-2 block">{{this.$page.meta.globals.homePage.pageTitle}}</span>
           <h1 class="sm:text-3xl text-1xl font-semibold	tracking-wide leading-tight text-gray-100 mb-2">{{this.$page.meta.globals.homePage.pageContent}}</h1>
           <p class="text-l font-normal tracking-wider leading-normal text-gray-200 mt-12">Kerro mistä haluat tietää enenmmän</p>
           <form 
@@ -15,11 +15,11 @@
               data-netlify-honeypot="bot-field"
             >
             <div class="flex flex-wrap my-4">
-            <div class="w-3/4 lg:w-5/6x">
-              <input v-model="formData.proposal" class="bg-gray-100 appearance-none border-2 border-gray-200 rounded-l-lg  w-full py-4 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500" type="text" name="proposal" placeholder="Kerro mistä aiheesta haluat tietää enenmmän">
+            <div class="w-full sm:w-5/6 mb-3">
+              <input v-model="formData.proposal" class="bg-gray-100 appearance-none border-2 border-gray-200 rounded sm:rounded-tr-none sm:rounded-br-none w-full py-4 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500" type="text" name="proposal" placeholder="Kerro mistä aiheesta haluat tietää enenmmän">
             </div>
-            <div class="w-1/4 lg:w-1/6">
-              <button class="bg-teal-500 appearance-none border-2 border-teal-500 rounded-r-lg  w-full py-4 px-4 text-gray-900 font-bold leading-tight focus:outline-none focus:bg-teal-200 focus:border-teal-200 hover:bg.teal-200" type="submit">{{this.submitText}}</button>
+            <div class="w-full sm:w-1/6">
+              <button class="bg-teal-500 appearance-none border-2 border-teal-500 rounded sm:rounded-tl-none sm:rounded-bl-none  w-full py-4 px-4 text-black font-bold leading-tight focus:outline-none focus:bg-teal-200 focus:border-teal-200 hover:bg.teal-200" type="submit">{{this.submitText}}</button>
             </div>
             </div>
           </form>
@@ -34,9 +34,6 @@
           </div>
         </div>
       </div>
-    </section>
-    <section>
-      <Notifications :notification-data="notificationData" ref="sendData"/>
     </section>
   </Layout>
 </template>
@@ -99,12 +96,6 @@ export default {
       .then(() => {
         this.formData = ""
         this.submitText = "Kiitos 👍🏻"
-        this.notificationData = [{
-          type: "demo",
-          title: "demo",
-          message: "demo",
-          on: false
-        }]
       })
       .catch(error => alert(error))
     }
