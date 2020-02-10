@@ -1,5 +1,5 @@
 <template>
-  <Layout class="h-full bg-gray-100">
+  <Layout class="h-full bg-gray-100 flex flex-col">
     <section class="bg-gray-900 relative">
       <div class="flex container mx-auto px-4 py-3">
         <div class="w-full lg:w-2/3  my-6 z-40">
@@ -16,7 +16,7 @@
             >
             <div class="flex flex-wrap my-4">
             <div class="w-full sm:w-5/6 mb-3">
-              <input v-model="formData.proposal" class="bg-gray-100 appearance-none border-2 border-gray-200 rounded sm:rounded-tr-none sm:rounded-br-none w-full py-4 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500" type="text" name="proposal" placeholder="Kerro mistä aiheesta haluat tietää enenmmän">
+              <input v-model="formData.proposal" class="bg-gray-100 appearance-none border-2 border-gray-200 rounded sm:rounded-tr-none sm:rounded-br-none w-full py-4 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-teal-500" type="text" name="proposal" placeholder="Esim. Node.js, Vue, Design system">
             </div>
             <div class="w-full sm:w-1/6">
               <button class="bg-teal-500 appearance-none border-2 border-teal-500 rounded sm:rounded-tl-none sm:rounded-bl-none w-full py-4 px-4 text-black font-bold leading-tight focus:outline-none focus:bg-teal-200 focus:border-teal-200 hover:bg.teal-200" type="submit">{{this.submitText}}</button>
