@@ -19,13 +19,12 @@
       </div>
 
       <div class="w-full sm:w-auto md:w-full lg:w-3/5 xl:w-3/5 mx-auto">
-        <div class="my-6 w-full mx-auto">
+        <div class="my-6 sm:text-2xl text-lg leading-snug my-12 font-serif text-center" v-html="$page.post.entry.pageSummaryContent.content" />
+        <div class="my-6 w-full mx-auto mb-20">
           <div v-for="audio in podcastAudioFile" :key="audio.id">
             <vue-audio :file="audio.url"></vue-audio>
           </div>
         </div>    
-
-        <div class="my-6 sm:text-2xl text-lg leading-snug my-12" v-html="$page.post.entry.pageSummaryContent.content" />
         <div class="markdown" v-html="compiledMarkdown"></div>
         <div v-if="$page.post.entry.postCodeLearn">
             <div class="markdown">
@@ -33,8 +32,6 @@
               <iframe width="100%" height="700" :src="$page.post.entry.postCodeLearn" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
-
-
         <div v-if="$page.post.entry.postLinkList.length">
           <div class="markdown">
             <h2>Linkkit</h2>

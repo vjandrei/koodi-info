@@ -21,8 +21,9 @@
     </div>
 
     <div class="w-full flex items-center cursor-pointer relative">
-        <div v-on:click="setPosition" id="setPlayPosition" class="relative w-full h-4 cursor-pointer z-10"></div>
-        <div v-bind:style="progressStyle" class="__playback-time-indicator bg-teal-800"></div>
+        <div v-on:click="setPosition" id="setPlayPosition" class="relative w-full h-full cursor-pointer z-20"></div>
+        <div v-bind:style="progressStyle" class="__playback-time-indicator bg-teal-800 z-30"></div>
+        <div class="absolute w-full h-2 bg-gray-400 z-10 rounded-l rounded-r"></div>
         <audio v-bind:id="playerId" :loop="innerLoop" ref="audiofile" :src="file" preload="auto" style="display:none;"></audio>
     </div>
   </div>
@@ -30,8 +31,7 @@
 </template>
 
 <script>
-export const baseVolumeValue = 7.5
-let audio, uuid
+export const baseVolumeValue = 100
 
 export const prefixCls = 'vue-sound'
 
@@ -47,6 +47,9 @@ export const convertTimeHHMMSS = (val) => {
   let hhmmss = new Date(val * 1000).toISOString().substr(11, 8)
   return (hhmmss.indexOf('00:') === 0) ? hhmmss.substr(3) : hhmmss
 }
+
+let audio, uuid
+
 export default {
   name: 'vue-audio',
   props: {
@@ -157,15 +160,15 @@ export default {
     _handlePlayingUI: function (e) {
       let currTime = parseInt(this.audio.currentTime)
       let percentage = parseInt((currTime / this.totalDuration) * 100)
-      this.progressStyle = `width:${percentage}%;`
+      this.progressStyle = `left:${percentage}%;`
       this.currentTime = convertTimeHHMMSS(currTime)
     },
     _handlePlayPause: function (e) {
       if (e.type === 'pause' && this.playing === false) {
         let currTime = parseInt(this.audio.currentTime)
         let percentage = parseInt((currTime / this.totalDuration) * 100)
-        this.progressStyle = `width:${percentage}%;`
-        this.currentTime = '00:00'
+        this.progressStyle = `left:${percentage}%;`
+        this.currentTime = convertTimeHHMMSS(currTime)
         this.paused = true
       }
     },
@@ -199,15 +202,14 @@ export default {
 <style lang="postcss">
 .__playback-time-indicator {
   position: absolute;
-  top: 0;
+  top: 12px;
   left: 0;
   bottom: 0;
-  height: auto;
-  mask: url('~@/assets/wave-shape.svg') repeat-x;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
 }   
 #setPlayPosition{
-  background: url('~@/assets/wave-shape.svg') repeat-x;
-  height: 56px;
-}  
 
+}  
 </style>
