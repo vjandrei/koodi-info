@@ -16,7 +16,6 @@ html {
     min-height: 100%;
 }
 
-
 a, a:link {
     transition: all .2s;
 }
@@ -26,6 +25,7 @@ a, a:link {
     text-decoration-color: #38b2ac;
     text-decoration-skip-ink: auto;
 }
+
 #app{
     display: flex;
     min-height: 100vh;

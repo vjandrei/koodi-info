@@ -25,7 +25,7 @@
       </p>
 
       <h3 class="bg-teal-100 text-teal-500 p-4 text-xl text-center">
-        Kiinnostaako tehdä sisältöäjä Koodi.infoon? <a href="" class="block text-teal-900">Katso ohjeet täältä</a> 
+        Kiinnostaako tehdä sisältöäjä Koodi.infoon? <a href="" class="block text-teal-900">Tulossa</a> 
       </h3>
 
     </div> 
