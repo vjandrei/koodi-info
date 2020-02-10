@@ -67,7 +67,7 @@ export default {
         { property: "og:type", content: 'website' },
         { property: "og:title", content: this.$page.meta.globals.homePage.pageSeoContent.social.facebook.title },
         { property: "og:description", content: this.$page.meta.globals.homePage.pageSeoContent.social.facebook.description },
-        { property: "og:url", content: this.$static.metadata.siteUrl },
+        { property: "og:url", content: "https://koodi.info" },
         { property: "og:image",  content: this.$page.meta.globals.homePage.pageSeoContent.social.facebook.image.url },
         { name: "twitter:card", content: "Summary" },
         { name: "twitter:title", content: this.$page.meta.globals.homePage.pageSeoContent.social.twitter.title },
