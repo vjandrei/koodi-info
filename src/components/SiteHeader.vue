@@ -92,7 +92,5 @@ export default {
 
 
 <style lang="postcss">
-#brand a{
-  color: black;
-}
+
 </style>
