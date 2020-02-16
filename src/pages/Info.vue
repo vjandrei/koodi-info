@@ -1,11 +1,16 @@
 <template>
   <Layout class="info">
     <div class="relative flex flex-col w-screen mx-auto xl:flex-row mx-auto" style="max-width: 1440px;"> 
-        <div class="xl:fixed static" style="width:initial; max-width:inherit;">
-            <div class="w-screen xl:h-screen border border-orange-600 bg-transparent">
-                hello
+
+        <div class="w-full border border-green-600" style="width:inherit; max-width:inherit;">Content center
+          <div class="xl:fixed static flex flex-col justify-between xl:h-screen border border-orange-600" style="width:inherit;max-width:inherit;">
+            <div class="xl:w-1/2 border border-blue-600">
+              hello
             </div>
+          </div>
         </div>
+
+        
         <div class="xl:absolute static w-full xl:w-1/2 right-0 p-8">
             2 Fusce nisl arcu, rhoncus sit amet scelerisque quis, iaculis vel mi. Mauris non orci sit amet sem maximus vulputate. Nulla aliquet sapien ipsum, vitae lacinia est finibus eget. Maecenas at mi vitae eros feugiat interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse leo sem, hendrerit at elementum eu, pulvinar vel enim. Morbi id orci justo. Vestibulum commodo dui eu nibh sodales, nec tristique mi pulvinar. Vestibulum vel mauris elementum, pharetra tellus et, commodo erat. Sed sed augue augue. Mauris non auctor dolor. Vivamus egestas lectus neque, a commodo diam blandit at.
 
