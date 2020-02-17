@@ -13,10 +13,6 @@
 @import 'highlight.js/styles/atom-one-dark.css';
 
 
-html {
-    min-height: 100%;
-}
-
 a, a:link {
     transition: all .2s;
 }
@@ -30,3 +26,5 @@ a, a:link {
 main {
     flex: 1; /* Or flex-grow: 1;*/
 }
+
+

@@ -24,7 +24,7 @@ module.exports = {
       anchorClassName: 'icon icon-link',
       plugins: [
       ]
-    }
+    },
   },
 
   plugins: [
