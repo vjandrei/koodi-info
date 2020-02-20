@@ -14,7 +14,7 @@
           <div class="flex-1 px-2 border-r-2 border-l-2  border-teal-500">
             <time>{{ postDate | moment("MM/YYYY") }}</time>
           </div>
-          <div class="flex-1 px-2">Avainsana</div>
+          <div class="flex-1 px-2">--</div>
         </div>
       </div>
 
