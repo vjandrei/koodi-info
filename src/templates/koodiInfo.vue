@@ -114,7 +114,6 @@ export default {
   },
   mounted() {
     this.postDate = Number(this.$page.post.entry.postDate)
-    
   }
 };
 </script>

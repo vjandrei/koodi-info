@@ -30,3 +30,13 @@ a, a:link {
 main {
     flex: 1; /* Or flex-grow: 1;*/
 }
+
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
