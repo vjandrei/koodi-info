@@ -24,6 +24,7 @@
         <div class="absolute w-full h-2 bg-gray-400 z-10 rounded-l rounded-r"></div>
         <audio v-bind:id="playerId" :loop="innerLoop" ref="audiofile" :src="file" preload="auto" style="display:none;"></audio>
     </div>
+    <div @click="speed()" class="text-sm ml-5 cursor-pointer leading-tight ">Speed x 1.5</div>
   </div>
 </div>
 </template>
@@ -144,6 +145,9 @@ export default {
       this.isMuted = !this.isMuted
       this.audio.muted = this.isMuted
       this.volumeValue = this.isMuted ? 0 : 75
+    },
+    speed: function () {
+      this.audio.playbackRate = 2;
     },
     _handleLoaded: function () {
       if (this.audio.readyState >= 2) {
