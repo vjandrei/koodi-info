@@ -26,13 +26,22 @@
           </div>
         </div>    
         <div class="markdown" v-html="compiledMarkdown"></div>
+        
+        <div v-if="$page.post.entry.pageVideo">
+          <div class="markdown">
+            <h2>Video</h2>
+            <iframe type="text/html" width="100%" height="400" 
+            :src="'https://www.youtube.com/embed/'+ $page.post.entry.pageVideo +'?autoplay=0&origin=http://koodi.info'" frameborder="0"></iframe>
+          </div>
+        </div>
+
         <div v-if="$page.post.entry.postCodeLearn">
             <div class="markdown">
               <h2>Live koodi</h2>
               <iframe width="100%" height="700" :src="$page.post.entry.postCodeLearn" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
-        <div v-if="$page.post.entry.postLinkList.length">
+        <div v-if="$page.post.entry.postLinkList.length == 0">
           <div class="markdown">
             <h2>Linkkit</h2>
           </div>
@@ -145,6 +154,7 @@ query Craft ($id: [Int]){
             wow
           }
         }
+        pageVideo
         pageSeoContent {
           title
           description
