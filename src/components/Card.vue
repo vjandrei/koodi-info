@@ -1,20 +1,15 @@
 <template>
-  <article itemscope="itemscope" itemtype="http://schema.org/CreativeWork" class="my-16">
+  <article itemscope="itemscope" itemtype="http://schema.org/CreativeWork" class="my-4 bg-gray-100 py-8 px-12">
     <g-link :to="`${post.uri}/`" class="flex items-center">
-      <div class="flex items-center justify-center flex-none mr-16 rounded-full w-20 h-20 bg-gray-400">
-        <svg class="w-4 h-4 text-teal-800" aria-hidden="true" data-prefix="fas" data-icon="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-          <path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"/>
-        </svg>
-      </div>
       <div>
-        <h3 itemprop="name" class="text-2xl font-semibold leading-snug md:leading-tight">
+        <h5 class="text-xs font-bold tracking-widest uppercase mb-4 text-gray-600">Aihetunnistin</h5>
+        <h3 itemprop="name" class="text-2xl font-semibold text-teal-900 leading-tight">
           {{ post.postTitle }}
         </h3>
-        <div class="font-normal text-gray-800 mt-4" v-html="excerpt(post, 150, ' ...')"></div>
-        <p class="mt-2 mb-2">
-          <span itemprop="publisher">Jakson isäntänä</span> —
-          <span itemprop="author">{{post.author.name}}</span>
-        </p>
+        <div class="text-sm text-gray-800 mt-4" v-html="excerpt(post, 150, ' ...')"></div>
+        <div class="flex text-sm text-gray-800 font-semibold mt-4">
+          Jakso numero: 1
+        </div>
       </div>
     </g-link>
   </article>

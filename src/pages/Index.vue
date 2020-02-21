@@ -1,12 +1,21 @@
 <template>
-  <Layout class="h-full bg-gray-100 flex flex-col">
-    <section class="bg-gray-900 relative">
-      <div class="flex container mx-auto px-4 py-3">
-        <div class="w-full lg:w-2/3  my-6 z-40">
-          <span class="text-xs font-black uppercase text-teal-400 mb-2 block">{{this.$page.meta.globals.homePage.pageTitle}}</span>
-          <h1 class="sm:text-3xl text-1xl font-semibold	tracking-wide leading-tight text-gray-100 mb-2">{{this.$page.meta.globals.homePage.pageContent}}</h1>
-          <p class="text-l font-normal tracking-wider leading-normal text-gray-200 mt-12">Kerro mistä haluat tietää enemmän</p>
-          <form 
+  <Layout class="info">
+    <div class="relative flex flex-col lg:flex-row lg:min-h-screen overflow-scroll">
+      <div class="lg:w-3/5 static w-full lg:fixed lg:min-h-screen lg:min-w-3xl lg:flex lg:items-center lg:justify-center lg:py-20 lg:pl-8 lg:pr-8 bg-no-repeat" style="background-color:#062B39;">
+        <div class="px-6 pt-16 pb-12 md:max-w-3xl md:mx-auto lg:max-w-full lg:pt-0"> 
+
+          <div class="mt-8 lg:mt-8">
+            <p class="text-sm font-semibold text-gray-300 uppercase tracking-wider"> Tervetuloa </p>
+            <h1 class="mt-2 sm:text-4xl text-3xl leading-tight tracking-wide font-semibold font-sans text-gray-100"> 
+              Koodi.info podcasting-blogin pariin joka yhdistelee <span class="text-teal-400"> tekstiä, audiota ja kuvakaappausta </span> ohjelmistoalan liittyvistä aiheista.  
+            </h1>
+            <p class="mt-3 text-lg max-w-xl lg:max-w-3xl text-gray-300 xl:text-2xl"> 
+              Aiheita mm. webin teknologiat, käyttöliittymäsuunnittelu, arkkitehtuurit, muut ohjelmisto teknologiat sekä avointa keskustelua ohjelmistoalasta.
+            </p>
+          </div>
+          <div class="mt-10">
+            <p class="text-base xl:text-lg font-medium text-white"> Kerro mistä haluaisit tietää enemmän? </p>
+            <form 
               name="proposal"
               method="post"
               v-on:submit.prevent="handleSubmit"
@@ -23,24 +32,40 @@
             </div>
             </div>
           </form>
-        </div>
-      </div>
-    </section>
-    <section class="h-full bg-gray-100">
-      <div class="container mx-auto px-4 py-3">
-        <div class="py-6 flex flex-wrap -mx-2">
-          <div v-for="(item, i) in $page.posts.entries" :key="item.id" :post="item" class="w-full sm:w-1/1 md:w-1/3 px-2 my-4" :class="{'': i > 0 }">
-            <Card :post="item" />
+          </div>
+          
+          <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Isäntänä toimii</p>
+          <div class="mt-4 sm:flex"> 
+            <a href="https://twitter.com/vj_andrei" class="flex items-center no-underline"> 
+              <div class="flex-shrink-0"> 
+                <g-image class="h-12 w-12 rounded-full border-2 border-white" src="~/assets/andreas.jpg" width="500"/>
+              </div> 
+              <div class="ml-3"> 
+                <p class="font-semibold text-white leading-tight">Andreas Koutsoukos</p> 
+                <p class="text-sm text-gray-400 leading-tight">Käyttöliittymä-nörtti</p> 
+              </div> 
+            </a> 
           </div>
         </div>
       </div>
-    </section>
+      <div class="lg:w-2/5 lg:absolute static w-full right-0 px-8">
+      <div class="border-b border-gray-200">
+        <SiteHeader />
+      </div>
+        <div class="w-full" :class="{'': i > 0 }" v-for="(item, i) in $page.posts.entries" :key="item.id" :post="item">
+          <Card :post="item" />
+          <Card :post="item" />
+          <Card :post="item" />
+          <Card :post="item" />
+        </div>
+      </div>
+  </div>
   </Layout>
 </template>
 
 <script>
+import SiteHeader from '~/components/SiteHeader.vue'
 import Card from '~/components/Card.vue'
-import Notifications from '~/components/Notifications.vue'
 export default {
   data() {
     return {
@@ -48,16 +73,9 @@ export default {
       notificationData: []
     }
   },
-  components: {
+  components:{
     Card,
-    Notifications
-  },
-  props:{
-    submitText: {
-      type: String,
-      required: false,
-      default: 'Ehdota'
-    }
+    SiteHeader
   },
   metaInfo () {
     return {
@@ -76,6 +94,13 @@ export default {
         { name: "twitter:creator", content: "@vj_andrei" },
         { name: "twitter:image", content: this.$page.meta.globals.homePage.pageSeoContent.social.twitter.image.url },
       ],
+    }
+  },
+   props:{
+    submitText: {
+      type: String,
+      required: false,
+      default: 'Ehdota'
     }
   },
   methods: {
@@ -102,6 +127,7 @@ export default {
   }
 }
 </script>
+
 
 <page-query> 
 query Craft ($slug: String){
@@ -140,6 +166,9 @@ query Craft ($slug: String){
         slug
         title
         postTitle
+        author{
+          name
+        }
       	pageSummaryContent{
           content
         }
