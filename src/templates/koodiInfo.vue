@@ -14,7 +14,7 @@
           <div class="flex-1 px-2 border-r-2 border-l-2  border-teal-500">
             <time>{{ postDate | moment("MM/YYYY") }}</time>
           </div>
-          <div class="flex-1 px-2">Avainsana</div>
+          <div class="flex-1 px-2">--</div>
         </div>
       </div>
 
@@ -26,13 +26,22 @@
           </div>
         </div>    
         <div class="markdown" v-html="compiledMarkdown"></div>
+        
+        <div v-if="$page.post.entry.pageVideo">
+          <div class="markdown">
+            <h2>Video</h2>
+            <iframe type="text/html" width="100%" height="400" 
+            :src="'https://www.youtube.com/embed/'+ $page.post.entry.pageVideo +'?autoplay=0&origin=http://koodi.info'" frameborder="0"></iframe>
+          </div>
+        </div>
+
         <div v-if="$page.post.entry.postCodeLearn">
             <div class="markdown">
               <h2>Live koodi</h2>
               <iframe width="100%" height="700" :src="$page.post.entry.postCodeLearn" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
-        <div v-if="$page.post.entry.postLinkList.length">
+        <div v-if="$page.post.entry.postLinkList.length == 0">
           <div class="markdown">
             <h2>Linkkit</h2>
           </div>
@@ -105,7 +114,6 @@ export default {
   },
   mounted() {
     this.postDate = Number(this.$page.post.entry.postDate)
-    
   }
 };
 </script>
@@ -145,6 +153,7 @@ query Craft ($id: [Int]){
             wow
           }
         }
+        pageVideo
         pageSeoContent {
           title
           description
