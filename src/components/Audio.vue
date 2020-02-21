@@ -1,6 +1,6 @@
 <template>
 <div class="bg-gray-100 px-6 py-2 rounded-lg">
-  <div class="flex flex-row py-2">
+  <div class="flex flex-row py-2 flex-wrap sm:flex-no-wrap">
     <div class="flex items-center">
       <div @click="pause()" v-if="paused" class="w-16 h-10 flex justify-center items-center bg-gray-400 rounded-full">
         <svg class="w-4 h-4 text-teal-800" aria-hidden="true" data-prefix="fas" data-icon="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -18,9 +18,9 @@
       <span class="mx-2">-</span>
       <p class="">{{duration}}</p>
     </div>
-    <div class="w-full flex items-center cursor-pointer relative">
+    <div class="w-full flex items-center cursor-pointer relative sm:order-none order-last mt-8 sm:mt-0">
         <div v-on:click="setPosition" id="setPlayPosition" class="relative w-full h-full cursor-pointer z-20"></div>
-        <div v-bind:style="progressStyle" class="__playback-time-indicator bg-teal-800 z-30"></div>
+        <div v-bind:style="progressStyle" class="__playback-time-indicator bg-teal-800 z-30 w-4 h-4 absolute rounded-full"></div>
         <div class="absolute w-full h-2 bg-gray-400 z-10 rounded-l rounded-r"></div>
         <audio v-bind:id="playerId" :loop="innerLoop" ref="audiofile" :src="file" preload="auto" style="display:none;"></audio>
     </div>
@@ -215,18 +215,3 @@ export default {
 };
 </script>
 
-
-<style lang="postcss">
-.__playback-time-indicator {
-  position: absolute;
-  top: 12px;
-  left: 0;
-  bottom: 0;
-  width: 16px;
-  height: 16px;
-  border-radius: 100%;
-}   
-#setPlayPosition{
-
-}  
-</style>
