@@ -26,7 +26,6 @@ module.exports = {
       ]
     },
   },
-
   plugins: [
     {
       use: 'gridsome-source-craftql',

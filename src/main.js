@@ -3,11 +3,12 @@
 
 import DefaultLayout from '~/layouts/Default.vue'
 import "~/assets/css/main.css"
+import moment from 'moment'
 
 export default function (Vue, { router, head, isClient }) {
   // Add a html attributes
   head.htmlAttrs = { lang: 'fi' }
-  head.bodyAttrs = { class: 'bg-white text-gray-900 leading-normal antialiased font-sans bg-gray-100' }
+  head.bodyAttrs = { class: 'bg-white text-gray-900 leading-normal antialiased font-sans bg-brand-grey-light' }
   // Add a meta tag
   head.meta.push({
     name: 'keywords',
@@ -26,6 +27,9 @@ export default function (Vue, { router, head, isClient }) {
 
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
-  Vue.use(require('vue-moment'))
+  //Use Moment.Js library inside our project
+  Object.defineProperty(Vue.prototype, '$moment', {
+    value: moment
+  });
 
 }

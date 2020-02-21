@@ -3,6 +3,16 @@ module.exports = {
   important: false,
   separator: ':',
   theme: {
+    extend: {
+      colors: {
+        'brand-light':      '#D9F8F3',
+        'brand-neutral':    '#67E2D0',
+        'brand-mid':        '#1D585C',
+        'brand-dark':       '#062B39',
+        'brand-grey-light': '#F1F6F8',
+        'brand-grey-dark':  '#E2E8EC',
+      }
+    },
     screens: {
       sm: '640px',
       md: '768px',

@@ -1,20 +1,21 @@
 <template>
-  <Layout class="info">
-    <div class="relative flex flex-col lg:flex-row lg:min-h-screen overflow-scroll">
-      <div class="lg:w-3/5 static w-full lg:fixed lg:min-h-screen lg:min-w-3xl lg:flex lg:items-center lg:justify-center lg:py-20 lg:pl-8 lg:pr-8 bg-no-repeat" style="background-color:#062B39;">
-        <div class="px-6 pt-16 pb-12 md:max-w-3xl md:mx-auto lg:max-w-full lg:pt-0"> 
+  <Layout>
+    <div class="relative flex flex-col xl:flex-row xl:min-h-screen">
+      <div class="xl:w-3/5 static w-full xl:fixed xl:min-h-screen xl:min-w-3xl xl:flex xl:items-center xl:justify-center xl:py-20 xl:pl-8 xl:pr-8 bg-no-repeat bg-brand-dark">
+        <div class="px-6 py-6 pb-12 max-w-2xl"> 
 
-          <div class="mt-8 lg:mt-8">
-            <p class="text-sm font-semibold text-gray-300 uppercase tracking-wider"> Tervetuloa </p>
-            <h1 class="mt-2 sm:text-4xl text-3xl leading-tight tracking-wide font-semibold font-sans text-gray-100"> 
-              Koodi.info podcasting-blogin pariin joka yhdistelee <span class="text-teal-400"> tekstiä, audiota ja kuvakaappausta </span> ohjelmistoalan liittyvistä aiheista.  
+          <div class="mt-2 xl:mt-8">
+            <p class="text-sm font-semibold text-brand-grey-light uppercase tracking-wider">Tervetuloa</p>
+            <h1 class="mt-2 sm:text-4xl text-1xl leading-snug tracking-wide font-semibold font-sans text-brand-grey-light font-serif"> 
+              Koodi.info podcasting-blogin pariin joka yhdistelee <span class="text-brand-neutral"> tekstiä, audiota ja kuvakaappausta </span> ohjelmistoalan liittyvistä aiheista.  
             </h1>
-            <p class="mt-3 text-lg max-w-xl lg:max-w-3xl text-gray-300 xl:text-2xl"> 
+            <p class="my-6 text-1xl max-w-xl leading-snug  xl:max-w-3xl text-brand-grey-light xl:text-2xl"> 
               Aiheita mm. webin teknologiat, käyttöliittymäsuunnittelu, arkkitehtuurit, muut ohjelmisto teknologiat sekä avointa keskustelua ohjelmistoalasta.
             </p>
           </div>
-          <div class="mt-10">
-            <p class="text-base xl:text-lg font-medium text-white"> Kerro mistä haluaisit tietää enemmän? </p>
+          
+          <div class="mt-4">
+            <p class="text-base xl:text-lg font-medium text-brand-grey-light"> Kerro mistä haluaisit tietää enemmän? </p>
             <form 
               name="proposal"
               method="post"
@@ -34,28 +35,28 @@
           </form>
           </div>
           
-          <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Isäntänä toimii</p>
-          <div class="mt-4 sm:flex"> 
-            <a href="https://twitter.com/vj_andrei" class="flex items-center no-underline"> 
-              <div class="flex-shrink-0"> 
-                <g-image class="h-12 w-12 rounded-full border-2 border-white" src="~/assets/andreas.jpg" width="500"/>
-              </div> 
-              <div class="ml-3"> 
-                <p class="font-semibold text-white leading-tight">Andreas Koutsoukos</p> 
-                <p class="text-sm text-gray-400 leading-tight">Käyttöliittymä-nörtti</p> 
-              </div> 
-            </a> 
+          <div class="my-2">
+            <p class="text-sm font-semibold text-brand-grey-light uppercase tracking-wider"> 🎤 Isäntänä toimii</p>
+            <div class="mt-4 sm:flex"> 
+              <a href="https://twitter.com/vj_andrei" class="flex items-center no-underline"> 
+                <div class="flex-shrink-0"> 
+                  <g-image class="h-12 w-12 rounded-full border-2 border-brand-grey-light" src="~/assets/andreas.jpg" width="500"/>
+                </div> 
+                <div class="ml-3"> 
+                  <p class="font-semibold text-brand-grey-light leading-tight">Andreas Koutsoukos</p> 
+                  <p class="text-sm text-brand-grey-dark leading-tight">Käyttöliittymä-nörtti</p> 
+                </div> 
+              </a> 
+            </div>
           </div>
+
         </div>
       </div>
-      <div class="lg:w-2/5 lg:absolute static w-full right-0 px-8">
-      <div class="border-b border-gray-200">
+      <div class="xl:w-2/5 xl:absolute static w-full right-0 bg-brand-grey-light">
+      <div class="border-b border-gray-200 bg-white sm:px-8 py-2">
         <SiteHeader />
       </div>
         <div class="w-full" :class="{'': i > 0 }" v-for="(item, i) in $page.posts.entries" :key="item.id" :post="item">
-          <Card :post="item" />
-          <Card :post="item" />
-          <Card :post="item" />
           <Card :post="item" />
         </div>
       </div>
@@ -165,7 +166,15 @@ query Craft ($slug: String){
         uri
         slug
         title
+        postSubjects {
+          title
+        }
         postTitle
+        postDate
+        pageSoundContent{
+          id
+        }
+        pageVideo
         author{
           name
         }
