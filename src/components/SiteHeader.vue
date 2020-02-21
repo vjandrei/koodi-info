@@ -4,7 +4,7 @@
       <div class="flex items-center">
         <div id="brand" class="space-between xl:py-5 flex justify-between py-3">
             <g-link to="/" class="sm:w-32">
-              <g-image class="hidden sm:block" src="~/assets/logo-black.svg"/>
+              <g-image class="hidden sm:block sm:w-32" src="~/assets/logo-black.svg"/>
             </g-link>
         </div>
         <nav class="flex items-center w-full sm:items-center">
