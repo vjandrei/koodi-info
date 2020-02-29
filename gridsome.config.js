@@ -1,4 +1,4 @@
-// This is where project configuration and plugin options are located. 
+// This is where project configuration and plugin options are located.
 // Learn more: https://gridsome.org/docs/config
 
 // Changes here require a server restart.
@@ -10,32 +10,30 @@ class TailwindExtractor {
   }
 }
 
-
 module.exports = {
-  siteName: 'Koodi.info',
+  siteName: "Koodi.info",
   siteDescription: "",
   titleTemplate: `%s | Koodi.info`,
-  icon: 'src/favicon.png',
-  siteUrl: 'https://youthful-wiles-bb2081.netlify.com/',
+  icon: "src/favicon.png",
+  siteUrl: "https://koodi.info",
   transformers: {
     remark: {
-      externalLinksTarget: '_blank',
-      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
-      anchorClassName: 'icon icon-link',
-      plugins: [
-      ]
-    },
+      externalLinksTarget: "_blank",
+      externalLinksRel: ["nofollow", "noopener", "noreferrer"],
+      anchorClassName: "icon icon-link",
+      plugins: []
+    }
   },
   plugins: [
     {
-      use: 'gridsome-source-craftql',
+      use: "gridsome-source-craftql",
       options: {
         url: process.env.CRAFT_API_URL,
-        token: process.env.AUTH_TOKEN,
-      },
+        token: process.env.AUTH_TOKEN
+      }
     },
     {
-      use: 'gridsome-plugin-tailwindcss',
+      use: "gridsome-plugin-tailwindcss",
       options: {
         purgeConfig: {},
         presetEnvConfig: {},
@@ -43,39 +41,41 @@ module.exports = {
         shouldImport: true,
         shouldTimeTravel: true
       }
+    },
+    {
+      use: "@gridsome/plugin-google-analytics",
+      options: {
+        id: "UA-16541249-5"
+      }
     }
   ],
 
   chainWebpack: config => {
     config.module
-      .rule('css')
-      .oneOf('normal')
-      .use('postcss-loader')
+      .rule("css")
+      .oneOf("normal")
+      .use("postcss-loader")
       .tap(options => {
-        options.plugins.unshift(...[
-          require('postcss-import'),
-          require('postcss-nested'),
-        ])
+        options.plugins.unshift(
+          ...[require("postcss-import"), require("postcss-nested")]
+        );
 
-        if (process.env.NODE_ENV === 'production') {
-          options.plugins.push(...[
-            require('@fullhuman/postcss-purgecss')({
-              content: [
-                'src/assets/**/*.css',
-                'src/**/*.vue',
-                'src/**/*.js'
-              ],
-              extractors: [
-                {
-                  extractor: TailwindExtractor,
-                  extensions: ['css', 'vue', 'js']
-                }
-              ],
-            }),
-          ])
+        if (process.env.NODE_ENV === "production") {
+          options.plugins.push(
+            ...[
+              require("@fullhuman/postcss-purgecss")({
+                content: ["src/assets/**/*.css", "src/**/*.vue", "src/**/*.js"],
+                extractors: [
+                  {
+                    extractor: TailwindExtractor,
+                    extensions: ["css", "vue", "js"]
+                  }
+                ]
+              })
+            ]
+          );
         }
-        return options
-      })
-    }
-  
-}
+        return options;
+      });
+  }
+};
