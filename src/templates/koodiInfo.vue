@@ -29,10 +29,14 @@
           v-html="$page.post.entry.pageSummaryContent.content"
         />
         <div class="my-6 w-full mx-auto mb-20">
+          <h4
+            class="my-6 m:text-1xl text-2xl leading-snug my-12 font-serif text-center"
+          >🎧 Kuuntele jakso!</h4>
           <div v-for="audio in podcastAudioFile" :key="audio.id">
             <vue-audio :file="audio.url"></vue-audio>
           </div>
         </div>
+
         <div class="markdown" v-html="compiledMarkdown"></div>
 
         <div v-if="$page.post.entry.pageVideo">

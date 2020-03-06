@@ -1,9 +1,12 @@
 .markdown {
-  p, ul, ol {
+  p,
+  ul,
+  ol {
     @apply mb-4;
   }
 
-  ul li, ol li {
+  ul li,
+  ol li {
     @apply mb-4;
   }
 
@@ -15,23 +18,43 @@
     @apply list-decimal pl-4;
   }
 
-  h1,h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-sans font-bold text-black my-6;
   }
 
-  h5, h6 {
+  h5,
+  h6 {
     @apply uppercase;
   }
 
-  h1 { @apply text-4xl; }
-  h2 { @apply text-2xl; }
-  h3 { @apply text-xl; }
-  h4 { @apply text-lg; }
-  h5 { @apply text-base; }
-  h6 { @apply text-sm; }
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  h3 {
+    @apply text-xl;
+  }
+  h4 {
+    @apply text-lg;
+  }
+  h5 {
+    @apply text-base;
+  }
+  h6 {
+    @apply text-sm;
+  }
 
   @screen sm {
-    h2 { @apply text-4xl; }
+    h2 {
+      @apply text-4xl;
+    }
   }
 
   a {
@@ -41,7 +64,6 @@
       @apply text-blue-700;
     }
   }
-
 
   code {
     @apply bg-gray-codeblock text-gray-100 !important;
@@ -75,6 +97,10 @@
   hr {
     @apply h-px bg-gray-300 my-8;
   }
+
+  img {
+    @apply w-full;
+  }
 }
 
 @screen sm {
@@ -83,84 +109,97 @@
       @apply mx-10;
     }
 
-    h2 { @apply text-4xl; }
-    h3 { @apply text-3xl; }
-    h4 { @apply text-2xl; }
-    h5 { @apply text-xl; }
-    h6 { @apply text-base; }
+    h2 {
+      @apply text-4xl;
+    }
+    h3 {
+      @apply text-3xl;
+    }
+    h4 {
+      @apply text-2xl;
+    }
+    h5 {
+      @apply text-xl;
+    }
+    h6 {
+      @apply text-base;
+    }
   }
 }
 
 .post-cover {
   &::after {
     @apply absolute w-full h-48 left-0 bottom-0 z-0;
-    content: '';
-    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.5) 100%);
+    content: "";
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
   }
 
   &.fullscreen::after {
     @apply h-full;
-    background: rgba(0,0,0,.15);
+    background: rgba(0, 0, 0, 0.15);
   }
 }
 
-
 code[class*="language-"],
 pre[class*="language-"] {
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	color: #eee;
-	background: #2f2f2f;
-	font-family: Roboto Mono, monospace;
-	font-size: 1em;
-	line-height: 1.5em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  color: #eee;
+  background: #2f2f2f;
+  font-family: Roboto Mono, monospace;
+  font-size: 1em;
+  line-height: 1.5em;
 
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
 
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 
 code[class*="language-"]::-moz-selection,
 pre[class*="language-"]::-moz-selection,
 code[class*="language-"] ::-moz-selection,
 pre[class*="language-"] ::-moz-selection {
-	background: #363636;
+  background: #363636;
 }
 
 code[class*="language-"]::selection,
 pre[class*="language-"]::selection,
 code[class*="language-"] ::selection,
 pre[class*="language-"] ::selection {
-	background: #363636;
+  background: #363636;
 }
 
 :not(pre) > code[class*="language-"] {
-	white-space: normal;
-	border-radius: 0.2em;
-	padding: 0.1em;
+  white-space: normal;
+  border-radius: 0.2em;
+  padding: 0.1em;
 }
 
 pre[class*="language-"] {
-	overflow: auto;
-	position: relative;
-	margin: 0.5em 0;
-	padding: 1.25em 1em;
+  overflow: auto;
+  position: relative;
+  margin: 0.5em 0;
+  padding: 1.25em 1em;
 }
 
 .language-css > code,
 .language-sass > code,
 .language-scss > code {
-	color: #fd9170;
+  color: #fd9170;
 }
 
 [class*="language-"] .namespace {
-	opacity: 0.7;
+  opacity: 0.7;
 }
