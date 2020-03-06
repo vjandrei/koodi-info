@@ -4,15 +4,19 @@
     itemtype="http://schema.org/CreativeWork"
     class="my-4 mx-4 bg-white py-8 px-8"
   >
-    <g-link :to="`${post.uri}/`" class="flex items-center">
+    <g-link :to="`${post.node.slug}/`" class="flex items-center">
       <div class="max-w-md">
         <h5
           class="text-xs font-bold tracking-widest uppercase mb-2 text-teal-700"
-        >{{post.postSubjects[0].title}}</h5>
+        >
+          {{ post.node.subjects[0] }}
+        </h5>
         <h3
           itemprop="name"
           class="text-2xl font-semibold font-serif text-brand-dark leading-tight"
-        >{{ post.postTitle }}</h3>
+        >
+          {{ post.node.title }}
+        </h3>
         <div class="flex items-center my-2">
           <svg
             aria-hidden="true"
@@ -27,12 +31,17 @@
               d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
             />
           </svg>
-          <time class="text-sm font-semibold">{{this.postDate}}</time>
+          <time class="text-sm font-semibold">{{ post.node.date }}</time>
         </div>
-        <div class="text-sm text-gray-800 mt-2" v-html="excerpt(post, 150, ' ...')"></div>
+        <div
+          class="text-sm text-gray-800 mt-2"
+          v-html="excerpt(post, 150, ' ...')"
+        ></div>
         <div class="flex align-middle text-sm text-gray-800 font-semibold mt-4">
-          <span class="mr-2 font-normal text-xs xl:text-sm text-gray-800">Artikkeli sisältää:</span>
-          <div class="flex items-center mr-4" v-if="post.pageSoundContent[0]">
+          <span class="mr-2 font-normal text-xs xl:text-sm text-gray-800"
+            >Artikkeli sisältää:</span
+          >
+          <div class="flex items-center mr-4" v-if="post.node.audio">
             <svg
               aria-hidden="true"
               data-prefix="fas"
@@ -48,7 +57,7 @@
             </svg>
             <span>Audion</span>
           </div>
-          <div class="flex items-center" v-if="post.pageVideo">
+          <div class="flex items-center" v-if="post.node.video">
             <svg
               aria-hidden="true"
               data-prefix="fab"
@@ -87,17 +96,12 @@ export default {
 
       length = length || 280;
       clamp = clamp || " ...";
-      let text = post.pageSummaryContent.content
+      let text = post.node.description
         .replace(/<pre(.|\n)*?<\/pre>/gm, "")
         .replace(/<[^>]+>/gm, "");
 
       return text.length > length ? `${text.slice(0, length)}${clamp}` : text;
     }
-  },
-  mounted() {
-    this.postDate = this.$moment
-      .unix(Number(this.post.postDate))
-      .format("DD.MM.YYYY");
   }
 };
 </script>

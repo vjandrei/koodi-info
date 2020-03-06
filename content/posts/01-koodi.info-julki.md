@@ -2,7 +2,7 @@
 title: "Koodi.info on nyt julki ja toivotan sinut tervetulleeksi sivuille"
 slug: koodi-info-on-nyt-julki-ja-toivotan-sinut-tervetulleeksi-sivuille
 description: "Vihdoinkin sivusto on julki! Kuuntele ja lue miksi ja mitä Koodi.info on sekä minkälaista sisältöä luvassa."
-date: 02-01-2020
+date: 10.10.2020
 author: Andreas Koutsoukos
 subjects:
   - yleistä

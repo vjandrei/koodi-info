@@ -40,6 +40,13 @@ module.exports = {
       }
     },
     {
+      use: "@gridsome/source-filesystem",
+      options: {
+        typeName: "PageSeo",
+        path: "./content/seo/**/*.md"
+      }
+    },
+    {
       use: "gridsome-plugin-tailwindcss",
       options: {
         purgeConfig: {},
