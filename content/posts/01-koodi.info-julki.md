@@ -1,17 +1,21 @@
 ---
 title: "Koodi.info on nyt julki ja toivotan sinut tervetulleeksi sivuille"
-post-title: "Koodi.info on nyt julki"
 slug: koodi-info-on-nyt-julki-ja-toivotan-sinut-tervetulleeksi-sivuille
 description: "Vihdoinkin sivusto on julki! Kuuntele ja lue miksi ja mitä Koodi.info on sekä minkälaista sisältöä luvassa."
-date: 2020-01-10 00:00:00
+date: 02-01-2020
 author: Andreas Koutsoukos
 subjects:
-  -
-tags:
-  - yleista
-audio:
-cover: ""
-excerpt: "Vihdoinkin sivusto on julki! Kuuntele ja lue miksi ja mitä Koodi.info on sekä minkälaista sisältöä luvassa."
+  - yleistä
+audio: "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2020-2-6/55022269-44100-2-05e9cebf9e12f.m4a"
+video: ""
+coverimage: ""
+links:
+  - Demo1
+  - Demo2
+keywords:
+  - Koodaus
+  - Ohjelmointi
+  - Ohjelmistokehitys
 ---
 
 ### Miksi Koodi.info perustettiin

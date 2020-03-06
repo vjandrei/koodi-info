@@ -1,18 +1,21 @@
 ---
 title: "Jamstack moderni web-kehitys arkkitehtuuri"
-post-title: "Jamstack moderni web-kehitys arkkitehtuuri"
-slug: koodi-info-on-nyt-julki-ja-toivotan-sinut-tervetulleeksi-sivuille
-description: "Frontin devaaminen on taas hauskaa kun ei tarvitse käyttää aikaa palvelinympäristöjen konfigurointiin.."
-date: 2020-01-10 00:00:00
+slug: jamstack
+description: "Frontin devaaminen on taas hauskaa kun ei tarvitse käyttää aikaa palvelinympäristöjen konfigurointiin."
+date: 02-20-2020
 author: Andreas Koutsoukos
 subjects:
-  -
-tags:
-  - yleista
-audio:
+  - Arkkitehtuuri
+audio: "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2020-2-6/55024076-44100-2-6703dc64e9c5f.m4a"
 video: "UddmiME11DQ"
-cover: ""
-excerpt: "Frontin devaaminen on taas hauskaa kun ei tarvitse käyttää aikaa palvelinympäristöjen konfigurointiin."
+coverimage: "https://s3.eu-north-1.amazonaws.com/apiclients-koodi-info/images/hqdefault.jpg?x-craft-preview=FcQo7NbPK3&token=FpFw9LwvrFm8dHIrvUo6JAd_SAOeR6tb"
+links:
+  - Demo1
+  - Demo2
+keywords:
+  - Koodaus
+  - Ohjelmointi
+  - Ohjelmistokehitys
 ---
 
 ( Audiossa muutama virhe, markdown ei markup! )
