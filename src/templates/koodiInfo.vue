@@ -64,9 +64,9 @@
             ></iframe>
           </div>
         </div>
-        <div v-if="$page.post.entry.postLinkList">
+        <div v-if="$page.post.entry.postLinkList == 0">
           <div class="markdown">
-            <h2>Linkkit</h2>
+            <h2>Linkit</h2>
           </div>
           <ul v-for="link in $page.post.entry.postLinkList" :key="link.id">
             <li>
