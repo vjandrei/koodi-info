@@ -33,6 +33,13 @@ module.exports = {
       }
     },
     {
+      use: "@gridsome/source-filesystem",
+      options: {
+        typeName: "BlogPost",
+        path: "./content/posts/**/*.md"
+      }
+    },
+    {
       use: "gridsome-plugin-tailwindcss",
       options: {
         purgeConfig: {},
@@ -49,7 +56,9 @@ module.exports = {
       }
     }
   ],
-
+  transformers: {
+    remark: {}
+  },
   chainWebpack: config => {
     config.module
       .rule("css")
