@@ -77,6 +77,17 @@
                   <p class="text-sm text-brand-grey-dark leading-tight">Käyttöliittymä-nörtti</p>
                 </div>
               </a>
+              <div class="ml-6">
+                <p class="font-semibold text-brand-grey-light leading-tight">Tilaa Koodi.info</p>
+                <a
+                  class="text-sm text-brand-grey-dark leading-tight"
+                  href="https://koodi.info/feed.xml"
+                >RSS syöte</a>
+                <a
+                  class="text-sm text-brand-grey-dark leading-tight ml-3"
+                  href="https://anchor.fm/koodiinfo"
+                >Podcast palvelut</a>
+              </div>
             </div>
           </div>
         </div>
