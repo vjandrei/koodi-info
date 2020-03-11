@@ -13,7 +13,7 @@ class TailwindExtractor {
 module.exports = {
   siteName: "Koodi.info",
   siteDescription: "",
-  titleTemplate: `%s | Koodi.info`,
+  titleTemplate: `%s`,
   icon: "src/favicon.png",
   siteUrl: "https://koodi.info",
   transformers: {
@@ -53,6 +53,28 @@ module.exports = {
       use: "@gridsome/plugin-google-analytics",
       options: {
         id: "UA-16541249-5"
+      }
+    },
+    {
+      use: "gridsome-plugin-rss",
+      options: {
+        contentTypeName: "Post",
+        feedOptions: {
+          title: "Ohjelmointia ja ohjelmistokehitystä suomeksi - Koodi.info",
+          feed_url: "https://koodi.info/feed.xml",
+          site_url: "https://koodi.info/"
+        },
+        feedItemOptions: node => ({
+          title: node.title,
+          description: node.description,
+          url: "https://koodi.info/" + node.slug,
+          author: node.author,
+          date: node.date
+        }),
+        output: {
+          dir: "./static",
+          name: "feed.xml"
+        }
       }
     }
   ],

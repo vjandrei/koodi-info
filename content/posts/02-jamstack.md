@@ -13,7 +13,6 @@ links:
   - Demo1
   - Demo2
 keywords:
-  -
 ---
 
 ( Audiossa muutama virhe, markdown ei markup! )

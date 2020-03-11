@@ -168,7 +168,6 @@ query Home ($page: Int){
         video
         coverimage
         links
-        keywords
       }
     }
   }

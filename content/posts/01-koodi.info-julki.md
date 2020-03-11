@@ -13,7 +13,6 @@ links:
   - Demo1
   - Demo2
 keywords:
-  -
 ---
 
 ### Miksi Koodi.info perustettiin

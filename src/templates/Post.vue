@@ -22,9 +22,7 @@
               class="text-sm font-semibold"
             >{{ formatPublishDate($page.post.datetime) }}</time>
           </div>
-          <div class="flex-1 px-2">
-            <p v-for="keyword in $page.post.keywords" :key="keyword.id">{{ keyword }}</p>
-          </div>
+          <div class="flex-1 px-2"></div>
         </div>
 
         <div
@@ -181,7 +179,6 @@ query Post ($path: String){
     video
     coverimage
     links
-    keywords
   }
 }
 </page-query>
