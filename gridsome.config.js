@@ -26,16 +26,9 @@ module.exports = {
   },
   plugins: [
     {
-      use: "gridsome-source-craftql",
-      options: {
-        url: process.env.CRAFT_API_URL,
-        token: process.env.AUTH_TOKEN
-      }
-    },
-    {
       use: "@gridsome/source-filesystem",
       options: {
-        typeName: "BlogPost",
+        typeName: "Post",
         path: "./content/posts/**/*.md"
       }
     },
@@ -65,6 +58,9 @@ module.exports = {
   ],
   transformers: {
     remark: {}
+  },
+  templates: {
+    Post: "/:slug"
   },
   chainWebpack: config => {
     config.module

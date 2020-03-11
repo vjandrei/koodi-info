@@ -8,16 +8,14 @@
           <div class="mt-2 xl:mt-8">
             <p
               class="text-sm font-semibold text-brand-grey-light uppercase tracking-wider"
-            >
-              Tervetuloa
-            </p>
+            >Tervetuloa</p>
             <h1
               class="mt-2 sm:text-4xl text-1xl leading-snug tracking-wide font-semibold font-sans text-brand-grey-light font-serif"
             >
               Koodi.info podcasting-blogin pariin joka yhdistelee
-              <span class="text-brand-neutral"
-                >tekstiä, audiota ja kuvakaappausta</span
-              >
+              <span
+                class="text-brand-neutral"
+              >tekstiä, audiota ja kuvakaappausta</span>
               ohjelmistoalan liittyvistä aiheista.
             </h1>
             <p
@@ -30,9 +28,9 @@
           </div>
 
           <div class="mt-4">
-            <p class="text-base xl:text-lg font-medium text-brand-grey-light">
-              Kerro mistä haluaisit tietää enemmän?
-            </p>
+            <p
+              class="text-base xl:text-lg font-medium text-brand-grey-light"
+            >Kerro mistä haluaisit tietää enemmän?</p>
             <form
               name="proposal"
               method="post"
@@ -55,9 +53,7 @@
                   <button
                     class="bg-teal-500 appearance-none border-2 border-teal-500 rounded sm:rounded-tl-none sm:rounded-bl-none w-full py-4 px-4 text-black font-bold leading-tight focus:outline-none focus:bg-teal-200 focus:border-teal-200 hover:bg.teal-200"
                     type="submit"
-                  >
-                    {{ this.submitText }}
-                  </button>
+                  >{{ this.submitText }}</button>
                 </div>
               </div>
             </form>
@@ -66,14 +62,9 @@
           <div class="my-2">
             <p
               class="text-sm font-semibold text-brand-grey-light uppercase tracking-wider"
-            >
-              🎤 Isäntänä toimii
-            </p>
+            >🎤 Isäntänä toimii</p>
             <div class="mt-4 sm:flex">
-              <a
-                href="https://twitter.com/vj_andrei"
-                class="flex items-center no-underline"
-              >
+              <a href="https://twitter.com/vj_andrei" class="flex items-center no-underline">
                 <div class="flex-shrink-0">
                   <g-image
                     class="h-12 w-12 rounded-full border-2 border-brand-grey-light"
@@ -82,21 +73,15 @@
                   />
                 </div>
                 <div class="ml-3">
-                  <p class="font-semibold text-brand-grey-light leading-tight">
-                    Andreas Koutsoukos
-                  </p>
-                  <p class="text-sm text-brand-grey-dark leading-tight">
-                    Käyttöliittymä-nörtti
-                  </p>
+                  <p class="font-semibold text-brand-grey-light leading-tight">Andreas Koutsoukos</p>
+                  <p class="text-sm text-brand-grey-dark leading-tight">Käyttöliittymä-nörtti</p>
                 </div>
               </a>
             </div>
           </div>
         </div>
       </div>
-      <div
-        class="xl:w-2/5 xl:absolute static w-full right-0 bg-brand-grey-light"
-      >
+      <div class="xl:w-2/5 xl:absolute static w-full right-0 bg-brand-grey-light">
         <div class="border-b border-gray-200 bg-white sm:px-8 py-2">
           <SiteHeader />
         </div>
@@ -105,9 +90,9 @@
           :class="{ '': i > 0 }"
           v-for="(edge, i) in $page.posts.edges"
           :key="edge.node.id"
-          :post="edge"
+          :post="edge.node"
         >
-          <Card :post="edge" />
+          <Card :post="edge.node" />
         </div>
       </div>
     </div>
@@ -168,17 +153,17 @@ export default {
 </script>
 
 <page-query> 
-query Home{
-  posts: allBlogPost{
+query Home ($page: Int){
+  posts: allPost(page: $page, sortBy:"date"){
     edges{
       node{
         id
         title
         slug
         description
-        date
-        author
-        subjects
+        datetime: date (format: "YYYY-MM-DD HH:mm:ss")
+        author 
+        subject
         audio
         video
         coverimage
