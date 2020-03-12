@@ -99,6 +99,11 @@
         >
           <Card :post="edge.node" />
         </div>
+        <div
+          class="lg:sticky bottom-0 border-b border-gray-200 bg-brand-grey-light px-4 py-6 shadow-md"
+        >
+          <PodcastAd />
+        </div>
       </div>
     </div>
   </Layout>
@@ -107,6 +112,7 @@
 <script>
 import SiteHeader from "~/components/SiteHeader.vue";
 import Card from "~/components/Card.vue";
+import PodcastAd from "~/components/PodcastAd.vue";
 export default {
   data() {
     return {
@@ -116,7 +122,8 @@ export default {
   },
   components: {
     Card,
-    SiteHeader
+    SiteHeader,
+    PodcastAd
   },
   metaInfo() {
     return {
