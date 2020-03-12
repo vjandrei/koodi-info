@@ -93,7 +93,7 @@
         </div>
       </div>
       <div class="xl:w-2/5 xl:absolute static w-full right-0 bg-brand-grey-light">
-        <div class="border-b border-gray-200 bg-white sm:px-8 py-2">
+        <div class="sticky top-0 border-b border-gray-200 bg-white sm:px-8 py-2 shadow-md">
           <SiteHeader />
         </div>
         <div
