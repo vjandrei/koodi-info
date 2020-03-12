@@ -1,6 +1,8 @@
 <template>
   <div>
-    <SiteHeader class="xl:flex-shrink-0 border-b border-gray-200" />
+    <div class="px-8 bg-white">
+      <SiteHeader class="xl:flex-shrink-0 border-b border-gray-200" />
+    </div>
     <section class="container mx-auto">
       <div class="w-full sm:w-auto p-8 xl:px-56 xl:py-16 mx-auto border-b border-gray-200 bg-white">
         <div class="text-center sm:mt-16 xl:mt-8">

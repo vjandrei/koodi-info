@@ -12,8 +12,8 @@ class TailwindExtractor {
 
 module.exports = {
   siteName: "Koodi.info",
-  siteDescription: "",
-  titleTemplate: `%s`,
+  siteDescription: "Koodi.info on podcastia suomeksi ohjelmistoalasta",
+  titleTemplate: `%s | Koodi.info`,
   icon: "src/favicon.png",
   siteUrl: "https://koodi.info",
   transformers: {

@@ -11,17 +11,11 @@
             >Tervetuloa</p>
             <h1
               class="mt-2 sm:text-4xl text-1xl leading-snug tracking-wide font-semibold font-sans text-brand-grey-light font-serif"
-            >
-              Koodi.info podcasting-blogin pariin joka yhdistelee
-              <span
-                class="text-brand-neutral"
-              >tekstiä, audiota ja kuvakaappausta</span>
-              ohjelmistoalan liittyvistä aiheista.
-            </h1>
+            >Koodi.info on podcastia suomeksi ohjelmistoalasta.</h1>
             <p
-              class="my-6 text-1xl max-w-xl leading-snug lg:max-w-3xl text-brand-grey-light lg:text-2xl"
+              class="my-6 text-1xl max-w-xl leading-snug lg:max-w-3xl text-brand-grey-light lg:text-xl"
             >
-              Aiheita mm. webin teknologiat, käyttöliittymäsuunnittelu,
+              Aiheina mm. webbi teknologiat, käyttöliittymäsuunnittelu,
               arkkitehtuurit, muut ohjelmisto teknologiat sekä avointa
               keskustelua ohjelmistoalasta.
             </p>
@@ -126,7 +120,7 @@ export default {
   },
   metaInfo() {
     return {
-      title: this.$static.allPageSeo[0]
+      title: this.$static.allPageSeo.title
     };
   },
   props: {
@@ -187,10 +181,7 @@ query Home ($page: Int){
 
 <static-query>
 query {
-  metadata {
-    siteUrl
-  }
-  allPageSeo{
+  allPageSeo  {
     edges{
       node{
         id
