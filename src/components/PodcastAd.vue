@@ -8,7 +8,9 @@
       />
     </div>
     <div class="mt-4 md:ml-6">
-      <div class="text-xs font-bold tracking-widest uppercase mb-2 text-teal-700">Ystävyys podcatit</div>
+      <div
+        class="text-xs font-bold tracking-widest uppercase mb-2 text-teal-700"
+      >🎙 Ystävyys podcatit</div>
       <a
         href="https://audioboom.com/channels/5016335"
         target="_black"
