@@ -1,11 +1,11 @@
 <template>
   <Layout>
-    <div class="relative flex flex-col xl:flex-row xl:min-h-screen">
+    <div class="relative flex flex-col lg:flex-row lg:min-h-screen">
       <div
-        class="xl:w-3/5 static w-full xl:fixed xl:min-h-screen xl:min-w-3xl xl:flex xl:items-center xl:justify-center xl:py-20 xl:pl-8 xl:pr-8 bg-no-repeat bg-brand-dark"
+        class="lg:w-3/5 static w-full lg:fixed lg:min-h-screen lg:min-w-3xl lg:flex lg:items-center lg:justify-center xl:py-20 lg:pl-8 lg:pr-8 bg-no-repeat bg-brand-dark"
       >
         <div class="px-6 py-6 pb-12 max-w-2xl">
-          <div class="mt-2 xl:mt-8">
+          <div class="mt-2 lg:mt-8">
             <p
               class="text-sm font-semibold text-brand-grey-light uppercase tracking-wider"
             >Tervetuloa</p>
@@ -19,7 +19,7 @@
               ohjelmistoalan liittyvistä aiheista.
             </h1>
             <p
-              class="my-6 text-1xl max-w-xl leading-snug xl:max-w-3xl text-brand-grey-light xl:text-2xl"
+              class="my-6 text-1xl max-w-xl leading-snug lg:max-w-3xl text-brand-grey-light lg:text-2xl"
             >
               Aiheita mm. webin teknologiat, käyttöliittymäsuunnittelu,
               arkkitehtuurit, muut ohjelmisto teknologiat sekä avointa
@@ -29,7 +29,7 @@
 
           <div class="mt-4">
             <p
-              class="text-base xl:text-lg font-medium text-brand-grey-light"
+              class="text-base lg:text-lg font-medium text-brand-grey-light"
             >Kerro mistä haluaisit tietää enemmän?</p>
             <form
               name="proposal"
@@ -92,8 +92,8 @@
           </div>
         </div>
       </div>
-      <div class="xl:w-2/5 xl:absolute static w-full right-0 bg-brand-grey-light">
-        <div class="sticky top-0 border-b border-gray-200 bg-white sm:px-8 py-2 shadow-md">
+      <div class="lg:w-2/5 lg:absolute static w-full right-0 bg-brand-grey-light">
+        <div class="sticky top-0 border-b border-gray-200 bg-white sm:px-4 py-2 shadow-md">
           <SiteHeader />
         </div>
         <div

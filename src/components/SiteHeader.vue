@@ -2,9 +2,9 @@
   <section class="bg-white">
     <header id="header" class="flex flex-col container mx-auto w-full py-2">
       <div class="flex items-center">
-        <div id="brand" class="space-between xl:py-5 flex justify-between py-3">
-          <g-link to="/" class="sm:w-32">
-            <g-image class="hidden sm:block sm:w-32" src="~/assets/logo-black.svg" />
+        <div id="brand" class="space-between lg:py-5 flex justify-between py-3">
+          <g-link to="/" class="sm:w-24">
+            <g-image class="hidden sm:block sm:w-24" src="~/assets/logo-black.svg" />
           </g-link>
         </div>
         <nav class="flex items-center w-full sm:items-center">
