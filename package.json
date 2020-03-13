@@ -21,6 +21,7 @@
     "gridsome-source-craftql": "^0.1.1",
     "highlight.js": "^9.17.1",
     "marked": "^0.8.0",
+    "rss-parser": "^3.7.5",
     "vue-moment": "^4.1.0"
   },
   "devDependencies": {
