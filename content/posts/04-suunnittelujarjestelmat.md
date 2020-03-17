@@ -22,7 +22,7 @@ Suunnittelujärjestelmä nousukausi oli vuonna 2014. Informaatiota suunnitteluj�
 
 Suunnittelutiedostot omilla koneilla, komponentit olivat hapantuneet ja kokemus suunnittelujärjestelmistä tiimillä lähes nolla. Siinä oli lähtökohdat ensimmäiseen suunnittelujärjestelmä projektiin. Tuotantoon ei päästy, mutta suunnittelijan työ yhdenmukaistui.
 
-## Viso miten työstetään suunnittelujärjestelmää yhdessä 💡
+## Visio miten työstetään suunnittelujärjestelmää yhdessä 💡
 
 Työstetään yhdessä ei erikseen ja ei toimiteta pelkkää handoveria.
 Näin syntyi avoimen lähdekoodin projekti Design Tokens.
