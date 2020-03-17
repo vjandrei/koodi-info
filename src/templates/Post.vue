@@ -115,7 +115,7 @@ export default {
         },
         {
           property: "og:description",
-          content: this.$page.post.description.description
+          content: this.$page.post.description
         },
         {
           property: "og:url",
@@ -123,7 +123,7 @@ export default {
         },
         {
           property: "og:image",
-          content: this.$page.post.coverimage.url
+          content: this.$page.post.coverimage
         },
         { name: "twitter:card", content: "Summary" },
         {
