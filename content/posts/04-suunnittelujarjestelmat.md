@@ -16,7 +16,7 @@ keywords:
 
 # Suunnittelujärjestelmä hype 🚂
 
-Suunnittelujärjestelmä nousukausi vuonna 2014. Informaatiota suunnittelujärjestelmistä ja kuinka pitäisi tehdä ja mitä työkaluja pitäisi käyttää.
+Suunnittelujärjestelmä nousukausi oli vuonna 2014. Informaatiota suunnittelujärjestelmistä ja kuinka suunnittelujärjestelmiä pitäisi tehdä ja mitä työkaluja pitäisi käyttää.
 
 ## Ensimmäinen suunnittelujärjestelmä projekti 🤓
 
