@@ -1,5 +1,5 @@
 ---
-title: "Miksi suunnittelujärjestelmä ei toimi ohjelmistokehitys projektissa"
+title: "Miksi suunnittelujärjestelmä ei toimi"
 slug: suunnittelujarjestelma
 description: "Suunnittelujärjestelmä vaatii omistautuneen tiimin ympärille, jotta se menestyisi eikä epäonnistuisi."
 date: 2020-03-17
