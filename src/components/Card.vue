@@ -8,11 +8,15 @@
       <div class="max-w-md">
         <h5
           class="text-xs font-bold tracking-widest uppercase mb-2 text-teal-700"
-        >{{ post.subject }}</h5>
+        >
+          {{ post.subject }}
+        </h5>
         <h3
           itemprop="name"
           class="text-2xl font-semibold font-serif text-brand-dark leading-tight"
-        >{{ post.title }}</h3>
+        >
+          {{ post.title }}
+        </h3>
         <div class="flex items-center my-2">
           <svg
             aria-hidden="true"
@@ -27,14 +31,18 @@
               d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"
             />
           </svg>
-          <time
-            :datetime="post.datetime"
-            class="text-sm font-semibold"
-          >{{ formatPublishDate(post.datetime) }}</time>
+          <time :datetime="post.datetime" class="text-sm font-semibold">{{
+            formatPublishDate(post.datetime)
+          }}</time>
         </div>
-        <div class="text-sm text-gray-800 mt-2" v-html="excerpt(post, 150, ' ...')"></div>
+        <div
+          class="text-sm text-gray-800 mt-2"
+          v-html="excerpt(post, 150, ' ...')"
+        ></div>
         <div class="flex align-middle text-sm text-gray-800 font-semibold mt-4">
-          <span class="mr-2 font-normal text-xs xl:text-sm text-gray-800">Artikkeli sisältää:</span>
+          <span class="mr-2 font-normal text-xs xl:text-sm text-gray-800"
+            >Artikkeli sisältää:</span
+          >
           <div class="flex items-center mr-4" v-if="post.audio">
             <svg
               aria-hidden="true"
@@ -102,4 +110,3 @@ export default {
   }
 };
 </script>
-

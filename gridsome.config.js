@@ -40,6 +40,13 @@ module.exports = {
       }
     },
     {
+      use: "@gridsome/source-filesystem",
+      options: {
+        typeName: "Podcast",
+        path: "./content/podcasts/**/*.md"
+      }
+    },
+    {
       use: "gridsome-plugin-tailwindcss",
       options: {
         purgeConfig: {},

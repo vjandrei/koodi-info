@@ -125,7 +125,12 @@
         <div
           class="lg:sticky bottom-0 border-b border-gray-200 bg-brand-grey-light px-4 py-6 shadow-md"
         >
-          <PodcastAd :feedUrl="feedUrl" :name="name" :limit="limit" />
+          <PodcastAd
+            v-for="edge in $page.podcasts.edges"
+            :key="edge.node.id"
+            :podcast="edge.node"
+          />
+          {{ relatedRecords }}
         </div>
       </div>
     </div>
@@ -136,6 +141,7 @@
 import SiteHeader from "~/components/SiteHeader.vue";
 import Card from "~/components/Card.vue";
 import PodcastAd from "~/components/PodcastAd.vue";
+import { random } from "lodash";
 export default {
   data() {
     return {
@@ -161,6 +167,11 @@ export default {
       type: String,
       required: false,
       default: "Ehdota"
+    }
+  },
+  computed: {
+    relatedRecords() {
+      return random(1, this.$page.podcasts.edges.length);
     }
   },
   methods: {
@@ -192,7 +203,7 @@ export default {
 
 <page-query> 
 query Home ($page: Int){
-  posts: allPost(page: $page, sortBy:"date"){
+  posts: allPost(page: $page, sortBy:"date" ){
     edges{
       node{
         id
@@ -206,6 +217,16 @@ query Home ($page: Int){
         video
         coverimage
         links
+      }
+    }
+  }
+  podcasts: allPodcast{
+    edges {
+      node {
+        title
+        cover
+        about
+        rss
       }
     }
   }
