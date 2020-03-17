@@ -99,44 +99,49 @@ export default {
     };
   },
   metaInfo() {
-    meta: [
-      {
-        name: "description",
-        content: this.$page.post.description
-      },
-      { property: "og:type", content: "website" },
-      {
-        property: "og:title",
-        content: this.$page.post.title
-      },
-      {
-        property: "og:description",
-        content: this.$page.post.description.description
-      },
-      {
-        property: "og:url",
-        content: "https://koodi.info/" + this.$page.post.slug
-      },
-      {
-        property: "og:image",
-        content: this.$page.post.coverimage.url
-      },
-      { name: "twitter:card", content: "Summary" },
-      {
-        name: "twitter:title",
-        content: this.$page.post.title
-      },
-      {
-        name: "twitter:description",
-        content: this.$page.post.description
-      },
-      { name: "twitter:site", content: "@vj_andrei" },
-      { name: "twitter:creator", content: "@vj_andrei" },
-      {
-        name: "twitter:image",
-        content: this.$page.post.coverimage
-      }
-    ];
+    return {
+      title: `${this.$page.post.title} ${
+        this.$page.post.tag ? "- " + this.$page.post.tag.name : ""
+      }`,
+      meta: [
+        {
+          name: "description",
+          content: this.$page.post.description
+        },
+        { property: "og:type", content: "website" },
+        {
+          property: "og:title",
+          content: this.$page.post.title
+        },
+        {
+          property: "og:description",
+          content: this.$page.post.description.description
+        },
+        {
+          property: "og:url",
+          content: "https://koodi.info/" + this.$page.post.slug
+        },
+        {
+          property: "og:image",
+          content: this.$page.post.coverimage.url
+        },
+        { name: "twitter:card", content: "Summary" },
+        {
+          name: "twitter:title",
+          content: this.$page.post.title
+        },
+        {
+          name: "twitter:description",
+          content: this.$page.post.description
+        },
+        { name: "twitter:site", content: "@vj_andrei" },
+        { name: "twitter:creator", content: "@vj_andrei" },
+        {
+          name: "twitter:image",
+          content: this.$page.post.coverimage
+        }
+      ]
+    };
   },
   components: {
     SiteHeader,
