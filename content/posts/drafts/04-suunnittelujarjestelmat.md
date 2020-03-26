@@ -29,7 +29,7 @@ Näin syntyi avoimen lähdekoodin projekti Design Tokens.
 [Design tokens](https://design-tokens.netlify.com/)
 [Style Dictionary](https://github.com/amzn/style-dictionary)
 
-## Intohimoa intohimia! 🕺
+## Intohimoa Intohimoa! 🕺
 
 Hyvä ja menestyvä suunnittelujärjestelmä vaatii ihmisiä ( tiimiä ) joilla on intohimoa tehdä suunnittelujärjestelmää.
 
