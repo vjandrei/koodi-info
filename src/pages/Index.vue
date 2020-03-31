@@ -49,7 +49,7 @@
                 </div>
                 <div class="w-full sm:w-1/6">
                   <button
-                    class="bg-teal-500 appearance-none border-2 border-teal-500 rounded sm:rounded-tl-none sm:rounded-bl-none w-full py-4 px-4 text-black font-bold leading-tight focus:outline-none focus:bg-teal-200 focus:border-teal-200 hover:bg.teal-200"
+                    class="bg-teal-500 appearance-none border-2 border-teal-500 rounded sm:rounded-tl-none sm:rounded-bl-none w-full py-4 px-4 text-black font-bold leading-tight focus:outline-none focus:bg-teal-200 focus:border-teal-200 hover:bg-teal-200"
                     type="submit"
                   >
                     {{ this.submitText }}
@@ -113,6 +113,31 @@
             class="sticky top-0 border-b border-gray-200 bg-white sm:px-4 py-2 shadow-md"
           >
             <SiteHeader />
+          </div>
+          <div class="my-4 px-4">
+            <ul class="flex">
+              <li class="flex-1 mr-2">
+                <a
+                  class="text-center block border border-teal-500 rounded py-2 px-4 bg-teal-500 hover:bg-teal-700 text-white font-semibold"
+                  href="#"
+                  >Podcastit</a
+                >
+              </li>
+              <li class="flex-1 mr-2">
+                <a
+                  class="text-center block border border-gray-300 rounded py-2 px-4 bg-gray-200 hover:bg-gray-300 text-gray-500 font-semibold py-2 px-4 cursor-not-allowed"
+                  href="#"
+                  >Screencastit</a
+                >
+              </li>
+              <li class="text-center flex-1">
+                <a
+                  class="text-center block border border-gray-300 rounded py-2 px-4 bg-gray-200 hover:bg-gray-300 text-gray-500 font-semibold py-2 px-4 cursor-not-allowed"
+                  href="#"
+                  >Muistiinpano</a
+                >
+              </li>
+            </ul>
           </div>
           <div
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-4"
