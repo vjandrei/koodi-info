@@ -13,7 +13,7 @@
         </h5>
         <h3
           itemprop="name"
-          class="text-2xl font-semibold font-serif text-brand-dark leading-tight"
+          class="text-2xl md:text-xl font-semibold font-serif text-brand-dark leading-tight"
         >
           {{ post.title }}
         </h3>
@@ -40,9 +40,9 @@
           v-html="excerpt(post, 150, ' ...')"
         ></div>
         <div class="flex align-middle text-sm text-gray-800 font-semibold mt-4">
-          <span class="mr-2 font-normal text-xs xl:text-sm text-gray-800"
-            >Artikkeli sisältää:</span
-          >
+          <span
+            class="mr-2 font-normal text-xs xl:text-sm text-gray-800"
+          ></span>
           <div class="flex items-center mr-4" v-if="post.audio">
             <svg
               aria-hidden="true"
