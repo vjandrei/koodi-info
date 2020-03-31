@@ -79,10 +79,10 @@
               <g-link to="/about/" class="block">Tietoa Koodi.info</g-link>
             </li>
             <li class="border-b border-gray-200 py-3">
-              <g-link to="/about/" class="block">Työpaikat</g-link>
+              <g-link to="/about/" class="block">Työpaikat (tulossa)</g-link>
             </li>
             <li class="border-b border-gray-200 py-3">
-              <g-link to="/about/" class="block">Hackathonit</g-link>
+              <g-link to="/about/" class="block">Hackathonit (tulossa)</g-link>
             </li>
           </ul>
         </div>
