@@ -2,7 +2,7 @@
   <article
     itemscope="itemscope"
     itemtype="http://schema.org/CreativeWork"
-    class="my-4 mx-4 bg-white py-8 px-8"
+    class="my-2 mx-2 bg-white py-6 px-6"
   >
     <g-link :to="`${post.slug}/`" class="flex items-center">
       <div class="max-w-md">
