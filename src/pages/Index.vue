@@ -125,7 +125,7 @@
                     ? 'bg-teal-500 hover:bg-teal-700 hover:text-white'
                     : ''
                 ]"
-                class="flex-1 mx-1 text-center block border border-gray-300 rounded py-2 px-4 font-semibold py-2 px-4 cursor-pointer hover:bg-teal-700 hover:text-white"
+                class="flex-auto sm:flex-1 mx-1 text-xs text-center sm:text-base block border border-gray-300 rounded py-2 px-2 sm:px-4 font-semibold cursor-pointer hover:bg-teal-700 hover:text-white"
                 v-on:click="currentTab = tab"
               >
                 {{ tab.name }}
