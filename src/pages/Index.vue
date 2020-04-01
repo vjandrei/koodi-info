@@ -116,47 +116,23 @@
           </div>
           <div class="my-4 px-4">
             <ul class="flex">
-              <li class="flex-1 mr-2">
-                <a
-                  class="text-center block border border-teal-500 rounded py-2 px-4 bg-teal-500 hover:bg-teal-700 text-white font-semibold"
-                  href="#"
-                  >Podcastit</a
-                >
-              </li>
-              <li class="flex-1 mr-2">
-                <a
-                  class="text-center block border border-gray-300 rounded py-2 px-4 bg-gray-200 hover:bg-gray-300 text-gray-500 font-semibold py-2 px-4 cursor-not-allowed"
-                  href="#"
-                  >Screencastit</a
-                >
-              </li>
-              <li class="text-center flex-1">
-                <a
-                  class="text-center block border border-gray-300 rounded py-2 px-4 bg-gray-200 hover:bg-gray-300 text-gray-500 font-semibold py-2 px-4 cursor-not-allowed"
-                  href="#"
-                  >Muistiinpano</a
-                >
+              <li
+                v-for="tab in tabs"
+                :key="tab.id"
+                :class="[
+                  '',
+                  currentTab.name === tab.name
+                    ? 'bg-teal-500 hover:bg-teal-700 hover:text-white'
+                    : ''
+                ]"
+                class="flex-1 mx-1 text-center block border border-gray-300 rounded py-2 px-4 font-semibold py-2 px-4 cursor-pointer hover:bg-teal-700 hover:text-white"
+                v-on:click="currentTab = tab"
+              >
+                {{ tab.name }}
               </li>
             </ul>
           </div>
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-4"
-          >
-            <div
-              class="bg-white"
-              :class="[
-                '',
-                i === 0
-                  ? 'col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2 xl:col-span-2'
-                  : 'col-span-2 sm:col-span-1 md:col-span-1 lg:col-span-2 xl:col-span-1'
-              ]"
-              v-for="(edge, i) in $page.posts.edges"
-              :key="edge.node.id"
-              :post="edge.node"
-            >
-              <Card :post="edge.node" />
-            </div>
-          </div>
+          <component :is="currentTabComponent.component"></component>
         </div>
         <div
           class="lg:sticky bottom-0 bg-white px-4 py-6 border-t border-gray-200"
@@ -174,7 +150,9 @@
 
 <script>
 import SiteHeader from "~/components/SiteHeader.vue";
-import Card from "~/components/Card.vue";
+import TabPodcasts from "~/components/TabPodcasts.vue";
+import TabScreencasts from "~/components/TabScreencasts.vue";
+import TabNotes from "~/components/TabNotes.vue";
 import PodcastAd from "~/components/PodcastAd.vue";
 import { random } from "lodash";
 export default {
@@ -184,11 +162,31 @@ export default {
       notificationData: [],
       feedUrl: "https://audioboom.com/channels/5016335.rss",
       name: "",
-      limit: 1
+      limit: 1,
+      currentTab: {
+        name: "Podcastit",
+        component: TabPodcasts
+      },
+      tabs: [
+        {
+          name: "Podcastit",
+          component: TabPodcasts
+        },
+        {
+          name: "Screencastit",
+          component: TabScreencasts
+        },
+        {
+          name: "Muistiinpanot",
+          component: TabNotes
+        }
+      ]
     };
   },
   components: {
-    Card,
+    TabPodcasts,
+    TabScreencasts,
+    TabNotes,
     SiteHeader,
     PodcastAd
   },
@@ -205,8 +203,8 @@ export default {
     }
   },
   computed: {
-    relatedRecords() {
-      return random(1, this.$page.podcasts.edges.length);
+    currentTabComponent() {
+      return this.currentTab;
     }
   },
   methods: {
