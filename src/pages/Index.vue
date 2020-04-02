@@ -4,20 +4,16 @@
       <div
         class="lg:w-3/5 static w-full lg:fixed lg:min-h-screen lg:min-w-3xl lg:flex lg:items-center lg:justify-center xl:py-20 lg:pl-8 lg:pr-8 bg-no-repeat bg-brand-dark"
       >
-        <div class="px-6 py-6 pb-12 max-w-2xl">
+        <div class="px-6 py-6 max-w-2xl">
           <div class="mt-2 lg:mt-8">
             <p
               class="text-sm font-semibold text-brand-grey-light uppercase tracking-wider"
-            >
-              Tervetuloa
-            </p>
+            >Tervetuloa</p>
             <h1
               class="mt-2 sm:text-4xl text-1xl leading-snug tracking-wide font-semibold font-sans text-brand-grey-light font-serif"
-            >
-              Koodi.info on podcastia suomeksi ohjelmistoalasta.
-            </h1>
+            >Koodi.info on podcastia suomeksi ohjelmistoalasta.</h1>
             <p
-              class="my-6 text-1xl max-w-xl leading-snug lg:max-w-3xl text-brand-grey-light lg:text-xl"
+              class="my-6 text-sm sm:text-1xl max-w-xl leading-snug lg:max-w-3xl text-brand-grey-light lg:text-xl"
             >
               Aiheina mm. webbi teknologiat, käyttöliittymäsuunnittelu,
               arkkitehtuurit, muut ohjelmisto teknologiat sekä avointa
@@ -25,10 +21,10 @@
             </p>
           </div>
 
-          <div class="mt-4">
-            <p class="text-base lg:text-lg font-medium text-brand-grey-light">
-              Kerro mistä haluaisit tietää enemmän?
-            </p>
+          <div class="mt-4 hidden sm:block">
+            <p
+              class="text-base lg:text-lg font-medium text-brand-grey-light"
+            >Kerro mistä haluaisit tietää enemmän?</p>
             <form
               name="proposal"
               method="post"
@@ -51,9 +47,7 @@
                   <button
                     class="bg-teal-500 appearance-none border-2 border-teal-500 rounded sm:rounded-tl-none sm:rounded-bl-none w-full py-4 px-4 text-black font-bold leading-tight focus:outline-none focus:bg-teal-200 focus:border-teal-200 hover:bg-teal-200"
                     type="submit"
-                  >
-                    {{ this.submitText }}
-                  </button>
+                  >{{ this.submitText }}</button>
                 </div>
               </div>
             </form>
@@ -62,14 +56,10 @@
           <div class="my-2">
             <p
               class="text-sm font-semibold text-brand-grey-light uppercase tracking-wider"
-            >
-              🎤 Isäntänä toimii
-            </p>
-            <div class="mt-4 sm:flex">
-              <a
-                href="https://twitter.com/vj_andrei"
-                class="flex items-center no-underline"
-              >
+            >🎤 Isäntänä toimii</p>
+            <div class="mt-4 flex flex-col">
+              <a href="https://twitter.com/vj_andrei" class="flex items-center no-underline"></a>
+              <div class="flex no-underline items-middle">
                 <div class="flex-shrink-0">
                   <g-image
                     class="h-12 w-12 rounded-full border-2 border-brand-grey-light"
@@ -77,41 +67,20 @@
                     width="500"
                   />
                 </div>
-                <div class="ml-3">
-                  <p class="font-semibold text-brand-grey-light leading-tight">
-                    Andreas Koutsoukos
-                  </p>
-                  <p class="text-sm text-brand-grey-dark leading-tight">
-                    Käyttöliittymä-nörtti
-                  </p>
+                <div class="flex flex-col ml-4">
+                  <div class>
+                    <p class="font-semibold text-brand-grey-light leading-tight">Andreas Koutsoukos</p>
+                    <p class="text-sm text-brand-grey-dark leading-tight">Käyttöliittymä-nörtti</p>
+                  </div>
                 </div>
-              </a>
-              <div class="ml-6">
-                <p class="font-semibold text-brand-grey-light leading-tight">
-                  Tilaa Koodi.info
-                </p>
-                <a
-                  class="text-sm text-brand-grey-dark leading-tight"
-                  href="https://koodi.info/feed.xml"
-                  >RSS syöte</a
-                >
-                <a
-                  class="text-sm text-brand-grey-dark leading-tight ml-3"
-                  href="https://anchor.fm/koodiinfo"
-                  >Podcast palvelut</a
-                >
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div
-        class="lg:w-2/5 lg:absolute static w-full right-0 bg-brand-grey-light"
-      >
+      <div class="lg:w-2/5 lg:absolute static w-full right-0 bg-brand-grey-light">
         <div class="relative" style="min-height: calc(100vh - 176px);">
-          <div
-            class="sticky top-0 border-b border-gray-200 bg-white sm:px-4 py-2 shadow-md"
-          >
+          <div class="sticky top-0 border-b border-gray-200 bg-white sm:px-4 py-2 shadow-md">
             <SiteHeader />
           </div>
           <div class="my-4 px-4">
@@ -127,21 +96,13 @@
                 ]"
                 class="flex-auto sm:flex-1 mx-1 text-xs text-center sm:text-base block border border-gray-300 rounded py-2 px-2 sm:px-4 font-semibold cursor-pointer hover:bg-teal-700 hover:text-white"
                 v-on:click="currentTab = tab"
-              >
-                {{ tab.name }}
-              </li>
+              >{{ tab.name }}</li>
             </ul>
           </div>
           <component :is="currentTabComponent.component"></component>
         </div>
-        <div
-          class="lg:sticky bottom-0 bg-white px-4 py-6 border-t border-gray-200"
-        >
-          <PodcastAd
-            v-for="edge in $page.podcasts.edges"
-            :key="edge.node.id"
-            :podcast="edge.node"
-          />
+        <div class="lg:sticky bottom-0 bg-white px-4 py-6 border-t border-gray-200">
+          <PodcastAd v-for="edge in $page.podcasts.edges" :key="edge.node.id" :podcast="edge.node" />
         </div>
       </div>
     </div>
