@@ -4,10 +4,7 @@
       <div class="flex items-center">
         <div id="brand" class="space-between lg:py-5 flex justify-between py-3">
           <g-link to="/" class="sm:w-24">
-            <g-image
-              class="hidden sm:block sm:w-24"
-              src="~/assets/logo-black.svg"
-            />
+            <g-image class="hidden sm:block sm:w-24" src="~/assets/logo-black.svg" />
           </g-link>
         </div>
         <nav class="flex items-center w-full sm:items-center">
@@ -40,8 +37,7 @@
                 :key="result.id"
                 :to="result.slug"
                 class="navbar-item cursor-pointer my-2 block"
-                >{{ result.title }}</g-link
-              >
+              >{{ result.title }}</g-link>
             </div>
           </div>
           <div class="flex items-center">
@@ -73,20 +69,16 @@
         </nav>
       </div>
       <div :class="{ hidden: !isOpen, 'block flex': isOpen }">
-        <div class="pr-10 my-4 w-full">
-          <ul class="leading-loose">
+        <div class="my-4 w-full">
+          <ul class="leading-loose px-4">
             <li class="border-b border-gray-200 py-3">
               <g-link to="/about/" class="block">Tietoa Koodi.info</g-link>
             </li>
             <li class="border-b border-gray-200 py-3">
-              <g-link to="/about/" class="block cursor-not-allowed"
-                >Työpaikat (tulossa)</g-link
-              >
+              <g-link to="/about/" class="block cursor-not-allowed">Työpaikat (tulossa)</g-link>
             </li>
             <li class="border-b border-gray-200 py-3">
-              <g-link to="/about/" class="block cursor-not-allowed"
-                >Hackathonit (tulossa)</g-link
-              >
+              <g-link to="/about/" class="block cursor-not-allowed">Hackathonit (tulossa)</g-link>
             </li>
           </ul>
         </div>
