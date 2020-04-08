@@ -1,6 +1,13 @@
 <template>
   <div class="m-4">
-    Muistiinpanot tulossa
+    <ul>
+      <li v-for="note in $page.notes.edges" :key="note.node.id">
+        <p class="text-1xl md:text-xl font-semibold font-serif text-brand-dark leading-tight">
+          <span v-html="note.node.name"></span>
+        </p>
+        <span class="markdown" v-html="note.node.content"></span>
+      </li>
+    </ul>
   </div>
 </template>
 <script>
@@ -12,5 +19,4 @@ export default {
   components: {}
 };
 </script>
-
 <style lang="scss"></style>
