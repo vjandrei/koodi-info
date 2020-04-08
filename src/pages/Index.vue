@@ -207,6 +207,15 @@ query Home ($page: Int){
         links
       }
     }
+  },
+   notes: allNotes(page: $page){
+    edges{
+      node{
+        id
+        name
+        content
+      }
+    }
   }
   podcasts: allPodcast(filter: { id: { in: ["2"] }}){
     edges {
