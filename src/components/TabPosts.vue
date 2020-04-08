@@ -27,7 +27,7 @@
 <script>
 import Card from "~/components/Card.vue";
 export default {
-  name: "TabPodcasts",
+  name: "TabPosts",
   data() {
     return {};
   },

@@ -111,8 +111,7 @@
 
 <script>
 import SiteHeader from "~/components/SiteHeader.vue";
-import TabPodcasts from "~/components/TabPodcasts.vue";
-import TabScreencasts from "~/components/TabScreencasts.vue";
+import TabPosts from "~/components/TabPosts.vue";
 import TabNotes from "~/components/TabNotes.vue";
 import PodcastAd from "~/components/PodcastAd.vue";
 import { random } from "lodash";
@@ -125,17 +124,13 @@ export default {
       name: "",
       limit: 1,
       currentTab: {
-        name: "Podcastit",
-        component: TabPodcasts
+        name: "Julkaisut",
+        component: TabPosts
       },
       tabs: [
         {
-          name: "Podcastit",
-          component: TabPodcasts
-        },
-        {
-          name: "Screencastit",
-          component: TabScreencasts
+          name: "Julkaisut",
+          component: TabPosts
         },
         {
           name: "Muistiinpanot",
@@ -145,8 +140,7 @@ export default {
     };
   },
   components: {
-    TabPodcasts,
-    TabScreencasts,
+    TabPosts,
     TabNotes,
     SiteHeader,
     PodcastAd
