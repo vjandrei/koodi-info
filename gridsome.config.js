@@ -21,30 +21,37 @@ module.exports = {
       externalLinksTarget: "_blank",
       externalLinksRel: ["nofollow", "noopener", "noreferrer"],
       anchorClassName: "icon icon-link",
-      plugins: []
-    }
+      plugins: [],
+    },
   },
   plugins: [
     {
       use: "@gridsome/source-filesystem",
       options: {
         typeName: "Post",
-        path: "./content/posts/**/*.md"
-      }
+        path: "./content/posts/**/*.md",
+      },
     },
     {
       use: "@gridsome/source-filesystem",
       options: {
         typeName: "PageSeo",
-        path: "./content/seo/**/*.md"
-      }
+        path: "./content/seo/**/*.md",
+      },
     },
     {
       use: "@gridsome/source-filesystem",
       options: {
         typeName: "Podcast",
-        path: "./content/podcasts/**/*.md"
-      }
+        path: "./content/podcasts/**/*.md",
+      },
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        typeName: "Notes",
+        path: "./content/notes/**/*.md",
+      },
     },
     {
       use: "gridsome-plugin-tailwindcss",
@@ -53,14 +60,14 @@ module.exports = {
         presetEnvConfig: {},
         shouldPurge: true,
         shouldImport: true,
-        shouldTimeTravel: true
-      }
+        shouldTimeTravel: true,
+      },
     },
     {
       use: "@gridsome/plugin-google-analytics",
       options: {
-        id: "UA-16541249-5"
-      }
+        id: "UA-16541249-5",
+      },
     },
     {
       use: "gridsome-plugin-rss",
@@ -69,34 +76,34 @@ module.exports = {
         feedOptions: {
           title: "Ohjelmointia ja ohjelmistokehitystä suomeksi - Koodi.info",
           feed_url: "https://koodi.info/feed.xml",
-          site_url: "https://koodi.info/"
+          site_url: "https://koodi.info/",
         },
-        feedItemOptions: node => ({
+        feedItemOptions: (node) => ({
           title: node.title,
           description: node.description,
           url: "https://koodi.info/" + node.slug,
           author: node.author,
-          date: node.date
+          date: node.date,
         }),
         output: {
           dir: "./static",
-          name: "feed.xml"
-        }
-      }
-    }
+          name: "feed.xml",
+        },
+      },
+    },
   ],
   transformers: {
-    remark: {}
+    remark: {},
   },
   templates: {
-    Post: "/:slug"
+    Post: "/:slug",
   },
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     config.module
       .rule("css")
       .oneOf("normal")
       .use("postcss-loader")
-      .tap(options => {
+      .tap((options) => {
         options.plugins.unshift(
           ...[require("postcss-import"), require("postcss-nested")]
         );
@@ -109,14 +116,14 @@ module.exports = {
                 extractors: [
                   {
                     extractor: TailwindExtractor,
-                    extensions: ["css", "vue", "js"]
-                  }
-                ]
-              })
+                    extensions: ["css", "vue", "js"],
+                  },
+                ],
+              }),
             ]
           );
         }
         return options;
       });
-  }
+  },
 };
