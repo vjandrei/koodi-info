@@ -5,7 +5,6 @@
         <p class="text-1xl md:text-xl font-semibold font-serif text-brand-dark leading-tight">
           <span v-html="note.node.name"></span>
         </p>
-        <span class="markdown" v-html="note.node.content"></span>
       </li>
     </ul>
   </div>

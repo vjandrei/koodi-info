@@ -5,6 +5,8 @@ name: "Design"
 
 ## Contents
 
+<div class="my-2 mx-2 bg-white py-2 px-4 sm:py-6 sm:px-6" markdown="1">
+
 - [Research](#research)
 - [UX](#ux)
 - [UI](#ui)
@@ -14,6 +16,8 @@ name: "Design"
 - [Writing](#writing)
 - [Data](#data)
 - [IoT](#iot)
+
+</div>
 
 <div class="my-2 mx-2 bg-white py-2 px-4 sm:py-6 sm:px-6" markdown="1">
 
@@ -312,7 +316,3 @@ name: "Design"
 
 - [Node RED](http://nodered.org/) - Flow-based programming for the Internet of Things.
 - [Noodl](http://www.getnoodl.com/) - Digital Experience Design Platform.
-
-## License
-
-[![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
