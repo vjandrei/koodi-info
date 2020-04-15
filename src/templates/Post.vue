@@ -3,95 +3,105 @@
     <div class="px-8 bg-white">
       <SiteHeader class="xl:flex-shrink-0 border-b border-gray-200" />
     </div>
-    <section class="container mx-auto">
-      <div class="w-full sm:w-auto p-8 xl:px-56 xl:py-16 mx-auto border-b border-gray-200 bg-white">
-        <div class="text-center sm:mt-16 xl:mt-8">
-          <span class="text-xs font-bold uppercase text-teal-700 mb-2 block">{{$page.post.subject}}</span>
-          <h1
-            class="sm:text-4xl text-2xl font-bold leading-tight mt-0 mb-4 font-serif font-black"
-            v-html="$page.post.title"
-          />
-        </div>
-        <div
-          class="flex sm:w-3/4 w-full mx-auto flex-row justify-center items-center text-center my-6 sm:text-base text-xs"
-        >
-          <div class="flex-1 px-2">
-            <p v-html="$page.post.author" />
-          </div>
-          <div class="flex-1 px-2 border-r-2 border-l-2 border-teal-500">
-            <time
-              :datetime="$page.post.datetime"
-              class="text-sm font-semibold"
-            >{{ formatPublishDate($page.post.datetime) }}</time>
-          </div>
-          <div class="flex-1 px-2"></div>
-        </div>
-
-        <div
-          class="my-6 sm:text-2xl text-lg leading-snug my-12 font-serif text-center"
-          v-html="$page.post.description"
-        />
-        <div class="my-6 w-full mx-auto mb-20">
-          <h4
-            class="my-6 m:text-1xl text-2xl leading-snug my-12 font-serif text-center"
-          >🎧 Kuuntele jakso!</h4>
-
-          <vue-audio :file="podcastAudioFile"></vue-audio>
-        </div>
-
-        <div class="markdown" v-html="compiledMarkdown"></div>
-
-        <div v-if="$page.post.video">
-          <div class="markdown">
-            <h2>Video</h2>
-            <iframe
-              type="text/html"
-              width="100%"
-              height="400"
-              :src="'https://www.youtube.com/embed/'+ $page.post.video +'?autoplay=0&origin=http://koodi.info'"
-              frameborder="0"
-            ></iframe>
+    <section class="container mx-auto p-4 bg-white my-4">
+      <div id="blogHeader" :style="{ backgroundImage: `url(${$page.post.coverimage})` }">
+        <div class="flex flex-row items-stretch w-full p-8">
+          <div class="justify-center content-center items-center flex flex-col w-2/3 mx-auto">
+            <div class="text-center">
+              <h3 class="relative text-xs font-bold text-gray-200 uppercase mb-2">
+                <span v-html="$page.post.subject" />
+              </h3>
+              <h1
+                class="relative sm:text-4xl text-2xl mb-2 font-bold leading-tight font-serif font-black text-white"
+              >
+                <span v-html="$page.post.title" />
+              </h1>
+              <h2 class="relative sm:text-2xl text-lg leading-snug font-serif text-white">
+                <span v-html="$page.post.description" />
+              </h2>
+            </div>
+            <div class="flex relative mt-6">
+              <div class="flex flex-row content-center justify-center align-middle mr-6">
+                <div>
+                  <g-image
+                    class="h-12 w-12 rounded-full border-2 border-brand-grey-light"
+                    src="~/assets/andreas.jpg"
+                    width="500"
+                  />
+                </div>
+                <div class="flex flex-col content-center justify-center align-middle ml-2">
+                  <p class="text-sm text-brand-grey-dark leading-tight mb-1">Kirjoittaja</p>
+                  <p class="font-semibold text-brand-grey-light leading-tight">Andreas Koutsoukos</p>
+                </div>
+              </div>
+              <div class="flex flex-row content-center justify-center align-middle">
+                <div class="flex flex-col content-center justify-center align-middle ml-2">
+                  <p class="text-sm text-brand-grey-dark leading-tight mb-1">Julkaistu</p>
+                  <p class="font-semibold text-brand-grey-light leading-tight">
+                    <time
+                      :datetime="$page.post.datetime"
+                      class="text-sm font-semibold"
+                    >{{ formatPublishDate($page.post.datetime) }}</time>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div v-if="$page.post.code">
-          <div class="markdown">
-            <h2>Live koodi</h2>
-            <iframe
-              width="100%"
-              height="700"
-              :src="$page.post.code"
-              frameborder="0"
-              allowfullscreen
-            ></iframe>
+      </div>
+    </section>
+    <section class="container mx-auto p-4 bg-white">
+      <div class="blogContainer">
+        <div class="lg:w-4/5 static w-full">
+          <div class="w-2/3 mx-auto">
+            <div class="markdown" v-html="compiledMarkdown"></div>
           </div>
         </div>
-        <div v-if="$page.post.links == 0">
-          <div class="markdown">
-            <h2>Linkit</h2>
+        <div class="lg:w-1/5 static w-full">
+          <div v-for="edge in $page.allPost.edges" :key="edge.id">
+            <g-link :to="`${edge.node.slug}/`" class="flex items-center">{{edge.node.title}}</g-link>
           </div>
-          <ul v-for="link in $page.post.links" :key="link.id">
-            <li>
-              <a v-bind:href="link">{{link}}</a>
-            </li>
-            <li>
-              <a v-bind:href="link">{{link}}</a>
-            </li>
-            <li>
-              <a v-bind:href="link">{{link}}</a>
-            </li>
-          </ul>
         </div>
       </div>
     </section>
   </div>
 </template>
 
+<style lang="postcss">
+.blogContainer {
+  @apply flex flex-col relative;
+  @screen lg {
+    @apply flex-row;
+  }
+}
+#blogHeader {
+  position: relative;
+  min-height: 300px;
+  @apply flex flex-row bg-cover bg-center;
+}
+
+#blogHeader:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  @apply bg-brand-mid;
+  opacity: 0.4;
+}
+
+#blogHeader svg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10vw;
+  /* set height to pixels if you want angle to change with screen width */
+}
+</style>
+
 <script>
 import marked from "marked";
 import SiteHeader from "~/components/SiteHeader.vue";
 import VueAudio from "~/components/Audio.vue";
-
 export default {
   data() {
     return {
@@ -172,7 +182,7 @@ export default {
 </script>
 
 <page-query>
-query Post ($path: String){
+query Post ($path: String, $id: ID!){
   post (path: $path){
     id
     title
@@ -187,6 +197,17 @@ query Post ($path: String){
     coverimage
     links
   }
+
+  allPost(filter: { id: { nin: [$id] }}){
+      edges {
+        node {
+          id
+          title
+          excerpt
+          slug
+        }
+      }
+    }
 }
 </page-query>
 

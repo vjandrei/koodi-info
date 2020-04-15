@@ -8,7 +8,8 @@ subject: "Yleistä"
 audio: "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2020-2-6/55022269-44100-2-05e9cebf9e12f.m4a"
 video: ""
 code: ""
-coverimage: ""
+coverimage: "https://images.unsplash.com/photo-1579792762757-899b4d2aaa41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+seoimage: ""
 links:
   - Demo1
   - Demo2

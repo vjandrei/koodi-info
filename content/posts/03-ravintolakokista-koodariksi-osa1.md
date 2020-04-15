@@ -8,7 +8,8 @@ subject: "Työelämä"
 audio: "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2020-2-7/55253629-44100-2-57048e4f172b9.m4a"
 video: ""
 code: ""
-coverimage: "https://s3.eu-north-1.amazonaws.com/apiclients-koodi-info/images/kokista-nortiksi.jpg?x-craft-preview=uje2zimzEk&token=elMczLunrQpkWWmGjTSQ9OzQP-cT5nls"
+coverimage: "https://images.unsplash.com/photo-1581084324492-c8076f130f86?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
+seoimage: "https://s3.eu-north-1.amazonaws.com/apiclients-koodi-info/images/kokista-nortiksi.jpg?x-craft-preview=uje2zimzEk&token=elMczLunrQpkWWmGjTSQ9OzQP-cT5nls"
 links:
   - Demo1
   - Demo2

@@ -8,7 +8,8 @@ subject: "Arkkitehtuuri"
 audio: "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2020-2-6/55024076-44100-2-6703dc64e9c5f.m4a"
 video: "UddmiME11DQ"
 code: ""
-coverimage: "https://s3.eu-north-1.amazonaws.com/apiclients-koodi-info/images/hqdefault.jpg?x-craft-preview=FcQo7NbPK3&token=FpFw9LwvrFm8dHIrvUo6JAd_SAOeR6tb"
+coverimage: "https://images.unsplash.com/photo-1586809774586-7be6449e517a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+seoimage: "https://s3.eu-north-1.amazonaws.com/apiclients-koodi-info/images/hqdefault.jpg?x-craft-preview=FcQo7NbPK3&token=FpFw9LwvrFm8dHIrvUo6JAd_SAOeR6tb"
 links:
   - Demo1
   - Demo2

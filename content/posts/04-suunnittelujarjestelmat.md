@@ -8,7 +8,8 @@ subject: "Suunnittelu"
 audio: "https://d3ctxlq1ktw2nl.cloudfront.net/staging/2020-2-17/57028167-44100-2-60caa66322e5f.m4a"
 video: ""
 code: ""
-coverimage: "https://s3.eu-north-1.amazonaws.com/apiclients-koodi-info/images/suunnittelujarjestelma.jpg?x-craft-preview=LEF8W71jG3&token=G8ags_2WSZQ7tuxl9pJVk956ECCXrd1W"
+coverimage: "https://images.unsplash.com/photo-1585758953419-ecd6aec9df03?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
+seoimage: "https://s3.eu-north-1.amazonaws.com/apiclients-koodi-info/images/suunnittelujarjestelma.jpg?x-craft-preview=LEF8W71jG3&token=G8ags_2WSZQ7tuxl9pJVk956ECCXrd1W"
 links:
   - https://pangrampangram.com/blogs/journal/design-systems
 keywords:
