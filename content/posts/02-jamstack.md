@@ -16,16 +16,16 @@ links:
 keywords:
 ---
 
+## Mikä on Jamstack?
+
 ( Audiossa muutama virhe, markdown ei markup! )
 
 Kun kuulin ensimmäistä kertaa Jamstack arkkitehtuurista mietin, että miksi en ole käyttänyt arkkitehtuuria aikaisemmin. Nuo vuodet freelancerina ja mainostoimisto koodarina kun kehitettiin WordPress, Drupal, Joomla ja muita PHP sisällönhallintajärjestelmiä tuntuu nyt arvottomilta. Verkkosivujen kehittäminen on taas yhtä juhlaa!
 
-### Mikä on Jamstack?
-
 Jamstack on arkkitehtuuri joka koostuu kolmesta teknologia osaalueesta. Javascript, API sekä Markdown.
 [JAMstack Fundamentals: What, What and How? With Phil Hawksworth](https://vimeo.com/340526374#at=1110)
 
-### Hyödyt
+## Hyödyt
 
 **Nopea**
 Valmiiksi koostetut staattiset sivut. Kuvat muut resurssit ( ääni, ikonit ja muut mediat ) voidaan jakaa sisällönjakeluverkkoon ( CDN )
@@ -45,14 +45,14 @@ Liikenteenmäärän kasvusta johtuvaa kuorimusta voidaan optimoida sisällönjak
 
 [Jamstack WTF](https://jamstack.wtf/)
 
-### Historiaa
+## Historiaa
 
 Jamstack arkkitehtuurin takana on Netlify perustaja [Mathias Biilmann](http://mathias-biilmann.net/about).
 Pieni kehittäjäryhmä antoi vuonna 2015 termin Jamstack jota alettiin pikkuhiljaa käyttämään muiden kehittäjien sekä kehittäjäyhteisön keskuudessa.
 
 [New to JAMstack? Everything You Need to Know to Get Started](https://snipcart.com/blog/jamstack)
 
-### Jamstack vs. perinteinen web-kehitys arkkitehtuuri
+## Jamstack vs. perinteinen web-kehitys arkkitehtuuri
 
 Perinteisessä arkkitehtuurissa kaikki osa-alueet ovat omassa hillopurkissa.
 Näin ollen ympäristöt että, sisällöt ( data ) pitää olla synkronoitu jotta koonti onnistuu täysin kuin se on suunniteltu kehitysvaiheessa.
@@ -63,7 +63,7 @@ Artikkelissa mainittu monta kertaa staattinen sivusto terminä joka tavallaan on
 
 [JAMstack Tutorial - Full site using Netlify & Hugo](https://youtu.be/NSts93C9UeE?t=360)
 
-### Käyttö ja soveltuvuus
+## Käyttö ja soveltuvuus
 
 Jamstack soveltuu hyvin moneen eri käyttötapaan. Sillä ei kuitenkaan kannata rakentaa sivustoa jonka sisältö muuttuvat kun selaaja ( client ) tekee muutos pyynnön, kuten vaikkapa Twitter.
 
@@ -77,11 +77,11 @@ Jamstack soveltuu hyvin moneen eri käyttötapaan. Sillä ei kuitenkaan kannata 
 
 [Hyper Web Development and the Rise of the JAMstack](https://www.software.com/src/hyper-web-development-and-the-rise-of-the-jamstack)
 
-### Työkalut sekä koonti prosessi
+## Työkalut sekä koonti prosessi
 
 Jamstack arkkitehtuuri kehitysympäristö voidaan aloittaa joko itse rakentamalla tai valita ns: staattisten sivujen generaattorin avulla. Nopein ja helpoin tapa on valita jälkimmäinen SSG (static site generator) tapa.
 
-#### Frontti
+### Frontti
 
 Frontti vastaa Jamstack arkkitehtuurin J osuudesta ja voi olla mikä tahansa teknologia jolla kyvykkyys reaktiiviseen web-kehitykseen.
 
@@ -91,7 +91,7 @@ Frontti vastaa Jamstack arkkitehtuurin J osuudesta ja voi olla mikä tahansa tek
 - [11ty](https://www.11ty.dev/) ( JS pohjainen )
 - [StaticGen](https://www.staticgen.com/) ( Listaus sivustojen generaattoreista )
 
-#### Tietolähde sekä rajapinnat
+### Tietolähde sekä rajapinnat
 
 Tietolähde vastaan Jamstack arkkitehtuurin A osuudesta ja voi olla mikä tahansa API tai sisällön julkaisujärjestelmä.
 
@@ -101,13 +101,13 @@ Tietolähde vastaan Jamstack arkkitehtuurin A osuudesta ja voi olla mikä tahans
 - [Cloudinary](https://cloudinary.com/)
 - [Typeform](https://www.typeform.com/)
 
-#### Sisältö
+### Sisältö
 
 Sisältö vastaa Jamstack arkkitehtuurin M osuudesta. Markdown muodon avulla voidaan generoida sivuja sekä sisältöjä.
 
 [Markdown guide](https://www.markdownguide.org/)
 
-#### Ympäristöt
+### Ympäristöt
 
 Jamstack arkkitehtuurin pohjainen koonti ei vaadi erityistä ympäristöä toimiakseen vaan se voi olla mikä tahansa sisällönjakeluverkko ( CDN ).
 Kehitysympäristö voi olla täysin erilainen kuin julkaisuympäristö ja tästä syystä Jamstack arkkitehtuuri on kehittäjä ystävällinen.
@@ -115,7 +115,7 @@ Kehitysympäristö voi olla täysin erilainen kuin julkaisuympäristö ja täst�
 - [Netlify](https://www.netlify.com/)
 - [GitHub Pages](https://pages.github.com/)
 
-#### Koonti prosessi
+### Koonti prosessi
 
 Työkulku prosessi on hyvin suoraviivainen Jamstack arkkitehtuurissa. Kehitystä tehdään paikallisesti ( omalta koneelta ) koodit sijaitsevat
 Versiohallinnassa josta koonti prosessi sisällönjakeluverkko voidaan automatisoida jatkuvan integraation avulla. JAM!

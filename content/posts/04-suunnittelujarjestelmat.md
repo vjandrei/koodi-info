@@ -15,26 +15,26 @@ links:
 keywords:
 ---
 
-# Suunnittelujärjestelmä hype 🚂
+## Suunnittelujärjestelmä hype
 
 Suunnittelujärjestelmä nousukausi oli vuonna 2014. Informaatiota suunnittelujärjestelmistä ja kuinka suunnittelujärjestelmiä pitäisi tehdä ja mitä työkaluja pitäisi käyttää.
 
-## Ensimmäinen suunnittelujärjestelmä projekti 🤓
+## Ensimmäinen suunnittelujärjestelmä projekti
 
 Suunnittelutiedostot omilla koneilla, komponentit olivat hapantuneet ja kokemus suunnittelujärjestelmistä tiimillä lähes nolla. Siinä oli lähtökohdat ensimmäiseen suunnittelujärjestelmä projektiin. Tuotantoon ei päästy, mutta suunnittelijan työ yhdenmukaistui.
 
-## Visio miten työstetään suunnittelujärjestelmää yhdessä 💡
+## Visio miten työstetään suunnittelujärjestelmää yhdessä
 
 Työstetään yhdessä ei erikseen ja ei toimiteta pelkkää handoveria.
 Näin syntyi avoimen lähdekoodin projekti Design Tokens.
 [Design tokens](https://design-tokens.netlify.com/)
 [Style Dictionary](https://github.com/amzn/style-dictionary)
 
-## Intohimoa Intohimoa! 🕺
+## Intohimoa Intohimoa!
 
 Hyvä ja menestyvä suunnittelujärjestelmä vaatii ihmisiä ( tiimiä ) joilla on intohimoa tehdä suunnittelujärjestelmää.
 
-## Inspiraatiota 🤩
+## Inspiraatiota
 
 Duet suunnittelujärjestelmä jonka takana oikeat ihmiset joiden intohimo näkyy ulospäin.
 [Duet Design System](https://www.duetds.com/)

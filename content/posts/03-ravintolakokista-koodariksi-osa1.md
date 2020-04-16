@@ -16,12 +16,12 @@ links:
 keywords:
 ---
 
-# Investointi uuteen kannatti tehdä 📚
+## Investointi uuteen kannatti tehdä
 
 Kun valmistuin ammatillisesta koulusta tilanteeni ei ollut paras mahdollinen. Minulla oli ammattitutkinto, ei työpaikkaa, toiminimi ja talouskriisi.
 Näistä edellytyksistä kuitenkin jaksoin yrittää ja uskoa, että työllistyn.
 
-## Mikä ihmeen SEO? 🕵🏼‍♀️
+## Mikä ihmeen SEO?
 
 Ensimmäinen työpaikkani uudella alalla oli Fonecta hakukone analyytikko. Tuli opittua hakukoneoptimointia eli SEO ( Search Engine Optimization )
 
@@ -32,7 +32,7 @@ Ensimmäinen työpaikkani uudella alalla oli Fonecta hakukone analyytikko. Tuli 
 - Linkittämisen tärkeys
 - Sisällön optimointi
 
-## Sinut on erotettu! 🥾
+## Sinut on erotettu!
 
 Mainostoimisto ympäristössä riitti tekemistä laidasta laitaan. Profiili Freelanceri sivustolla oli syy potkuihin!
 Irtisanomisesta huolimatta oli mielenkiintoinen työympäristö pienessä mainostoimistossa.

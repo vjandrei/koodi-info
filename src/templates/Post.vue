@@ -30,7 +30,7 @@
                   />
                 </div>
                 <div class="flex flex-col content-center justify-center align-middle ml-2">
-                  <p class="text-sm text-brand-grey-dark leading-tight mb-1">Kirjoittaja</p>
+                  <p class="text-sm text-brand-grey-dark leading-tight mb-1">Julkaisija</p>
                   <p class="font-semibold text-brand-grey-light leading-tight">Andreas Koutsoukos</p>
                 </div>
               </div>
@@ -50,16 +50,35 @@
         </div>
       </div>
     </section>
+
     <section class="container mx-auto p-4 bg-white">
-      <div class="blogContainer">
-        <div class="lg:w-4/5 static w-full">
-          <div class="w-2/3 mx-auto">
+      <div class="blogContainer flex">
+        <div class="lg:w-2/3 static w-full">
+          <div class="w-4/5 mx-auto">
             <div class="markdown" v-html="compiledMarkdown"></div>
           </div>
         </div>
-        <div class="lg:w-1/5 static w-full">
-          <div v-for="edge in $page.allPost.edges" :key="edge.id">
-            <g-link :to="`${edge.node.slug}/`" class="flex items-center">{{edge.node.title}}</g-link>
+        <div class="lg:w-1/3 w-full order-first lg:order-last">
+          <div class="sticky top-0">
+            <div>
+              <h4 class="my-4 m:text-1xl text-2xl leading-snug font-serif">Podcast jakso</h4>
+              <div class="shadow-md">
+                <vue-audio :file="podcastAudioFile"></vue-audio>
+              </div>
+            </div>
+            <div class="my-16 border-gray-200 border-l-2 pl-6">
+              <h4 class="my-4 m:text-1xl text-2xl leading-snug font-serif">Saatat myös pitää:</h4>
+              <div v-for="edge in $page.allPost.edges" :key="edge.id" class="my-4">
+                <g-link :to="`${edge.node.slug}/`">
+                  <h3
+                    class="text-1xl md:text-md font-semibold font-sans underline hover:text-brand-dark text-brand-mid leading-tight mb-2"
+                  >{{edge.node.title}}</h3>
+                </g-link>
+              </div>
+              <g-link
+                class="text-xs font-bold uppercase underline text-gray-900"
+              >Katso kaikki artikkelit →</g-link>
+            </div>
           </div>
         </div>
       </div>

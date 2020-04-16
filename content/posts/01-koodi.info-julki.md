@@ -16,18 +16,18 @@ links:
 keywords:
 ---
 
-### Miksi Koodi.info perustettiin
+## Miksi Koodi.info perustettiin
 
 Näin tarvetta jakaa ohjelmointiin liittyvää sisältöä Suomeksi.
 Haluan olla tukemassa uusia teknologia-alalle pyrkiviä ja ohjelmistosuunnittelusta kiinnostuneita löytämään kanavan mistä löytää alaan liittyvää infoa. Lisäksi koen, että tarve on selkeästi olemassa tämänkaltaiselle blogille. Blogi toimii myös itselleni hyvänä muistiinpano välineenä sekä oppimisympäristönä.
 
-### Mitä Koodi.info mahdollisesti tulee olemaan
+## Mitä Koodi.info mahdollisesti tulee olemaan
 
 - Infoa yleisesti ohjelmistoalasta
 - Teknologia höpinää
 - Rento ja mukaansa tempaavaa
 
-### Minkälaisia sisältöjä
+## Minkälaisia sisältöjä
 
 Toiveena on tuottaa mielenkiintoista sisältöä. Kuitenkin sellaista sisältöä joka on helposti ymmärrettävässä muodossa.
 
@@ -41,7 +41,7 @@ Lista millaisia aiheita sivusto tulee sisältämään
 - Tips and Triks
 - Ja paljon muuta
 
-#### Miten Koodi.info on suunniteltu ja koodattu
+## Miten Koodi.info on suunniteltu ja koodattu
 
 JAMstack jossa craft cms toimii sisällönhallintana.
 
@@ -55,7 +55,7 @@ JAMstack jossa craft cms toimii sisällönhallintana.
 
 Tästä arkkitehtuurista tulossa oma julkaisu.
 
-#### Inspiraatiota
+## Inspiraatiota
 
 Koodi.info ei ole uniikki ja inspiraation lähteitä on monia mm.
 
