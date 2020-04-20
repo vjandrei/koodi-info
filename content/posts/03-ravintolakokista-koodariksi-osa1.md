@@ -45,14 +45,26 @@ Irtisanomisesta huolimatta oli mielenkiintoinen työympäristö pienessä mainos
 - jQuery
 - Facebook SDK
 
-> Työpöytäni 2008-2009
+<div class="image">
 
 ![Työpöytäni vuonna 2009](https://s3.eu-north-1.amazonaws.com/apiclients-koodi-info/images/tyopoyta-2009.jpg?x-craft-preview=Cj6RsosiTy&token=GCc8ivfUqkGB0-GN3NtXzlu53dbE_eBk)
 
-> Työpöytäni ja menoa 2007-2010
+> Työpöytäni 2008-2009
+
+</div>
+
+<div class="image">
 
 ![Työpöytiä ja meininkiä 2008-2009](https://s3.eu-north-1.amazonaws.com/apiclients-koodi-info/images/tyopoyta-08-09.jpg?x-craft-preview=kXJWdN3cCd&token=CjVU7j_IPvU1B_6hnoW8_DrYJ5Rxjzui)
 
-> Työnäytteitä vuosien 2009-2012 varrelta
+> Työpöytäni ja menoa 2007-2010
+
+</div>
+
+<div class="image">
 
 ![Työnäytteitä vuosien 2009-2012 varrelta ](https://s3.eu-north-1.amazonaws.com/apiclients-koodi-info/images/duunit.jpg?x-craft-preview=CgPFu9H3Fb&token=VPouMqMOMP4gTM9sdWP91JxmozMH7IdW)
+
+> Työnäytteitä vuosien 2009-2012 varrelta
+
+</div>

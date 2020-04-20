@@ -59,20 +59,23 @@
           </div>
         </div>
         <div class="lg:w-1/3 w-full order-first lg:order-last">
-          <div class="sticky top-0">
+          <div class="sticky top-0 pt-2 border-gray-200 border-l-2 pl-6">
             <div>
               <h4 class="my-4 m:text-1xl text-2xl leading-snug font-serif">Podcast jakso</h4>
               <div class="shadow-md">
                 <vue-audio :file="podcastAudioFile"></vue-audio>
               </div>
             </div>
-            <div class="my-16 border-gray-200 border-l-2 pl-6">
-              <h4 class="my-4 m:text-1xl text-2xl leading-snug font-serif">Saatat myös pitää:</h4>
+            <div class="my-16">
+              <h4 class="my-4 m:text-1xl text-2xl leading-snug font-serif">Viimeisimmät artikkelit</h4>
               <div v-for="edge in $page.allPost.edges" :key="edge.id" class="my-4">
-                <g-link :to="`${edge.node.slug}/`">
-                  <h3
-                    class="text-1xl md:text-md font-semibold font-sans underline hover:text-brand-dark text-brand-mid leading-tight mb-2"
-                  >{{edge.node.title}}</h3>
+                <g-link :to="`${edge.node.slug}/`" class="flex content-center items-center">
+                  <g-image :src="edge.node.coverimage" class="w-16 h-16 mr-2" />
+                  <span>
+                    <h3
+                      class="text-md md:text-md font-semibold font-sans hover:text-brand-dark text-brand-mid leading-tight mb-2 tracking-tight leading-tight"
+                    >{{edge.node.title}}</h3>
+                  </span>
                 </g-link>
               </div>
               <g-link
@@ -222,8 +225,9 @@ query Post ($path: String, $id: ID!){
         node {
           id
           title
-          excerpt
+          description
           slug
+          coverimage
         }
       }
     }

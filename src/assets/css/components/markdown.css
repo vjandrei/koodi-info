@@ -80,10 +80,10 @@
   }
 
   blockquote {
-    @apply border-l-4 border-gray-300 p-4 mb-4 mx-4 italic;
+    @apply mb-4 text-center;
 
     p {
-      @apply mb-0;
+      @apply mb-0 text-sm text-gray-600;
     }
   }
 
@@ -94,12 +94,15 @@
   img {
     @apply w-full;
   }
+
+  .image {
+    @apply my-20;
+  }
 }
 
 @screen sm {
   .markdown {
     blockquote {
-      @apply mx-10;
     }
     h1 {
       @apply text-4xl;
