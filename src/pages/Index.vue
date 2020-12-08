@@ -10,7 +10,7 @@
         >
           <div class="max-w-md mx-auto">
             <div>
-              <img src="/img/logo.svg" class="h-7 sm:h-8" />
+              <g-image src="~/assets/logo-black.svg" class="" />
             </div>
             <div class="divide-y divide-gray-200">
               <div
