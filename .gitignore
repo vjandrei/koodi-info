@@ -6,6 +6,3 @@ node_modules
 dist
 .env
 .env.*
-static/feed.xml
-# Local Netlify folder
-.netlify
