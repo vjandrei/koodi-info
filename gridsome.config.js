@@ -11,50 +11,56 @@ class TailwindExtractor {
 }
 
 module.exports = {
-  siteName: "Koodi.info",
-  siteDescription: "Koodi.info on podcastia suomeksi ohjelmistoalasta",
+  siteName: 'Koodi.info',
+  siteDescription: 'Koodi.info on podcastia suomeksi ohjelmistoalasta',
   titleTemplate: `%s | Koodi.info`,
-  icon: "src/favicon.png",
-  siteUrl: "https://koodi.info",
+  icon: 'src/favicon.png',
+  siteUrl: 'https://koodi.info',
   transformers: {
     remark: {
-      externalLinksTarget: "_blank",
-      externalLinksRel: ["nofollow", "noopener", "noreferrer"],
-      anchorClassName: "icon icon-link",
+      externalLinksTarget: '_blank',
+      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+      anchorClassName: 'icon icon-link',
       plugins: [],
     },
   },
   plugins: [
     {
-      use: "@gridsome/source-filesystem",
+      use: 'gridsome-source-static-meta',
       options: {
-        typeName: "Post",
-        path: "./content/posts/**/*.md",
+        path: 'content/site/*.json',
       },
     },
     {
-      use: "@gridsome/source-filesystem",
+      use: '@gridsome/source-filesystem',
       options: {
-        typeName: "PageSeo",
-        path: "./content/seo/**/*.md",
+        typeName: 'Post',
+        path: './content/posts/**/*.md',
       },
     },
     {
-      use: "@gridsome/source-filesystem",
+      use: '@gridsome/source-filesystem',
       options: {
-        typeName: "Podcast",
-        path: "./content/podcasts/**/*.md",
+        typeName: 'PageSeo',
+        path: './content/seo/**/*.md',
       },
     },
     {
-      use: "@gridsome/source-filesystem",
+      use: '@gridsome/source-filesystem',
       options: {
-        typeName: "Notes",
-        path: "./content/notes/**/*.md",
+        typeName: 'Podcast',
+        path: './content/podcasts/**/*.md',
       },
     },
     {
-      use: "gridsome-plugin-tailwindcss",
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'Notes',
+        path: './content/notes/**/*.md',
+      },
+    },
+    {
+      use: 'gridsome-plugin-tailwindcss',
       options: {
         purgeConfig: {},
         presetEnvConfig: {},
@@ -64,30 +70,30 @@ module.exports = {
       },
     },
     {
-      use: "@gridsome/plugin-google-analytics",
+      use: '@gridsome/plugin-google-analytics',
       options: {
-        id: "UA-16541249-5",
+        id: 'UA-16541249-5',
       },
     },
     {
-      use: "gridsome-plugin-rss",
+      use: 'gridsome-plugin-rss',
       options: {
-        contentTypeName: "Post",
+        contentTypeName: 'Post',
         feedOptions: {
-          title: "Ohjelmointia ja ohjelmistokehitystä suomeksi - Koodi.info",
-          feed_url: "https://koodi.info/feed.xml",
-          site_url: "https://koodi.info/",
+          title: 'Ohjelmointia ja ohjelmistokehitystä suomeksi - Koodi.info',
+          feed_url: 'https://koodi.info/feed.xml',
+          site_url: 'https://koodi.info/',
         },
         feedItemOptions: (node) => ({
           title: node.title,
           description: node.description,
-          url: "https://koodi.info/" + node.slug,
+          url: 'https://koodi.info/' + node.slug,
           author: node.author,
           date: node.date,
         }),
         output: {
-          dir: "./static",
-          name: "feed.xml",
+          dir: './static',
+          name: 'feed.xml',
         },
       },
     },
@@ -96,27 +102,27 @@ module.exports = {
     remark: {},
   },
   templates: {
-    Post: "/:slug",
+    Post: '/:slug',
   },
   chainWebpack: (config) => {
     config.module
-      .rule("css")
-      .oneOf("normal")
-      .use("postcss-loader")
+      .rule('css')
+      .oneOf('normal')
+      .use('postcss-loader')
       .tap((options) => {
         options.plugins.unshift(
-          ...[require("postcss-import"), require("postcss-nested")]
+          ...[require('postcss-import'), require('postcss-nested')]
         );
 
-        if (process.env.NODE_ENV === "production") {
+        if (process.env.NODE_ENV === 'production') {
           options.plugins.push(
             ...[
-              require("@fullhuman/postcss-purgecss")({
-                content: ["src/assets/**/*.css", "src/**/*.vue", "src/**/*.js"],
+              require('@fullhuman/postcss-purgecss')({
+                content: ['src/assets/**/*.css', 'src/**/*.vue', 'src/**/*.js'],
                 extractors: [
                   {
                     extractor: TailwindExtractor,
-                    extensions: ["css", "vue", "js"],
+                    extensions: ['css', 'vue', 'js'],
                   },
                 ],
               }),
