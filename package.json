@@ -20,7 +20,7 @@
     "gridsome-plugin-rss": "^1.2.0",
     "gridsome-source-craftql": "^0.1.1",
     "gridsome-source-static-meta": "^1.0.1",
-    "highlight.js": "^9.17.1",
+    "highlight.js": "^10.4.1",
     "lodash": "^4.17.15",
     "marked": "^0.8.0",
     "rss-parser": "^3.7.5",
