@@ -21,9 +21,12 @@ query {
 }
 </static-query>
 
-<style>
+<style lang="postcss" scoped>
 .header {
-  display: flex;
+  @apply flex bg-blue-100;
+  @screen tablet {
+    @apply bg-red-300;
+  }
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
