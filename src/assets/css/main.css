@@ -1,0 +1,131 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+/* Extend Classes to Tailwind */
+@layer utilities {
+  .main-heading {
+    @apply font-heading text-2xl font-semibold leading-tight mb-4;
+  }
+  .small-text,
+  .small-text {
+    @apply font-heading text-sm text-gray-600 font-normal;
+  }
+  .excerpt {
+    @apply font-body leading-relaxed text-lg space-y-4 mb-8 mt-4;
+  }
+  .separator {
+    @apply w-0.5 h-0.5 rounded-full bg-black self-center;
+  }
+  .tags {
+  }
+}
+
+/* Markdown Styles */
+/* Global */
+.markdown {
+  @apply leading-relaxed text-sm;
+}
+
+@screen sm {
+  .markdown {
+    @apply text-base;
+  }
+}
+
+@screen lg {
+  .markdown {
+    @apply text-lg;
+  }
+}
+
+/* Headers */
+.markdown h1,
+.markdown h2 {
+  @apply font-heading text-xl my-6 font-semibold;
+}
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  @apply font-heading text-lg my-3 font-semibold;
+}
+
+@screen sm {
+  .markdown h1,
+  .markdown h2 {
+    @apply text-2xl;
+  }
+  .markdown h3,
+  .markdown h4,
+  .markdown h5,
+  .markdown h6 {
+    @apply text-xl;
+  }
+}
+
+/* Links */
+.markdown a {
+  @apply text-green-600;
+}
+.markdown a:hover {
+  @apply underline;
+}
+/* Paragraph */
+.markdown p {
+  @apply font-body mb-4;
+}
+/* Lists */
+.markdown ul,
+.markdown ol {
+  @apply mb-4 ml-8;
+}
+.markdown li > p,
+.markdown li > ul,
+.markdown li > ol {
+  @apply mb-0;
+}
+.markdown ol {
+  @apply list-decimal;
+}
+.markdown ul {
+  @apply list-disc;
+}
+/* Blockquotes */
+.markdown blockquote {
+  @apply p-2 mx-6 bg-gray-100 mb-4 border-l-4 border-gray-400 italic;
+}
+.markdown blockquote > p {
+  @apply mb-0;
+}
+/* Tables */
+.markdown td,
+.markdown th {
+  @apply px-2 py-1 border border-gray-400;
+}
+.markdown tr:nth-child(odd) {
+  @apply bg-gray-100;
+}
+.markdown table {
+  @apply mb-6;
+}
+
+/* Wrap any inline highlights `that are really long`, but don't modify
+   the setting for codeblocks (inside ```), which are rendered in as:
+   <pre><code>...
+*/
+.markdown pre {
+  overflow: auto;
+  overflow-wrap: break-word;
+  padding: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  @apply text-sm rounded-lg;
+}
+.markdown :not(pre) > code.language-text {
+  white-space: pre-line;
+  @apply rounded-lg;
+}
+/* purgecss end ignore */

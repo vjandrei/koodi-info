@@ -1,17 +1,21 @@
 <template>
-  <div class="container mx-auto">
-    <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-      </nav>
-    </header>
+  <main class="container max-w-screen-md mx-auto px-6">
+    <SiteTopbar />
     <slot />
-  </div>
+    <SiteFooter />
+  </main>
 </template>
+
+<script>
+import SiteTopbar from '~/components/SiteTopbar.vue';
+import SiteFooter from '~/components/SiteFooter.vue';
+export default {
+  components: {
+    SiteTopbar,
+    SiteFooter,
+  },
+};
+</script>
 
 <static-query>
 query {
@@ -23,14 +27,16 @@ query {
 
 <style lang="postcss" scoped>
 .header {
-  @apply flex bg-blue-100;
-  @screen tablet {
-    @apply bg-red-300;
-  }
+  @apply flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
   height: 80px;
+}
+
+@screen sm {
+  .header {
+  }
 }
 
 .nav__link {
