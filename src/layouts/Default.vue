@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import SiteTopbar from '~/components/SiteTopbar.vue';
-import SiteFooter from '~/components/SiteFooter.vue';
+import SiteTopbar from "~/components/SiteTopbar.vue";
+import SiteFooter from "~/components/SiteFooter.vue";
 export default {
   components: {
     SiteTopbar,

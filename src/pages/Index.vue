@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import SiteHeader from '@/components/SiteHeader.vue';
-import PostItem from '@/components/PostItem';
+import SiteHeader from "@/components/SiteHeader.vue";
+import PostItem from "@/components/PostItem";
 export default {
   data() {
     return {
@@ -25,7 +25,7 @@ export default {
     PostItem,
   },
   metaInfo: {
-    title: 'Hello, world!',
+    title: "Hello, world!",
   },
   async mounted() {},
 };

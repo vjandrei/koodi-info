@@ -28,12 +28,12 @@
           class="pl-1 pt-1 h-auto  text-green-200 font-mono text-xs bg-black"
           id="console"
         >
-          <p class="pb-1">Get for: ~ on $koodi.info</p>
+          <p class="pb-1">Command: get info from $koodi.info</p>
           <p class="pb-1">
             Site stats: <br />
             <ul>
-              <li>- 23 blog post</li> 
-              <li>- 3 videos</li>
+              <li> - 23 blog post</li> 
+              <li> - 3 videos</li>
             </ul>
           </p>
         </div>
@@ -44,7 +44,7 @@
 
 <script>
 export default {
-  name: 'SiteHeader',
+  name: "SiteHeader",
 };
 </script>
 
